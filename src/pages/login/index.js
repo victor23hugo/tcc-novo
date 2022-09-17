@@ -4,7 +4,7 @@ export default function Index(){
 
     return(
         <main ClassName='page page-login'>
-            <h1>Login</h1>
+            <h1>Ldada</h1>
         </main>
     )
 }
