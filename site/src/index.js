@@ -14,7 +14,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/admCadastrar' element={<AdmCadastrar/>} />
+        <Route path='/' element={<AdmCadastrar/>} />
         <Route path='/Home' element={<Home/>} />
         <Route path='/Login' element={<Login/>} />
       </Routes>
