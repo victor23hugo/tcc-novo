@@ -1,4 +1,5 @@
 import './index.scss'
+import ImagemGif from './soccer.svg'
 
 export default function Login(){
 
@@ -8,7 +9,7 @@ export default function Login(){
                 <div className='left-login'>
                     <h1>Faça Login</h1>
                     <h1>E entre para o nosso time</h1>
-                    <img src='Soccer.gif' alt='soccer animacao'></img>
+                    <img className='left-login-image' src={ImagemGif} alt='soccer'/>
                 </div>
                 <div className='right-login'>
                     <div className='card-login'>
