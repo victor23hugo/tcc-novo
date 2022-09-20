@@ -1,14 +1,16 @@
-import './index.scss'
+import './index.scss';
 
-export default function LoginAdm(){
+export default function Index(){
 
     return(
  
  <main className="mae">
     <div className="login">
         <div className="circulo">
-        
-           
+
+         
+        <img src = './public/1.png'/>
+
                 
         </div>
 
@@ -22,6 +24,7 @@ export default function LoginAdm(){
 
         <button>Entrar</button>
     </div>
+
 
  </main>
  )

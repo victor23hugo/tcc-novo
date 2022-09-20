@@ -3,7 +3,7 @@ import './index.scss'
 export default function Login(){
 
     return(
-        <body>
+        <main>
             <div className='main-login'>
                 <div className='left-login'>
                     <h1>Faça Login</h1>
@@ -27,7 +27,7 @@ export default function Login(){
             </div>
 
 
-        </body>
+        </main>
         
             
 
