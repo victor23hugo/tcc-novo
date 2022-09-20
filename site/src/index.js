@@ -4,10 +4,13 @@ import './index.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import App from './App';
+
 import AdmCadastrar from './pages/adm-Cadastrar'
 import Home from './pages/home'
 import Login from './pages/login'
+import LoginAdm from './pages/loginAdm';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +20,7 @@ root.render(
         <Route path='/' element={<AdmCadastrar/>} />
         <Route path='/Home' element={<Home/>} />
         <Route path='/Login' element={<Login/>} />
+        <Route path='/LoginAdm' element={<LoginAdm/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
