@@ -7,16 +7,12 @@ export default function Index(){
  <main className="mae">
     <div className="login">
         <div className="circulo">
-
-         
-        <img src = './public/1.png'/>
-
-                
+            <img className="iconUser" src="/images/1.png" alt="iconesUser"/>
         </div>
 
         <h1>Logar no sistema</h1>
 
-        <input className="form-email" type="email" placeholder="login" id=""/>
+        <input className="form-email" type="email" placeholder="Login" id=""/>
         <br/><br/>
   
         <input className="form-senha" type="password" placeholder="Senha" id=""/>
