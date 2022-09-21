@@ -223,6 +223,13 @@ body * {
     box-shadow: 0px 10px 50px -12px #f7020252;
 }
  
+.btn-login:hover{
+    background-color: #e66801;
+    transition: all 1.050 ease;
+    -webkit-transform: scale(1.050);
+    -ms-transform: scalle(1.050);
+    transform: scale(1.050);
+}
 
     @media only screen and (max-width: 950px) {
         .card-login {
