@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
-import AdmCadastrar from './pages/adm-Cadastrar'
+import Cadastrar from './pages/cadastrar'
 import Home from './pages/home'
 import Login from './pages/login'
 import LoginAdm from './pages/loginAdm';
@@ -17,7 +17,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<AdmCadastrar/>} />
+        <Route path='/' element={<Cadastrar/>} />
         <Route path='/Home' element={<Home/>} />
         <Route path='/Login' element={<Login/>} />
         <Route path='/LoginAdm' element={<LoginAdm/>} />
