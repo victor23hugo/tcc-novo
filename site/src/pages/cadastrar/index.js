@@ -4,7 +4,7 @@ import upload from '../../componentes/imgs/icon-upload.svg'
 export default function Index(){
 
     return(
-        <body>
+        <main>
         <div class="princ">
             <div class="form-image">
                 <img src={upload}/>
@@ -64,6 +64,6 @@ export default function Index(){
                 </form>
             </div>
         </div>
-    </body>
+    </main>
     )
 }

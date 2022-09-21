@@ -12,13 +12,13 @@ export default function Index(){
 
         <h1>Logar no sistema</h1>
 
-        <input className="form-email" type="email" placeholder="Login" id=""/>
+        <input className="form-email" type="email" placeholder="Login"/>
         <br/><br/>
   
-        <input className="form-senha" type="password" placeholder="Senha" id=""/>
+        <input className="form-senha" type="password" placeholder="Senha"/>
         <br/><br/>
 
-        <button>Entrar</button>
+        <button className='btn-cadastro'>Entrar</button>
     </div>
 
 
