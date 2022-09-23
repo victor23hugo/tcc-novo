@@ -14,7 +14,7 @@ export default function Index(){
                 <form action="#">
                     <div class="form-header">
                         <div class="title">
-                            <h1>Cadatrar novos produtos</h1>
+                            <h1>Cadastrar novos produtos</h1>
                         </div>
                         <div class="login-boton">
                             <button><a href="../home/index.html">Voltar</a></button>
