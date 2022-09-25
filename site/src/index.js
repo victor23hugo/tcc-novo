@@ -17,10 +17,10 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Cadastrar/>} />
+        <Route path='/Cadastrar' element={<Cadastrar/>} />
         <Route path='/Home' element={<Home/>} />
         <Route path='/Login' element={<Login/>} />
-        <Route path='/LoginAdm' element={<LoginAdm/>} />
+        <Route path='/' element={<LoginAdm/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
