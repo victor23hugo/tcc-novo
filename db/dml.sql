@@ -3,8 +3,8 @@ use casportsDB;
 
 -- login adm
 
-insert into tb_admin_login(nm_usuario, ds_email, ds_senha)
-                        values('Guilherme', 'guilhermeadm@gmail.com', 'qzwx2@');
+insert into tb_admin_login( ds_email, ds_senha)
+                        values( 'guilhermeadm@gmail.com', '101010');
 
 -- cadastrar Camisa
    -- CADASTRAR CAMISA
