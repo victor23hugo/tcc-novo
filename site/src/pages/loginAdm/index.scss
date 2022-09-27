@@ -3,8 +3,28 @@
     margin: 0px;
 }
 .mae{
-    background: linear-gradient(45deg, #2B2B5F 4.72%, #007ACC 128.44%);
-    height: 100vh;
+    display: flex;
+       align-items: center;
+       justify-content: center;
+       height: 100vh;
+       width: 100vw;
+       background: linear-gradient(45deg, #5e037a, #5f5dc2, #0f0d6b, #22a2ec);
+       background-size: 300% 300%;
+       animation: colors 35s ease infinite;
+
+   @keyframes colors {
+        0% {
+            background-position: 0% 58%;
+
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
  
 .iconUser{
     margin-left: 19.6px;
@@ -66,7 +86,7 @@
  
  button{
   
-     background: linear-gradient(90deg, #2B2B5F 4.72%, #007ACC 128.44%);
+     
      border-radius: 10px;
      width: 178px;
      height: 30px;
@@ -74,6 +94,9 @@
      border: 0;
      margin-top: 30px;
      cursor: pointer;
+     background: linear-gradient(45deg, #5e037a, #5f5dc2, #0f0d6b, #22a2ec);
+     background-size: 300% 300%;
+     animation: colors 4s ease infinite;
  }
  ::placeholder{
     color: white;
@@ -102,3 +125,4 @@ transform: scale(1.050);
 
     transform: scale(1.1);
     }
+    

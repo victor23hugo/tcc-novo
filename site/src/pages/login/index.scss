@@ -10,14 +10,29 @@
         }
         
         .main-login{
-            width: 100vw;
-            height: 100vh;
-            background-color: #201b2c;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(45deg, #5e037a, #5f5dc2, #0f0d6b, #22a2ec);
+            background-size: 300% 300%;
+            animation: colors 35s ease infinite;
         }
         
+        @keyframes colors {
+            0% {
+                background-position: 0% 58%;
+    
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+    
+            100% {
+                background-position: 0% 50%;
+            }
+        }
         
         .left-login{
             width: 50vw;
@@ -26,10 +41,11 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            
         }
         
         .left-login > h1 {
-            color: #77ffc0;
+            
         }
         
         .right-login{
@@ -50,13 +66,14 @@
             background-color: #2f2841;
             border-radius: 20px;
             box-shadow: 0px 10px 40px #00000056;
+            background: linear-gradient(45deg, #f2eef3, #e3e3e6, #d8d8da, #c9c9c9);
+            background-size: 300% 300%;
+            animation: colors 30s ease infinite;
             
         }
         
         .card-login > h1 {
-            color: #00ff88;
-            font-weight: 800;
-            margin: 0;
+            
         }
         
         .textfield {
@@ -74,7 +91,7 @@
             border-radius: 10px;
             padding: 15px;
             background-color: #514869;
-            color: #f0ffffde;
+            color: #000000de;
             font-size: 12pt;
             box-shadow: 0px 10px 40px #00000056;
             outline: none;
@@ -83,13 +100,13 @@
         
         
         .textfield > label {
-            color: #f0ffffde;
+            color: #000000de;
             margin-bottom: 10px;
         }
         
         
         .textfield > input ::placeholder{
-            color: #f0ffff94;
+            color: #00000094;
         }
         
         .btn-login {
@@ -103,9 +120,11 @@
             font-weight: 800;
             letter-spacing: 3px;
             color: #2b134b;
-            background-color: #00ff88;
             cursor: pointer;
             box-shadow: 0px 10px 40px -12px #00ff8052;
+            background: linear-gradient(45deg, #5e037a, #5f5dc2, #0f0d6b, #22a2ec);
+            background-size: 300% 300%;
+            animation: colors 4s ease infinite;
         }
    
 
@@ -196,7 +215,7 @@ body * {
     border-radius: 10px;
     padding: 15px;
     background-color: #d7cfec;
-    color: #f0ffffde;
+    color: #000000de;
     font-size: 12pt;
     box-shadow: 0px 10px 40px #00000056;
     outline: none;
@@ -205,13 +224,13 @@ body * {
 
 
 .textfield > label {
-    color: #f0ffffde;
+    color: #000000de;
     margin-bottom: 10px;
 }
 
 
 .textfield > input ::placeholder{
-    color: #f0ffff94;
+    color: #00000094;
 }
 
 .btn-login {
