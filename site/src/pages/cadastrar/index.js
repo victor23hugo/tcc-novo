@@ -2,7 +2,7 @@ import './index.scss'
 import upload from '../../componentes/imgs/upload2.png'
 import { useState } from 'react';
 
-import { enviarImagemCamisa, cadastrarCamisa} from  '../../../../api/camisaApi'
+import { enviarImagemCamisa, cadastrarCamisa} from  '../../api/camisaApi'
 
 export default function Index(){
 
@@ -42,7 +42,6 @@ export default function Index(){
                             <button>Voltar</button>
                         </div>
                     </div>
-///
                     <div class="input-group">
                         <div class="input-box">
 
