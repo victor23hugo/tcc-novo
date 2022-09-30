@@ -14,16 +14,22 @@ select id_admin_login 		id,
 
 -- cadastrar Camisa
    -- CADASTRAR CAMISA
-   insert into tb_cadastro_camisa (id_camisa, nm_camisa, ds_descricao, qtd_camisa, vl_camisa, nm_marca, ds_tamanho)
-                        values    ('3','Camisa curintians','corinthians é lixo!', '20', '200', 'Nike', 'P');
+insert into tb_cadastro_camisa (nm_camisa, ds_descricao, qtd_camisa, vl_camisa, nm_marca, ds_tamanho)
+						values    ('Camisa Palmeiras 2024','camisa bacana', '50', '350', 'Puma', 'G');
 
-    select id_camisa    id,
-        nm_camisa        nome,
-        ds_descricao    descricao,
-        qtd_camisa        quantidade,
-        vl_camisa        valor,
-        nm_marca        marca,
-        ds_tamanho        tamanho
+	select id_camisa	id,
+		nm_camisa		nome,
+        ds_descricao	descricao,
+        qtd_camisa		quantidade,
+        vl_camisa		valor,
+        nm_marca		marca,
+        ds_tamanho		tamanho
 from tb_cadastro_camisa
-where nm_camisa            = 'Camisa curintians'
-and        ds_tamanho        = 'P';
+where nm_camisa			= 'Camisa Palmeiras 2024'
+and		ds_tamanho		= 'G';
+
+--Cadastro imagem camisa
+
+update tb_cadastro_camisa
+set img_camisa1 = 'imagem'
+where id_camisa = 1;

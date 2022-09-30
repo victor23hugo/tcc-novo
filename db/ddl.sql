@@ -1,8 +1,7 @@
 create table tb_admin_login (
-id_admin_login        int primary key auto_increment,
-nm_usuario    varchar (30),
-ds_email    varchar(50),
-ds_senha    varchar (50)
+id_admin_login		int primary key auto_increment,
+ds_email	varchar(50),
+ds_senha	varchar (50)
 );
 
 

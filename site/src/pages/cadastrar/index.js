@@ -1,9 +1,28 @@
 import './index.scss'
-import upload from '../../componentes/imgs/icon-upload.svg'
+import upload from '../../componentes/imgs/upload2.png'
+import { useState } from 'react';
 
-
+import { enviarImagemCamisa, cadastrarCamisa} from  '../../../../api/camisaApi'
 
 export default function Index(){
+
+    const [nome, setNome] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [quantidade, setQuantidade] = useState('');
+    const [valor, setValor] = useState('');
+    const [tamaho, setTamanho] = useState('');
+    const [marca, setMarca] = useState('');
+    const [imagem, setImagem] = useState('');
+    
+   async function salvarClick(){
+        try{
+            const r = await cadastrarCamisa(nome, descricao, quantidade, valor, tamaho, marca);
+            alert('Camisa cadastrada com sucesso ');
+
+        } catch (err){
+            alert(err.message);
+        }
+    }
 
     return(
         <main>
@@ -23,46 +42,39 @@ export default function Index(){
                             <button>Voltar</button>
                         </div>
                     </div>
-
+///
                     <div class="input-group">
                         <div class="input-box">
 
-                            <input id="firstname" type="text" name="firstname" placeholder="Nome do produto" required/>
+                            <input id="firstname" type="text" name="firstname" placeholder="Nome do produto" value={nome} onChange={e => setNome(e.target.value)}/>
                         </div>
 
                         <div class="input-box">
-                            <input id="Descrição" type="Descrição" name="Descrição" placeholder="Descrição" required/>
+                            <input id="Descrição" type="Descrição" name="Descrição" placeholder="Descrição" value={descricao} onChange={e => setDescricao(e.target.value)}/>
                         </div>
 
                         <div class="input-box">
-                            <input id="Marca" type="Marca" name="Marca" placeholder="Marca" required/>
+                            <input id="Marca" type="Marca" name="Marca" placeholder="Marca"  value={marca} onChange={e => setMarca(e.target.value)}/>
                         </div>
 
                         <div class="input-box">
-                            <input id="Quantidade" type="Quantidade" name="Quantidade" placeholder="Quantidade" required/>
+                            <input id="Quantidade" type="Quantidade" name="Quantidade" placeholder="Quantidade"  value={quantidade} onChange={e => setQuantidade(e.target.value)}/>
                         </div>
                         <div class="input-box">
-                            <input id="Valor" type="Valor" name="Valor" placeholder="Valor" required/>
+                            <input id="Valor" type="Valor" name="Valor" placeholder="Valor"  value={valor} onChange={e => setValor(e.target.value)}/>
                         </div>
 
 
                         <div class="input-box">
-                            <input id="Tamnaho" type="Tamnaho" name="Tamnaho" placeholder="Tamanho" required/>
+                            <input id="Tamnaho" type="Tamnaho" name="Tamnaho" placeholder="Tamanho"  value={tamaho} onChange={e => setTamanho(e.target.value)}/>
                         </div>
 
                         <div class="form-imagem">
                             <img src={upload} alt="imagem-upload" width="50px" height="50px"/>
                         </div>
-
-                        <div class="form-image">
-                            <img src={upload} alt="imagem-upload"/>
-                        </div>
-
                     </div>
-
-
                     <div class="continue-button">
-                        <button>Cadastrar</button>
+                        <button onClick={salvarClick}>Cadastrar</button>
                     </div>
 
                 </form>
