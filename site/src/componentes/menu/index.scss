@@ -1,20 +1,27 @@
 .comp-menu {
     position: relative;
-    width: 18%;
+    width: 20%;
     height: 100vh;
     background-color: #191F28;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
- 
+    align-items: center;    
+
+
+    .ee{
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        
+    }
 
     .titulo{
         color: #fff;
         display: flex;
-    
+        margin-top: -350px;
     }
-
+    
     .menu-items {
         display: flex;
         flex-direction: column;
@@ -23,7 +30,7 @@
         padding: 10px;
 
     }
-    .menu-items > .texto {
+    .menu-items > a.texto {
         display: flex;
         align-items: center;
         color: #fff;

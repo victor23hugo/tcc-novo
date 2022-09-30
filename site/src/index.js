@@ -9,6 +9,8 @@ import Cadastrar from './pages/cadastrar'
 import Home from './pages/home'
 import Login from './pages/login'
 import LoginAdm from './pages/loginAdm';
+import Pendentes from './pages/Pendentes';
+import Admin from './pages/admin';
 
 
 
@@ -17,10 +19,12 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/Cadastrar' element={<Cadastrar/>} />
+      <Route path='/' element={<LoginAdm/>} />
+      <Route path='/admin' element={<Admin/>} />
+        <Route path='/admin/cadastrar' element={<Cadastrar/>} />
         <Route path='/Home' element={<Home/>} />
+        <Route path='/admin/pendentes' element={<Pendentes/>} />
         <Route path='/Login' element={<Login/>} />
-        <Route path='/' element={<LoginAdm/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
