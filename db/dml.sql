@@ -33,3 +33,4 @@ and		ds_tamanho		= 'G';
 update tb_cadastro_camisa
 set img_camisa1 = 'imagem'
 where id_camisa = 1;
+
