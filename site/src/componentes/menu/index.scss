@@ -6,22 +6,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
-
+    align-items: center;
+    margin-left: -60.7em;
+ 
 
     .ee{
         display: flex;
         flex-direction: column;
-        margin-top: 100px;
-        
+        margin-top: 150px;   
     }
 
     .titulo{
         color: #fff;
         display: flex;
-        margin-top: -350px;
+    margin-top: -300px;
     }
-    
+
     .menu-items {
         display: flex;
         flex-direction: column;
@@ -30,7 +30,7 @@
         padding: 10px;
 
     }
-    .menu-items > a.texto {
+    .menu-items > .texto {
         display: flex;
         align-items: center;
         color: #fff;

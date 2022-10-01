@@ -6,12 +6,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 import Cadastrar from './pages/cadastrar'
-import Home from './pages/home'
+import Concluidos from './pages/concluidos'
 import Login from './pages/login'
 import LoginAdm from './pages/loginAdm';
 import Pendentes from './pages/Pendentes';
 import Admin from './pages/admin';
-
+import Consultar from './pages/consultar';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,7 +22,8 @@ root.render(
       <Route path='/' element={<LoginAdm/>} />
       <Route path='/admin' element={<Admin/>} />
         <Route path='/admin/cadastrar' element={<Cadastrar/>} />
-        <Route path='/Home' element={<Home/>} />
+        <Route path='/admin/consultar' element={<Consultar/>} />
+        <Route path='/admin/concluidos' element={<Concluidos/>} />
         <Route path='/admin/pendentes' element={<Pendentes/>} />
         <Route path='/Login' element={<Login/>} />
       </Routes>
