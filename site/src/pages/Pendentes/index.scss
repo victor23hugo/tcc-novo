@@ -1,0 +1,10 @@
+.page-pedidos{
+    display: flex;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    
+}

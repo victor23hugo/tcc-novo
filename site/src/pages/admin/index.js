@@ -1,13 +1,15 @@
 import './index.scss'
 import Menu from '../../componentes/menu'
+import Cabecalho from '../../componentes/cabecalho'
 
 export default function Index() {
     return(
-        <main>
-        <Menu/>
-            <div className='fundo-admin'>
-                <h1 className='h1-admin'>saddas</h1>
+        <main className='page page-home'>
+            <Menu/>
+            <div className='container'>    
+                <Cabecalho />
             </div>
+
         </main>
     )
 }
