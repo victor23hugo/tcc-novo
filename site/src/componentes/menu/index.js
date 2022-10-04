@@ -1,8 +1,13 @@
-
+import storage from 'local-storage'
 import { useNavigate, Link } from 'react-router-dom';
 import './index.scss'
 
 export default function Index(){
+
+function sairClick(){
+    storage.remove('ususario-logado');
+}
+
 
     return(
         <nav className="comp-menu">
@@ -36,7 +41,7 @@ export default function Index(){
             </div>
 
             <div className='menu-items'>
-                <Link to='/'>
+                <Link to='/' onClick={sairClick}>
                     <img src="/images/7.png" alt="consultar" />
                     <div>Sair</div>
                 </Link>

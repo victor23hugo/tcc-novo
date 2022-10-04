@@ -3,35 +3,35 @@
 .comp-cabecalho {
     position: relative;
     z-index: 1;
-
+    background-color: #191F28;
     display: flex;
     justify-content: space-between;
     
     padding: 0px 80px;
-    box-shadow: 1px 2px 10px #e3e3e3;
     margin-top: -28.5em;
-    width: 58.5em;
+    width: 61.2em;
     height: 4.5em;
     
 
     .bem-vindo {
         font: 700 18px 'Inter';
         color: #7C7C7C;
+        align-items: center;
     }
 
     .usuario {
         display: flex;
         align-items: center;
-        justify-content: center;
-        
         background-color: #7773F2;
         border-radius: 100%;
-        
         font: 500 20px 'Inter';
         color: #fff;
-
         height: 50px;
         width: 50px;
+        
+    }
+    span{
+        align-items: center;
     }
 
     .img-cabecalho{
@@ -39,5 +39,6 @@
     color: #0000;
     width: 35px;
     height: 35px;
+    align-items: center;
     }
 }

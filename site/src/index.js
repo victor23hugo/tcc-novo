@@ -12,7 +12,7 @@ import LoginAdm from './pages/loginAdm';
 import Pendentes from './pages/Pendentes';
 import Admin from './pages/admin';
 import Consultar from './pages/consultar';
-
+import Listar from './pages/listar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +25,7 @@ root.render(
         <Route path='/admin/consultar' element={<Consultar/>} />
         <Route path='/admin/concluidos' element={<Concluidos/>} />
         <Route path='/admin/pendentes' element={<Pendentes/>} />
+        <Route path='/admin/listar' element={<Listar/>} />
         <Route path='/Login' element={<Login/>} />
       </Routes>
     </BrowserRouter>

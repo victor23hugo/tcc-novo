@@ -1,30 +1,43 @@
 import axios from 'axios'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './index.scss';
+import storage from 'local-storage'
 
-
+import LoadingBar from 'react-top-loading-bar'
 export default function Index(){
 
     const [email,setEmail] = useState('');
     const [senha,setSenha] = useState('');
     const [erro,setErro] = useState('');
+    const [carregando, setCarregando] = useState(false);
 
     const navigate = useNavigate();
 
+    const ref = useRef();
+
 
     async function entrarClick(){
+        ref.current.continuousStart();
         try{
 
       const r = await axios.post('http://localhost:5000/admin/login', {email: email, senha: senha});
-       navigate('/Cadastrar')
+            console.log(r);
+
+            //storage('admin-logado', r)
+
+      setTimeout(() => {
+        navigate('/pages/cadastrar')
+      },  2000  )
+
 
       if(r.status === 401){
         setErro(r.data.erro);
         } 
 
     }catch(err){
-
+        ref.current.complete(); 
+        setCarregando(false);
         if(err.response.status === 401)
         {
             setErro(err.response.data.erro);
@@ -35,6 +48,7 @@ export default function Index(){
         return(
  
             <main className="mae">
+                <LoadingBar color='#f11946' ref={ref}/>
                <div className="login">
                    <div className="circulo">
                        <img className="iconUser" src="/images/1.png" alt="iconesUser"/>
@@ -47,8 +61,8 @@ export default function Index(){
            
                    <input className="form-senha" type="password" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)}/>
                    <br/><br/>
-           
-                   <button className='btn-cadastro' onClick={entrarClick}>Entrar</button>
+        
+                   <button className='btn-cadastro' onClick={entrarClick} disable={carregando}>Entrar</button>
                </div>
            
                <div className='invalido'>
