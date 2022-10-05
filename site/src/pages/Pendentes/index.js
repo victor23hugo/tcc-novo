@@ -4,7 +4,7 @@ import Cabecalho from '../../componentes/cabecalho'
 
 export default function Index() {
     return(
-        <main className='page page-pedidos'>
+        <main className='page page-consultar'>
             <Menu/>
             <div className='container'>    
                 <Cabecalho />

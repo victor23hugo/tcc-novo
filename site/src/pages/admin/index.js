@@ -4,10 +4,11 @@ import Cabecalho from '../../componentes/cabecalho'
 
 export default function Index() {
     return(
-        <main className='page page-home'>
-            <Menu/>
+        <main className='page page-consultar'>              
+           
+            <Cabecalho />
             <div className='container'>    
-                <Cabecalho />
+                <Menu/>
             </div>
 
         </main>

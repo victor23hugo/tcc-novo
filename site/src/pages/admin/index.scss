@@ -1,10 +1,23 @@
-.page-home{
-display: flex;
+.page-consultar{ 
 
-.container {
+
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-}
+    
+    
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+    }
 
+ 
+    .container-2{
+        display: flex;
+
+        height: 30em;
+        width: 10em;
+        background-color: aqua;
+    }
 }
