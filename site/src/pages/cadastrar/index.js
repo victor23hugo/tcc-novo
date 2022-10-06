@@ -1,69 +1,88 @@
 import './index.scss'
-import upload from '../../componentes/imgs/upload2.png'
-//import { useState } from 'react';
+import Menu from '../../componentes/menu'
+import Cabecalho from '../../componentes/cabecalho'
+import upload from '../../componentes/imgs/upload.png'
+import {useState} from 'react'
+import { cadastrarCamisa } from '../../api/camisaApi'
 
-//import { enviarImagemCamisa, cadastrarCamisa} from  '../../api/camisaApi'
+export default function Index() {
+    const [nome, setNome] = useState('')
+    const [descricao, setDescricao] = useState('')
+    const [quantidade, setQuantidade] = useState('')
+    const [valor, setValor] = useState('')
+    const [marca, setMarca] = useState('')
+    const [tamanho, setTamanho] = useState('')
 
-export default function Index(){
-
-    
+    async function salvar(){
+        try {
+            const novoProduto = await cadastrarCamisa(nome, descricao, quantidade, valor, marca, tamanho)
+            alert('cadastrado')
+        } catch (err) {
+            console.log(err)
+            alert(err.response.data.erro)
+        }
+    }
 
     return(
-        <main>
-        <div class="princ">
-            <div class="form-image">
-
-          <h4>Espaço reservado para menu</h4>
-
+        <main className='page page-consultar'>              
+           
+            <Cabecalho />
+            <div className='container'>    
+                <Menu/>
+                <br/>
+            
+                <br/>
             </div>
-            <div class="form">
-                <form action="#">
-                    <div class="form-header">
-                        <div class="title">
-                            <h1>Cadatrar novos produtos</h1>
+                <div className='input-group'>
+
+
+                <div className='inputs'>
+                
+                        <div class="inputs">
+
+                            <input id="firstname" type="text" name="firstname" placeholder="Nome do produto" value={nome} onChange={e => setNome(e.target.value)}/>
                         </div>
-                        <div class="login-boton">
-                            <button>Voltar</button>
+                            <br/>
+                        <div class="input-box">
+                            <input id="Descrição" type="Descrição" name="Descrição" placeholder="Descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
                         </div>
+                            <br/>
+                        <div class="input-box">
+                            <input id="Marca" type="Marca" name="Marca" placeholder="Marca" value={marca} onChange={e => setMarca(e.target.value)} />
+                        </div>
+                            <br/>
+                        <div class="input-box">
+                            <input id="Quantidade" type="Quantidade" name="Quantidade" placeholder="Quantidade" value={quantidade} onChange={e => setQuantidade(e.target.value)} />
+                        </div>
+                        <br/>
+                        <div class="input-box">
+                            <input id="Valor" type="Valor" name="Valor" placeholder="Valor" value={valor} onChange={e => setValor(e.target.value)} />
+                        </div>
+                        <br/>
+
+                        <div class="input-box">
+                            <input id="Tamnaho" type="Tamnaho" name="Tamnaho" placeholder="Tamanho" value={tamanho} onChange={e => setTamanho(e.target.value) } />
+                        </div>
+                        <br/>
+                        <div class="continue-button">
+                        <button onClick={salvar}>Cadastrar</button>
                     </div>
-                    <div class="input-group">
-                        <div class="input-box">
-
-                            <input id="firstname" type="text" name="firstname" placeholder="Nome do produto" />
-                        </div>
-
-                        <div class="input-box">
-                            <input id="Descrição" type="Descrição" name="Descrição" placeholder="Descrição" />
-                        </div>
-
-                        <div class="input-box">
-                            <input id="Marca" type="Marca" name="Marca" placeholder="Marca"  />
-                        </div>
-
-                        <div class="input-box">
-                            <input id="Quantidade" type="Quantidade" name="Quantidade" placeholder="Quantidade" />
-                        </div>
-                        <div class="input-box">
-                            <input id="Valor" type="Valor" name="Valor" placeholder="Valor"  />
-                        </div>
-
-
-                        <div class="input-box">
-                            <input id="Tamnaho" type="Tamnaho" name="Tamnaho" placeholder="Tamanho"  />
-                        </div>
-
-                        <div class="form-imagem">
-                            <img src={upload} alt="imagem-upload" width="50px" height="50px"/>
-                        </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                
+                    <div className='img-upload'>
+                        <img src={upload} alt = "upload" width="200" height="200"/>
                     </div>
-                    <div class="continue-button">
-                        <button>Cadastrar</button>
+                    
                     </div>
+                </div>
 
-                </form>
-            </div>
-        </div>
-    </main>
+                
+
+
+        </main>
     )
 }
-

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom'
 import './index.scss';
-import storage from 'local-storage'
+//import storage from 'local-storage'
 
 import LoadingBar from 'react-top-loading-bar'
 export default function Index(){

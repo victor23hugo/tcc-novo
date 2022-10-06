@@ -11,7 +11,7 @@ const upload = multer({dest: 'storage/imgcamisas'})
 
 
 server.post('/camisa', async (req, resp) =>{
-
+console.log('bateu aqui')
     try{
         const camisaParaInserir = req.body;
 
@@ -36,7 +36,7 @@ server.post('/camisa', async (req, resp) =>{
 
         const camisaInserida = await inserirCamisa(camisaParaInserir);
 
-        resp.send(camisaInserida)
+        resp.status(200).send(camisaInserida)
 
     } catch(err){
         resp.status(400).send({

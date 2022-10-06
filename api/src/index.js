@@ -18,7 +18,6 @@ server.use(express.json());
 server.use('/storage/imgcamisas', express.static('storage/imgcamisas'));
 
 
-
 server.use(adminController);
 
 server.use(lojaController);

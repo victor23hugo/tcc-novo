@@ -1,24 +1,14 @@
+ 
 import axios from 'axios'
 
 const api = axios.create({
-    baseUrl: 'http://localhost:5000'
+    baseURL: `http://localhost:5000`
 })
 
-
 export async function cadastrarCamisa(nome, descricao, quantidade, valor, marca, tamanho){
-    const resposta = await api .post('/camisa', {
-        
-            nome: nome,
-            descricao: descricao,
-            quantidade: quantidade,
-            valor: valor,
-            marca: marca,
-            tamanho: tamanho
-          
-    })
-
+    
+    const resposta = await api.post('/camisa', {nome, descricao, quantidade, valor, marca, tamanho  })
     return resposta.data;
-
 }
 
 

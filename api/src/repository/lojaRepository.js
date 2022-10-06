@@ -9,6 +9,7 @@ insert into tb_cadastro_camisa (nm_camisa, ds_descricao, qtd_camisa, vl_camisa, 
 
     const [resposta] = await con.query(comando, [camisa.nome, camisa.descricao, camisa.quantidade, camisa.valor, camisa.marca, camisa.tamanho]);
     camisa.id = resposta.insertId;
+    console.log(resposta)
 
     return camisa;
 }
