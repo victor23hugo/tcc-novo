@@ -91,3 +91,10 @@ create table tb_pagamento_pix (
     
     FOREIGN KEY (fk_pedido) REFERENCES tb_pedido (id_pedido)
 );
+
+create table tb_camisa_imagem (
+id_camisa_imagem		int primary key auto_increment,
+id_camisa			int,
+ds_imagem			varchar (800),
+foreign key (id_camisa) references tb_cadastro_camisa (id_camisa)
+);

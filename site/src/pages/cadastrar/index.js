@@ -13,10 +13,14 @@ export default function Index() {
     const [marca, setMarca] = useState('')
     const [tamanho, setTamanho] = useState('')
 
+    const [imagem1, setImagem1] = useState('');
+    const [imagem2, setImagem2] = useState('');
+
+
     async function salvar(){
         try {
             const novoProduto = await cadastrarCamisa(nome, descricao, quantidade, valor, marca, tamanho)
-            alert('cadastrado')
+            alert('cadastrado umildimente no banco')
         } catch (err) {
             console.log(err)
             alert(err.response.data.erro)
@@ -74,7 +78,11 @@ export default function Index() {
                     <br/>
                 
                     <div className='img-upload'>
-                        <img src={upload} alt = "upload" width="200" height="200"/>
+                        <img src={upload} alt = "upload" width="200" height="200"  onClick={() => escolherImagem('imagem1')}/>
+                        <input type = 'file' id= 'imagem1' onChange={e => setImagem1(e.target.files[0])}  />
+
+                        <img src={upload} alt = "upload" width="200" height="200"   onClick={() => escolherImagem('imagem2')} />
+                        <input type = 'file' id= 'imagem2' onChange={e => setImagem2(e.target.files[0])}/>
                     </div>
                     
                     </div>

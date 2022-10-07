@@ -1,3 +1,4 @@
+import server from "../controller/adminController.js";
 import { con } from "./connection.js";
 
 
@@ -25,3 +26,10 @@ export async function alterarImagem(imagem, id){
             resposta.affectedRows;
 }
 
+export async function salvarProdutoImagem(idCamisa, imagemPath){
+    const comando = `
+    insert into tb_imagem_camisa (id_camisa, ds_imagem)
+                                values (?, ?)`
+
+    const [resp] = await con.query (comando, [idCamisa, imagemPath])
+}

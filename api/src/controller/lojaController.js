@@ -1,4 +1,4 @@
-import { alterarImagem, inserirCamisa } from '../repository/lojaRepository.js';
+import { alterarImagem, inserirCamisa, salvarProdutoImagem } from '../repository/lojaRepository.js';
 
 import multer from 'multer'
 
@@ -11,7 +11,7 @@ const upload = multer({dest: 'storage/imgcamisas'})
 
 
 server.post('/camisa', async (req, resp) =>{
-console.log('bateu aqui')
+
     try{
         const camisaParaInserir = req.body;
 
@@ -48,29 +48,26 @@ console.log('bateu aqui')
 
 
 
-server.put('/camisa/:id/imagem', upload.single('imagem') ,async(req,resp) =>{
 
+
+server.put ('admin/camisa/:id', upload.array('imagens'), async (req, resp) =>{
     try{
-        const { id } = req.params;
-        const imagem = req.file.path;
-        
-        
-        const resposta = await alterarImagem(imagem, id);
+        const id = req.params.id;
+        const imagens = req.files;
+
+        for(const imagem of imagens){
+
+           await salvarProdutoImagem (id, imagem.path);
+        }
+
         resp.status(204).send();
 
-        if(resposta != 1)
-        throw new Error ('A imagem nao pode ser salva.')
-
-
-    } catch (err){
+    } catch (err) {
         resp.status(400).send({
-            erro:  err.message 
+            erro: err.message
         })
-        
     }
-
-
-})
+} )
 
 
 
