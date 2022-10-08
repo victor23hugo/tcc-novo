@@ -1,9 +1,9 @@
 import './index.scss'
-import Menu from '../../componentes/menu'
-import Cabecalho from '../../componentes/cabecalho'
-import upload from '../../componentes/imgs/upload.png'
+import Menu from '../../../componentes/2.MenuAdm'
+import Header from '../../../componentes/1.HeaderAdm'
+import upload from '../../../componentes/imgs/upload.png'
 import {useState} from 'react'
-import { cadastrarCamisa } from '../../api/camisaApi'
+import { cadastrarCamisa } from '../../../api/camisaApi'
 
 export default function Index() {
     const [nome, setNome] = useState('')
@@ -30,7 +30,7 @@ export default function Index() {
     return(
         <main className='page page-consultar'>              
            
-            <Cabecalho />
+            <Header/>
             <div className='container'>    
                 <Menu/>
                 <br/>

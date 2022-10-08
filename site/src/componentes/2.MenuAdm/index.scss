@@ -3,36 +3,20 @@
         text-decoration: none;
     }
     
-    position: relative;
-    z-index: 10;
-
     width: 300px;
-    height: 52.6em;
-    
+    height: 51.6em;
     background-color: #191F28;
-
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     
     .logo {
         display: flex;
         align-items: center;
-
-        padding: 40px;
+        color: #fff;
+        padding: 30px 65px;
     }
-    .logo img {
-        width: 110px;
-    }
-    .logo div {
-        font: 700 22px 'Inter';
-        color: #E9E9E9;
-        position: relative;
-        left: -10px;
-    }
-
+ 
     .menu-items {
         display: flex;
         flex-direction: column;
@@ -40,11 +24,8 @@
     .menu-items > a {
         display: flex;
         align-items: center;
-       
         padding: 30px 40px;
-        font: 500 18px 'Inter';
         color: #fff;
-
         transition: .3s;
         cursor: pointer;
     }

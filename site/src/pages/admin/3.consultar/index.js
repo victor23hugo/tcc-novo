@@ -1,12 +1,12 @@
 import './index.scss'
-import Menu from '../../componentes/menu'
-import Cabecalho from '../../componentes/cabecalho'
+import Menu from '../../../componentes/2.MenuAdm'
+import Header from '../../../componentes/1.HeaderAdm'
 
 export default function Index() {
     return(
         <main className='page page-consultar'>              
            
-            <Cabecalho />
+            <Header />
             <div className='container'>    
                 <Menu/>
                 <div className='listar'>

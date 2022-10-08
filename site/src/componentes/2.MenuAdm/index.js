@@ -11,41 +11,42 @@ function sairClick(){
 
     return(
         <nav className="comp-menu">
-            <div>
+        
                 <div className='logo'>
-                    <div></div>
+                    <h1>CaSport</h1>
                 </div>
 
                 <div className='menu-items'>
-                    <Link to='/admin'>
-                        <img src="/images/8.png" alt="home" />
+                    <Link to='/admin/BemVindo'>
+                        <img src="/images/8.png" alt="" />
                         <div>Admin</div>
                     </Link>
                     <Link to='/admin/cadastrar'>
-                        <img src="/images/3.png" alt="cadastrar" />
+                        <img src="/images/3.png" alt="" />
                         <div>Cadastrar</div>
                     </Link>
                     <Link to='/admin/consultar'>
-                        <img src="/images/6.png" alt="consultar" />
+                        <img src="/images/6.png" alt="" />
                         <div>Consultar</div>
                     </Link>
-                    <Link to='/admin/pendentes'>
-                        <img src="/images/5.png" alt="consultar" />
+                    <Link to='/admin/pedidos'>
+                        <img src="/images/5.png" alt="" />
                         <div>Pedidos</div>
                     </Link>
-                    <Link to='/admin/concluidos'>
-                        <img src="/images/4.png" alt="consultar" />
+                    <Link to='/admin/entregues'>
+                        <img src="/images/4.png" alt="" />
                         <div>Entregues</div>
                     </Link>
                 </div>
-            </div>
+        
 
             <div className='menu-items'>
                 <Link to='/' onClick={sairClick}>
-                    <img src="/images/7.png" alt="consultar" />
+                    <img src="/images/7.png" alt="" />
                     <div>Sair</div>
                 </Link>
             </div>
+            
         </nav>
     )
 }
