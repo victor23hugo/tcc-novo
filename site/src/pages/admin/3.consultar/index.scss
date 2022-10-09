@@ -20,6 +20,25 @@
         width: 10em;
     }
 
+    tr td:nth-last-child(1), tr td:nth-last-child(2) {
+        padding: 0px;
+        text-align: center;
+    }
+    tr td:nth-last-child(1) span, tr td:nth-last-child(2) span {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 10px;
+        cursor: pointer;
+        transition: .6s;
+        padding: 5px 10px;
+        border-radius: 3px;
+    }
+    tr td:nth-last-child(1) span:hover, tr td:nth-last-child(2) span:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+
     .listar{
         display: flex;
         flex-direction: column;

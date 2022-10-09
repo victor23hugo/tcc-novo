@@ -34,3 +34,8 @@ export async function salvarImagem(id, imagem1, imagem2){
 
 
 }
+
+
+export async function removerProduto(id){
+    const r = await api.delete('/admin/camisa' + id );
+}

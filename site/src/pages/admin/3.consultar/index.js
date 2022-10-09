@@ -2,7 +2,10 @@ import './index.scss'
 import Menu from '../../../componentes/2.MenuAdm'
 import Header from '../../../componentes/1.HeaderAdm'
 import { useEffect, useState } from 'react';
-import { buscarCamisa } from '../../../api/camisaApi';
+import { buscarCamisa, removerProduto } from '../../../api/camisaApi';
+import { toast } from 'react-toastify'
+
+
 export default function Index() {
 
 const [produtos, setProdutos] = useState([]);
@@ -15,6 +18,15 @@ async function carregarProdutos(){
 useEffect(() => {
     carregarProdutos();
 } , []);
+
+async function deletarProduto(id){
+    try{
+        await removerProduto (id);
+        toast.dark('Produto removido com sucesso ');
+    }   catch (err){
+        toast.error(err.response.data.erro)
+    }
+}
 
 
 
@@ -51,7 +63,7 @@ useEffect(() => {
                                 <td>{item.tamanho}</td>
                                 <td>{item.valor}</td>
                                 <td><span>Editar</span></td>
-                                <td><span>Remover</span></td>
+                                <td><span  onClick={() => deletarProduto(item.id)}>Remover</span></td>
                             </tr>
                                 
                                 )}
