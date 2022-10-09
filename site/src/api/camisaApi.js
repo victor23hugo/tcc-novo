@@ -11,16 +11,26 @@ export async function cadastrarCamisa(nome, descricao, quantidade, valor, marca,
     return resposta.data;
 }
 
+export async function buscarCamisa(){
+    
+    const resposta = await api.get('/admin/camisa')
+    return resposta.data;
+}
 
-export async function enviarImagemCamisa(id, imagem){
-    const formData =    new formData();
-    formData.append('imagem', imagem );
 
-    const resposta = await api.put(`/camisa/${id}/imagem`, formData, {
-        headers:{
-            "Content-Type": "multipart/form-data"
-        },
+export async function salvarImagem(id, imagem1, imagem2){
+    let form = new FormData();
+    form.append('imagens', imagem1);
+    form.append('imagens', imagem2);
+
+    const r = await api.put('/admin/camisa/' + id, form, {
+
+        headers: {
+            'Content-Type' : 'multipart/form-data'
+        }
     });
 
-    return resposta.status;
+    return r.data;
+
+
 }

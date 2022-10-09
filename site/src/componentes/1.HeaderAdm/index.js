@@ -12,7 +12,7 @@ export default function Index() {
                             <p>Olá</p>
                         </div>
                         <div className="frase-user">
-                            <p>Roberto Carlos</p>
+                            <p>🐒 -- Eu sou o Victor Hugo</p>
                         </div>
                     </div>
                 </div>

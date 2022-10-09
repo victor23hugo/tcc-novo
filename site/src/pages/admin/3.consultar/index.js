@@ -1,8 +1,25 @@
 import './index.scss'
 import Menu from '../../../componentes/2.MenuAdm'
 import Header from '../../../componentes/1.HeaderAdm'
-
+import { useEffect, useState } from 'react';
+import { buscarCamisa } from '../../../api/camisaApi';
 export default function Index() {
+
+const [produtos, setProdutos] = useState([]);
+
+async function carregarProdutos(){
+    const r = await buscarCamisa();
+    setProdutos(r) 
+}
+
+useEffect(() => {
+    carregarProdutos();
+} , []);
+
+
+
+
+
     return(
         <main className='page page-consultar'>              
            
@@ -25,33 +42,20 @@ export default function Index() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>01</td>
-                                <td>São Paulo</td>
-                                <td>ADIDAS</td>
-                                <td>G</td>
-                                <td>200</td>
+                            {produtos.map(item =>
+                                
+                                <tr>
+                                <td>{item.id}</td>
+                                <td>{item.nome}</td>
+                                <td>{item.marca}</td>
+                                <td>{item.tamanho}</td>
+                                <td>{item.valor}</td>
                                 <td><span>Editar</span></td>
                                 <td><span>Remover</span></td>
                             </tr>
-                            <tr>
-                                <td>02</td>
-                                <td>Santos</td>
-                                <td>UMBRO</td>
-                                <td>G</td>
-                                <td>300</td>
-                                <td><span>Editar</span></td>
-                                <td><span>Remover</span></td>
-                            </tr>
-                            <tr>
-                                <td>03</td>
-                                <td>Plameiras</td>
-                                <td>PUMA</td>
-                                <td>P</td>
-                                <td>199</td>
-                                <td><span>Editar</span></td>
-                                <td><span>Remover</span></td>
-                            </tr>
+                                
+                                )}
+                            
                         </tbody>
                     </table>
                 </div>

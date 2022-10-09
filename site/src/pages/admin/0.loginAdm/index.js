@@ -27,7 +27,7 @@ export default function Index(){
             //storage('admin-logado', r)
 
       setTimeout(() => {
-        navigate('/pages/cadastrar')
+        navigate('/admin/BemVindo')
       },  2000  )
 
 
@@ -63,11 +63,12 @@ export default function Index(){
                    <br/><br/>
         
                    <button className='btn-cadastro' onClick={entrarClick} disable={carregando}>Entrar</button>
-               </div>
-           
-               <div className='invalido'>
+                   <br/>
+                   
                    {erro}
                </div>
+           
+              
            
            
             </main>

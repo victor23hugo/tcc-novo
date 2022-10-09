@@ -16,20 +16,49 @@ insert into tb_cadastro_camisa (nm_camisa, ds_descricao, qtd_camisa, vl_camisa, 
 }
 
 
-export async function alterarImagem(imagem, id){
-    const comando = `
-    update tb_cadastro_camisa
-    set img_camisa1 = ?
-    where id_camisa = ?`;
 
-            const [resposta] = await con.query(comando, [imagem, id]);
-            resposta.affectedRows;
+
+export async function buscarProduto(){
+
+    const comando = 
+    `
+    select id_camisa	 as id,
+            nm_camisa	as nome,
+            vl_camisa	as valor,
+            qtd_camisa  as quantidade,
+            ds_tamanho  as tamanho
+    from tb_cadastro_camisa 
+    group 
+        by id_camisa,
+            nm_camisa	,
+            vl_camisa	,
+            qtd_camisa  ,
+            ds_tamanho	;
+    
+    `
+    const [registros] = await con.query(comando);
+    return registros;
+
 }
 
-export async function salvarProdutoImagem(idCamisa, imagemPath){
-    const comando = `
-    insert into tb_imagem_camisa (id_camisa, ds_imagem)
-                                values (?, ?)`
+export async function removerCamisa(idCamisa){
 
-    const [resp] = await con.query (comando, [idCamisa, imagemPath])
+    const comando = `
+    
+    delete from tb_cadastro_camisa
+            where id_camisa = ?
+    
+    `
+
+
+}
+
+export async function salvarCamisaImagem(idCamisa, imagemPath) {
+    const comando = `
+            insert into tb_camisa_imagem(id_camisa, ds_imagem)
+                                values (?, ?)    
+    `
+
+    const [resp] = await  con.query(comando, [idCamisa, imagemPath]) 
+
 }
