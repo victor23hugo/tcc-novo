@@ -1,10 +1,9 @@
-import {  buscarProduto, inserirCamisa, removerCamisa, salvarCamisaImagem } from '../repository/lojaRepository.js';
+import {  alterarImagem, buscarPorId, buscarProduto, inserirCamisa, buscarPorNome, buscarPorMarca, removerCamisa1 } from '../repository/lojaRepository.js';
 
 import multer from 'multer'
-
 import { Router } from 'express';
-const server = Router();
 
+const server = Router();
 const upload = multer({ dest: 'storage/imgcamisas'})
 
 
@@ -36,9 +35,7 @@ server.post('/camisa', async (req, resp) =>{
 
         const camisaInserida = await inserirCamisa(camisaParaInserir);
 
-        resp.send({
-            id: idCamisa
-        });
+        resp.send(camisaInserida);
 
     } catch(err){
         resp.status(400).send({
@@ -50,7 +47,7 @@ server.post('/camisa', async (req, resp) =>{
 
 
 
-
+//listar camisas 
 server.get('/admin/camisa', async (req, resp) =>{
     try{
         const r = await buscarProduto();
@@ -64,7 +61,69 @@ server.get('/admin/camisa', async (req, resp) =>{
 })
 
 
-server.delete('/admin/camisa/:id', async (req, resp ) =>{
+//buscar por nome 
+server.get('/admin/busca', async (req, resp) =>{
+    try{
+        const {nome} = req.query;
+
+        const resposta  = await buscarPorNome(nome);
+
+        if(resposta.length == 0 )
+        throw new Error('Camiseta Não Encontrada/ Não Cadastrada / Não existente')
+
+        resp.send(resposta);
+    } 
+    catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+//buscar por marca ARRUMAR --guilherme 
+server.get('/admin/busca', async (req, resp) =>{
+    try{
+        const {marca} = req.query;
+
+        const resposta  = await buscarPorMarca(marca);
+
+        if(!resposta)
+        throw new Error('Camiseta Não Encontrada/ Não Cadastrada / Não existente')
+
+        resp.send(resposta);
+    } 
+    catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+
+//buscar por id 
+server.get('/admin/:id', async (req, resp) =>{
+    try{
+        const id = Number(req.params.id);
+
+        const resposta  = await buscarPorId(id);
+
+        if(!resposta)
+        throw new Error('Camiseta Não Encontrada/ Não Cadastrada / Não existente')
+
+        resp.send(resposta);
+    } 
+    catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+//deletar camisa
+server.delete('/admin/camisa/i/:id', async (req, resp ) =>{
     try{
 
         const id = req.params.id;
@@ -82,31 +141,40 @@ server.delete('/admin/camisa/:id', async (req, resp ) =>{
 
 })
 
+//inserir imagem 'camisa no form pra poder chamar'
 
-server.put('/admin/produto/:id', upload.array('imagens') , async (req, resp) =>{
-    
+server.put('/camisa/:id/imagem', upload.single('camisa') ,async (req, resp) =>{
     try{
+        const {id} = req.params;
+        const imagem = req.file.path;
 
-            const id = req.params.id;
-            const imagens = req.files;
-
-            console.log(id);
-            console.log(imagens);
-            
-            for(const imagem of imagens ){
-               await salvarCamisaImagem(id, imagem.path);
-            }
-
-            resp.status(204).send();
-
-} catch (err){
-    resp.status(400).send({
-        erro: err.message
-    })
-}
-
-
-} )
+        const resposta = await alterarImagem(imagem, id)
+        if(resposta != 1 )
+        throw new error('A imagem Nao pode ser salva.')
+        
+        resp.status(204).send();
+    } catch (err){
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 
 export default server;
+
+
+server.delete('/camisa/:id', async (req, resp ) =>{
+    try{
+        const {id} = req.params;
+
+       const  resposta = removerCamisa1(id);
+
+
+       resp.status(204).send();
+    } catch (err){
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})

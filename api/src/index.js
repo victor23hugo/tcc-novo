@@ -4,7 +4,7 @@ import express from 'express'
 import adminController from './controller/adminController.js'
 import lojaController from './controller/lojaController.js'
 
-//
+
 
 
 
@@ -15,7 +15,7 @@ server.use(express.json());
 //configuração dos endpoints
 
 //Liberar arquivos da storage
-server.use('/storage/imgcamisas', express.static('storage/imgcamisas'));
+server.use('/storage/imgcamisas',  express.static('storage/imgcamisas'));
 
 
 server.use(adminController);

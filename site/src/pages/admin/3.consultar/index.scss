@@ -52,5 +52,29 @@
         display: flex;
         justify-content: center;
         background-color: aqua;
+        
     }
+    .caixa-busca {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 20px 40px;
+        border-radius: 15px;
+        box-shadow: 1px 1px 5px rgb(220, 220, 220);
+        width: 50%;
+        margin-top: 30px;
+        margin-left: 15em;
+    }
+    .caixa-busca input {
+        background: none;
+        border: none;
+        padding: 0px;
+        width: 100%;
+    }
+    .caixa-busca img {
+        cursor: pointer;
+        position: relative;
+        right: -15px;
+    }
+
 }

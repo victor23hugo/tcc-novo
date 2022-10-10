@@ -4,6 +4,7 @@ import Header from '../../../componentes/1.HeaderAdm'
 import { useEffect, useState } from 'react';
 import { buscarCamisa, removerProduto } from '../../../api/camisaApi';
 import { toast } from 'react-toastify'
+import buscar from '../../../componentes/imgs/icon-buscar.svg'
 
 
 export default function Index() {
@@ -40,7 +41,11 @@ async function deletarProduto(id){
                 <Menu/>
                 <div className='listar'>
                     <h1 className='produtos'>Produtos</h1>
-                    
+                    <div className='caixa-busca'>
+                        <input type="text" placeholder='Buscar Camisas' />
+                        <img src={buscar} alt='buscar' />
+                    </div>
+                    <br/>
                     <table>
                         <thead>
                             <tr>

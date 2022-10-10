@@ -1,7 +1,7 @@
 import server from "../controller/adminController.js";
 import { con } from "./connection.js";
 
-
+//inserir camisa no banco
 export async function inserirCamisa(camisa){
     const comando = `
 insert into tb_cadastro_camisa (nm_camisa, ds_descricao, qtd_camisa, vl_camisa, nm_marca, ds_tamanho)
@@ -17,23 +17,25 @@ insert into tb_cadastro_camisa (nm_camisa, ds_descricao, qtd_camisa, vl_camisa, 
 
 
 
-
+//listar Camisas
 export async function buscarProduto(){
 
     const comando = 
     `
-    select id_camisa	 as id,
-            nm_camisa	as nome,
-            vl_camisa	as valor,
-            qtd_camisa  as quantidade,
-            ds_tamanho  as tamanho
-    from tb_cadastro_camisa 
-    group 
-        by id_camisa,
-            nm_camisa	,
-            vl_camisa	,
-            qtd_camisa  ,
-            ds_tamanho	;
+    select id_camisa as id,
+    nm_camisa	as nome,
+    nm_marca	as marca,
+    vl_camisa	as valor,
+    qtd_camisa  as quantidade,
+    ds_tamanho  as tamanho
+from tb_cadastro_camisa 
+group 
+by id_camisa,
+    nm_camisa	,
+    nm_marca	,
+    vl_camisa	,
+    qtd_camisa  ,
+    ds_tamanho	;
     
     `
     const [registros] = await con.query(comando);
@@ -41,24 +43,95 @@ export async function buscarProduto(){
 
 }
 
-export async function removerCamisa(idCamisa){
+// Enviar imagem
+export async function alterarImagem(imagem , id ){
 
     const comando = `
-    
-    delete from tb_cadastro_camisa
-            where id_camisa = ?
-    
-    `
 
+    update tb_cadastro_camisa
+        set img_camisa =        ?
+        where id_camisa =       ?
+
+    `
+    const [resposta] = await con.query(comando, [imagem, id]);
+    return resposta.affectedRows
+}
+
+
+//buscar por nome
+export async function buscarPorNome(nome){
+
+    const comando = 
+    `
+    select id_camisa	,
+    nm_camisa	as nome,
+    nm_marca	as marca,
+    vl_camisa	as valor,
+    qtd_camisa  as quantidade,
+    ds_tamanho  as tamanho
+from tb_cadastro_camisa 
+    where nm_camisa like  ?`;
+
+
+    const [registros] = await con.query(comando, [`%${nome}%`]);
+    return registros[0];
 
 }
 
-export async function salvarCamisaImagem(idCamisa, imagemPath) {
-    const comando = `
-            insert into tb_camisa_imagem(id_camisa, ds_imagem)
-                                values (?, ?)    
+
+
+//buscar por marca Arrumar 
+export async function buscarPorMarca(marca){
+
+    const comando = 
     `
+    select id_camisa	,
+    nm_camisa	as nome,
+    nm_marca	as marca,
+    vl_camisa	as valor,
+    qtd_camisa  as quantidade,
+    ds_tamanho  as tamanho
+from tb_cadastro_camisa 
+    where nm_marca like  ?`;
 
-    const [resp] = await  con.query(comando, [idCamisa, imagemPath]) 
 
+    const [registros] = await con.query(comando, [`%${marca}%`]);
+    return registros[0];
+
+}
+//Arrumar  <...> -guilherme
+
+
+
+//buscar por id 
+export async function buscarPorId(id){
+
+    const comando = 
+    `
+    select id_camisa	,
+    nm_camisa	as nome,
+    nm_marca	as marca,
+    ds_descricao as descricao,
+    img_camisa   as imagem,
+    vl_camisa	as valor,
+    qtd_camisa  as quantidade,
+    ds_tamanho  as tamanho
+from tb_cadastro_camisa 
+    where id_camisa = ?`;
+
+
+    const [registros] = await con.query(comando, [id]);
+    return registros[0];
+
+}
+
+//remover Camisa Funcionando 
+export async function removerCamisa1 (id){
+    const comando = `
+    
+    delete from tb_cadastro_camisa
+    where id_camisa = ? `
+
+    const [resposta] = await con.query (comando, [id]);
+    return resposta.affectedRows;
 }
