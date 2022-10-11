@@ -3,7 +3,10 @@ import Menu from '../../../componentes/2.MenuAdm'
 import Header from '../../../componentes/1.HeaderAdm'
 import upload from '../../../componentes/imgs/upload.png'
 import {useState} from 'react'
-import { cadastrarCamisa, salvarImagem } from '../../../api/camisaApi'
+import { cadastrarCamisa, enviarImagemCamisa } from '../../../api/camisaApi'
+
+import { toast, ToastContainer } from 'react-toastify'
+//import 'react-toastify/dist/RactToastify.css';
 
 
 export default function Index() {
@@ -13,42 +16,39 @@ export default function Index() {
     const [valor, setValor] = useState('')
     const [marca, setMarca] = useState('')
     const [tamanho, setTamanho] = useState('')
+    const [imagem, setImagem] = useState();
 
-    const [imagem1, setImagem1 ] = useState();
-    const [imagem2, setImagem2] = useState();
 
 
     async function salvar(){
+
+        if(!imagem)
+            throw new Error('Voçe se esqueceu da imagem broder')
         try {
-            const novoProduto = await cadastrarCamisa(nome, descricao, quantidade, valor, marca, tamanho)
-            await salvarImagem(r.id, imagem1, imagem2);
-            alert('cadastrado umildimente no banco')
+            const novoProduto = await cadastrarCamisa(nome, descricao, quantidade, valor, marca, tamanho);
+            const r = await enviarImagemCamisa(novoProduto.id, imagem);
+            
+            alert('Cadastrado com sucesso!')
         } catch (err) {
-            console.log(err)
-            alert(err.response.data.erro)
+            if(err.response)
+            toast(err.response.data.erro);
+            else
+            toast(err.message);
         }
     }
 
-    function exibirImagem(imagem){
-        if(imagem == undefined){
-            return {upload};
-        }
 
-        else {
-        URL.createObjectURL(imagem);
-        }
+function escolherImagem(){
+    document.getElementById('imagemcapa').click(); 
+}
 
-         
-    }
-    
-
-    async function escolherImagem(inputId){
-        document.getElementById(inputId).click();
-    }
+function mostrarImagem(){
+    return URL.createObjectURL(imagem);
+}
 
     return(
         <main className='page-consultar'>              
-           
+           <ToastContainer/>
             <Header/>
             <div className='container'>    
                 <Menu/>
@@ -88,12 +88,15 @@ export default function Index() {
                         </div>
                         <br/>
                         
-                    <div className='img-upload'>
-                        <img src={exibirImagem(imagem1)} alt = "" width="200" height="200" onClick={() => escolherImagem('imagem1')}/>
-                        <img src={exibirImagem(imagem2)} alt = "" width="200" height="200"  onClick={() => escolherImagem('imagem2')}/>
-
-                        <input type = 'file' id = 'imagem1' onChange={e => setImagem1(e.target.files[0])} />
-                        <input type = 'file' id = 'imagem2' onChange={e => setImagem2(e.target.files[0])}/>
+                    <div className='img-upload' onClick={escolherImagem}>
+                        {!imagem  && 
+                                <img src={upload} alt = "" width="200" height="200"/>
+                        }
+                    {imagem &&
+                        <img className='imagem-camisa' src = {mostrarImagem()}/>
+                    }
+                        <input type = 'file' id='imagemcapa' onChange={e => setImagem(e.target.files[0])}/>
+                    
                     </div>
                     
                     </div>

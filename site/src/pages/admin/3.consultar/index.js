@@ -2,7 +2,7 @@ import './index.scss'
 import Menu from '../../../componentes/2.MenuAdm'
 import Header from '../../../componentes/1.HeaderAdm'
 import { useEffect, useState } from 'react';
-import { buscarCamisa, removerProduto } from '../../../api/camisaApi';
+import { buscarCamisa } from '../../../api/camisaApi';
 import { toast } from 'react-toastify'
 import buscar from '../../../componentes/imgs/icon-buscar.svg'
 

@@ -18,24 +18,14 @@ export async function buscarCamisa(){
 }
 
 
-export async function salvarImagem(id, imagem1, imagem2){
-    let form = new FormData();
-    form.append('imagens', imagem1);
-    form.append('imagens', imagem2);
-
-    const r = await api.put('/admin/camisa/' + id, form, {
-
+export async function enviarImagemCamisa(id, imagem){
+    const formData = new FormData();
+    formData.append('camisa', imagem);
+    const resposta = await api.put(`/camisa/${id}/imagem`, formData,  {
         headers: {
-            'Content-Type' : 'multipart/form-data'
-        }
+            "Content-Type": "multipart/formData"
+        },
     });
 
-    return r.data;
-
-
-}
-
-
-export async function removerProduto(id){
-    const r = await api.delete('/admin/camisa' + id );
+    return resposta.status;
 }
