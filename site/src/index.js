@@ -13,6 +13,9 @@ import Pedidos from './pages/admin/4.pedidos';
 import Entregues from './pages/admin/5.entregues';
 
 
+//loja CaSports
+import LandingPage from './pages/loja/landingPage'
+
 //imports do User
 import LoginUser from './pages/User/0.loginUser';
 import CadastrarUser from './pages/User/1.CadastrarUser';
@@ -29,6 +32,8 @@ root.render(
         <Route path='/admin/consultar' element={<Consultar/>} />
         <Route path='/admin/pedidos' element={<Pedidos/>} />
         <Route path='/admin/entregues' element={<Entregues/>} />
+
+        <Route path='/loja/landing' element={<LandingPage/>} />
 
 
         <Route path='/Login' element={<LoginUser/>} />
