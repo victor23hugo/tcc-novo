@@ -1,25 +1,21 @@
 import './index.scss'
+import {  Link } from 'react-router-dom';
+
 
 export default function Index() {
     return(
-        <header className='comp-Header'>
-            <div className='header-1'>
-                <div className='bem-vindo'>Bem-vindo à nossa loja</div>
+        <main className='comp-cabeçalho'>
+            <h1 className='espaçar'>caSports</h1>
+            <div className='reunir-navegações'>
+                <Link>Início</Link>
+                <Link>Catálogo</Link>
+                <Link>Entrar em contato</Link>
             </div>
-            <hr/>
-            <div className='header-2'>
-                <div className='click'>
-                    <div>CaSports</div>
-                    <div>inicio</div>
-                    <div>Catalago</div>
-                    <div>Entrar em contato</div>
-                </div>
-                <div className='icon'>
-                    <div>r</div>
-                    <div>rr</div>
-                    <div>rr</div>
-                </div>
+            <div className='reunir-imagens'>
+                <img className='imagens' src="/images/lupa.png" alt="" />
+                <img className='imagens' src="/images/sacola.png" alt=""/>
+                <img className='imagens' src="/images/user.png" alt="" />
             </div>
-        </header>
+        </main>
     )
 }

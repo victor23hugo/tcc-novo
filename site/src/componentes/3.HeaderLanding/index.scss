@@ -1,29 +1,28 @@
-.comp-Header{
-    background-color: rgb(255, 255, 255);
+
+.comp-cabeçalho{
+    *{
+        border: 1px solid green;
+    }
     display: flex;
-    flex-direction: column;
-    
-    .bem-vindo{
-        width: 500px;
+    flex-direction: row;
+    width: 100%;
+
+    background-color: #ffff;
+
+    .espaçar{
+        display: flex;
+        padding: 0px 0px 0px 60px;
     }
 
-    .header-1{
-        width: 1366px;
-        display: flex;
-        justify-items: center;
-        align-items: center;
+    .reunir-navegações{
+
     }
-    .header-2{
-        display: flex;
-        width: 780px;
+
+    .reunir-imagens{
+
     }
-    .click{
-        display: flex;
-        flex-direction: row;
-        width: 780px;
-    }
-    .icon{
-        display: flex;
-        flex-direction: row;
+
+    .imagens{
+        
     }
 }
