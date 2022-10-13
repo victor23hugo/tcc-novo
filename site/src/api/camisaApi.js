@@ -29,3 +29,9 @@ export async function enviarImagemCamisa(id, imagem){
 
     return resposta.status;
 }
+
+export async function buscarCamisaPorNome(nome){
+    const resposta = await api.get(`/admin/busca?nome=${nome}`);
+    return resposta.data;
+
+}

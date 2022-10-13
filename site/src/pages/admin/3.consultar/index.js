@@ -2,13 +2,14 @@ import './index.scss'
 import Menu from '../../../componentes/2.MenuAdm'
 import Header from '../../../componentes/1.HeaderAdm'
 import { useEffect, useState } from 'react';
-import { buscarCamisa } from '../../../api/camisaApi';
+import { buscarCamisa, buscarCamisaPorNome } from '../../../api/camisaApi';
 import { toast } from 'react-toastify'
 import buscar from '../../../componentes/imgs/icon-buscar.svg'
 
 
 export default function Index() {
 
+const [filtro, setFiltro] = useState('');
 const [produtos, setProdutos] = useState([]);
 
 async function carregarProdutos(){
@@ -20,13 +21,9 @@ useEffect(() => {
     carregarProdutos();
 } , []);
 
-async function deletarProduto(id){
-    try{
-        await removerProduto (id);
-        toast.dark('Produto removido com sucesso ');
-    }   catch (err){
-        toast.error(err.response.data.erro)
-    }
+async function filtrar(){
+    const resp = await buscarCamisaPorNome(filtro);
+    setProdutos(resp)
 }
 
 
@@ -42,8 +39,8 @@ async function deletarProduto(id){
                 <div className='listar'>
                     <h1 className='produtos'>Produtos</h1>
                     <div className='caixa-busca'>
-                        <input type="text" placeholder='Buscar Camisas' />
-                        <img src={buscar} alt='buscar' />
+                        <input type="text" placeholder='Buscar Camisas' value={filtro} onChange={e => setFiltro(e.target.value)}/>
+                        <img src={buscar} alt='buscar' onClick={filtrar} />
                     </div>
                     <br/>
                     <table>
@@ -68,7 +65,7 @@ async function deletarProduto(id){
                                 <td>{item.tamanho}</td>
                                 <td>{item.valor}</td>
                                 <td><span>Editar</span></td>
-                                <td><span  onClick={() => deletarProduto(item.id)}>Remover</span></td>
+                                <td><span>Remover</span></td>
                             </tr>
                                 
                                 )}

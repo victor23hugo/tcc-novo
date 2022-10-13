@@ -74,7 +74,7 @@ from tb_cadastro_camisa
 
 
     const [registros] = await con.query(comando, [`%${nome}%`]);
-    return registros[0];
+    return registros;
 
 }
 
@@ -96,7 +96,7 @@ from tb_cadastro_camisa
 
 
     const [registros] = await con.query(comando, [`%${marca}%`]);
-    return registros[0];
+    return registros;
 
 }
 //Arrumar  <...> -guilherme
