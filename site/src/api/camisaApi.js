@@ -30,8 +30,17 @@ export async function enviarImagemCamisa(id, imagem){
     return resposta.status;
 }
 
+
+//buscar camisas
 export async function buscarCamisaPorNome(nome){
     const resposta = await api.get(`/admin/busca?nome=${nome}`);
     return resposta.data;
 
+}
+
+//deletar camisas
+
+export async function deletarcamisa(id){
+    const resposta = await api.delete(`/camisa/${id}`);
+    return resposta.status;
 }
