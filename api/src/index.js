@@ -3,7 +3,7 @@ import 'dotenv/config'
 import express from 'express'
 import adminController from './controller/adminController.js'
 import lojaController from './controller/lojaController.js'
-
+import loginClienteController from './controller/loginClienteController.js'
 
 
 
@@ -19,8 +19,8 @@ server.use('/storage/imgcamisas',  express.static('storage/imgcamisas'));
 
 
 server.use(adminController);
-
 server.use(lojaController);
+server.use(loginClienteController);
 
 server.listen(process.env.PORT, () => console.log(`Api conectada na porta ${process.env.PORT}`))
 

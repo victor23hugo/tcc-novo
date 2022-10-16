@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import './index.scss'
 import ImagemGif from './soccer.svg'
+
 
 export default function Login(){
 
@@ -16,11 +18,11 @@ export default function Login(){
                         <h1>LOGIN</h1>
                         <div className='textfield'>
                             <label for='usuario'>Usuário</label>
-                            <input type='text' name='usuario' placeholder='Usuário'></input>
+                            <input type='text' name='usuario' placeholder='Usuário'/>
                         </div>
                         <div className='textfield'>
                             <label for='senha'>senha</label>
-                            <input type='password' name='senha' placeholder='Senha'></input>
+                            <input type='password' name='senha' placeholder='Senha'/>
                         </div>
                         <button className='btn-login'>Login</button>
                     </div>
