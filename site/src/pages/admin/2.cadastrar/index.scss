@@ -7,3 +7,29 @@
     width:200px;
      height:200px;
 }
+
+.input-group{
+    flex-direction: row;
+   
+}
+
+.container{
+    background-color: #252f3c;
+    justify-content:left;
+    flex-direction: column;
+   
+}
+
+.input-box > input {
+    background-color: #252f3c;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px rgb(22, 28, 36);
+    outline: none;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+

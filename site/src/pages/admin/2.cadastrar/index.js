@@ -52,63 +52,62 @@ function mostrarImagem(){
             <Header/>
             <div className='container'>    
                 <Menu/>
-                <br/>
-            
-                <br/>
-            </div>
-                <div className='input-group'>
-
-
                 <div className='inputs'>
                 
-                        <div class="inputs">
+                <div className="input-box">
 
-                            <input id="firstname" type="text" name="firstname" placeholder="Nome do produto" value={nome} onChange={e => setNome(e.target.value)}/>
-                        </div>
-                            <br/>
-                        <div class="input-box">
-                            <input id="Descrição" type="Descrição" name="Descrição" placeholder="Descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
-                        </div>
-                            <br/>
-                        <div class="input-box">
-                            <input id="Marca" type="Marca" name="Marca" placeholder="Marca" value={marca} onChange={e => setMarca(e.target.value)} />
-                        </div>
-                            <br/>
-                        <div class="input-box">
-                            <input id="Quantidade" type="Quantidade" name="Quantidade" placeholder="Quantidade" value={quantidade} onChange={e => setQuantidade(e.target.value)} />
-                        </div>
-                        <br/>
-                        <div class="input-box">
-                            <input id="Valor" type="Valor" name="Valor" placeholder="Valor" value={valor} onChange={e => setValor(e.target.value)} />
-                        </div>
-                        <br/>
+                    <input id="firstname" type="text" name="firstname" placeholder="Nome do produto" value={nome} onChange={e => setNome(e.target.value)}/>
+                </div>
+                    <br/>
+                <div className="input-box">
+                    <input id="Descrição" type="Descrição" name="Descrição" placeholder="Descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
+                </div>
+                    <br/>
+                <div className="input-box">
+                    <input id="Marca" type="Marca" name="Marca" placeholder="Marca" value={marca} onChange={e => setMarca(e.target.value)} />
+                </div>
+                    <br/>
+                <div className="input-box">
+                    <input id="Quantidade" type="Quantidade" name="Quantidade" placeholder="Quantidade" value={quantidade} onChange={e => setQuantidade(e.target.value)} />
+                </div>
+                <br/>
+                <div className="input-box">
+                    <input id="Valor" type="Valor" name="Valor" placeholder="Valor" value={valor} onChange={e => setValor(e.target.value)} />
+                </div>
+                <br/>
 
-                        <div class="input-box">
-                            <input id="Tamnaho" type="Tamnaho" name="Tamnaho" placeholder="Tamanho" value={tamanho} onChange={e => setTamanho(e.target.value) } />
-                        </div>
-                        <br/>
-                        
-                    <div className='img-upload' onClick={escolherImagem}>
-                        {!imagem  && 
-                                <img src={upload} alt = "" width="200" height="200"/>
-                        }
-                    {imagem &&
-                        <img className='imagem-camisa' src = {mostrarImagem()}/>
-                    }
-                        <input type = 'file' id='imagemcapa' onChange={e => setImagem(e.target.files[0])}/>
-                    
-                    </div>
-                    
-                    </div>
-                    
-                    
+                <div className="input-box">
+                    <input id="Tamnaho" type="Tamnaho" name="Tamnaho" placeholder="Tamanho" value={tamanho} onChange={e => setTamanho(e.target.value) } />
+                </div>
+                <br/>
+                
+            <div className='img-upload' onClick={escolherImagem}>
+                {!imagem  && 
+                        <img src={upload} alt = "" width="200" height="200"/>
+                }
+            {imagem &&
+                <img className='imagem-camisa' src = {mostrarImagem()}/>
+            }
+                <input type = 'file' id='imagemcapa' onChange={e => setImagem(e.target.files[0])}/>
+            
+            </div>
+            
+            </div>
+
+            <div className='input-group'>
                     
                 
-                    <div class="continue-button">
+                    <div className="continue-button">
                         <button onClick={salvar}>Cadastrar</button>
                     </div>
 
                 </div>
+
+                <br/>
+            
+                <br/>
+            </div>
+               
 
                 
 
