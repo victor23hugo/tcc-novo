@@ -74,7 +74,7 @@ async function filtrar(){
                     <h1 className='produtos'>Produtos</h1>
                     <div className='caixa-busca'>
                         <input type="text" placeholder='Buscar Camisas' value={filtro} onChange={e => setFiltro(e.target.value)}/>
-                        <img src={buscar} alt='buscar' onClick={filtrar} />
+                        <img className="iconUser" src="/images/lupa.png" alt="iconesUser"/>
                     </div>
                     <br/>
                     <table>

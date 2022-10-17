@@ -15,8 +15,8 @@ export default function Index() {
              <Header/>
           <div className='centro'>
 
-            <img className='ajuste' src='/images/10.png' alt=''/>
-            </div>
+
+          </div>
           </div>
            </main>
     )}
