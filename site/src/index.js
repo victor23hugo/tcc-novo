@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import { ToastContainer } from 'react-toastify';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -25,7 +25,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-      
+      <ToastContainer/>
+
       <Route path='/' element={<LoginAdm/>} />
         <Route path='/admin/BemVindo' element={<BemVindo/>} />
         <Route path='/admin/cadastrar' element={<Cadastrar/>} />

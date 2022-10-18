@@ -28,15 +28,26 @@ from tb_cadastro_camisa
 where nm_camisa			= 'Camisa Palmeiras 2024'
 and		ds_tamanho		= 'G';
 
---Cadastro imagem camisa
+-- Cadastrar Usuario
+
+select tb_usuario.id_usuario	id,
+	   nm_usuario				nome
+ from tb_usuario
+	inner join tb_login_usuario on tb_login_usuario.id_usuario = tb_usuario.id_usuario
+where ds_email = 'victor@gmail.com'
+  and ds_senha = md5('123');
+
+select * from tb_usuario;
+select * from tb_login_usuario;
+
+-- Cadastro imagem camisa
 
 update tb_cadastro_camisa
 set img_camisa1 = 'imagem'
 where id_camisa = 1;
 
 
-
----- Inserts Produtos/camisas
+-- Inserts Produtos/camisas
 
 
 insert into tb_cadastro_camisa (nm_camisa, ds_descricao, qtd_camisa, vl_camisa, nm_marca, ds_tamanho)
@@ -356,6 +367,6 @@ insert into tb_cadastro_camisa (nm_camisa, ds_descricao, qtd_camisa, vl_camisa, 
                         de fundação do clube. O novo traje traz o tradicional design listrado, além de selo em
                         referência à idade comemorada.', '100', '250', 'Umbro', 'P'); 
  
- 
+ select * from tb_cadastro_camisa;
  
                                                                                                                
