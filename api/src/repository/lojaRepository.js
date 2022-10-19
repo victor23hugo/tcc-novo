@@ -157,3 +157,34 @@ export async function alterarCamisa(id, camisa){
      return resposta.affectedRows;       
 }
 //arrumar
+
+export async function buscarCamisaPorId1(id){
+
+    const comando = 
+    `
+    select id_camisa as id,
+    nm_camisa	as nome,
+    nm_marca	as marca,
+    vl_camisa	as valor,
+    qtd_camisa  as quantidade,
+    ds_tamanho  as tamanho
+from tb_cadastro_camisa 
+    where id_camisa = ?
+    `
+    const [registros] = await con.query(comando, [id]);
+    return registros[0];
+
+}
+
+export async function buscarCamisaImagem10(idCamisa){
+        const comando = `
+        
+        select img_camisa as imagem
+        from tb_cadastro_camisa
+        where id_camisa = ?
+        
+        `
+    const [registros] = await con.query(comando, [idCamisa]);
+    return registros.map(item => item.imagem)
+
+}    
