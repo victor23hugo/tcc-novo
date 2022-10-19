@@ -1,13 +1,13 @@
 import './index.scss'
 import ImagemGif from './soccer.svg'
 
-import { UseState } from 'react'
+import { useState } from 'react'
 import { logar } from '../../../api/loginCliente'
 import { toast } from 'react-toastify';
 
 export default function Login(){
-    const [email, setEmail] = UseState('');
-    const [senha, setSenha] = UseState('');
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
 
 
     async function logarCliente(){

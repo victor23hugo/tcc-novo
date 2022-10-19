@@ -17,7 +17,7 @@ import Entregues from './pages/admin/5.entregues';
 import LandingPage from './pages/loja/landingPage'
 
 //imports do User
-import LoginUser from './pages/User/0.loginUser';
+import LoginUser from './pages/User/0.loginUser/index.js';
 import CadastrarUser from './pages/User/1.CadastrarUser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,7 +25,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-      <ToastContainer/>
+  
 
       <Route path='/' element={<LoginAdm/>} />
         <Route path='/admin/BemVindo' element={<BemVindo/>} />
