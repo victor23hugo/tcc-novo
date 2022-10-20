@@ -13,3 +13,17 @@ export async function login(email, senha) {
     const [registros] = await con.query(comando, [email, senha]);
     return registros[0];
 }
+
+
+//cadastrar Usuário
+export async function cadastraruser(user){
+    const comando = `
+    
+    insert into tb_usuario (nm_usuario, dt_nascimento,  ds_cpf, ds_telefone)
+				values (?,?,?,?)
+    
+    `
+    const [resposta] = await con.query(comando, [user.nome, user.nascimento, user.cpf, user.telefone]);
+    user.id = resposta.insertId
+    return user;
+}

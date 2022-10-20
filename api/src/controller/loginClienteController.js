@@ -1,4 +1,4 @@
-import { login } from "../repository/loginClienteRepository.js"
+import { cadastraruser, login } from "../repository/loginClienteRepository.js"
 
 import { Router } from "express";
 const server = Router();
@@ -21,5 +21,22 @@ server.post('/login', async (req, resp) => {
     }
 })
 
+
+
+server.post('/cadastrar/user', async (req, resp) =>{
+    try{
+
+        const clienteparainserir = req.body;
+
+        const cliente = await cadastraruser(clienteparainserir)
+
+        resp.send(cliente)
+
+    } catch(err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 export default server ;
