@@ -1,28 +1,73 @@
-
-.comp-cabeçalho{
-    *{
-        border: 1px solid green;
-    }
+.header-page{
     display: flex;
-    flex-direction: row;
-    width: 100%;
-
-    background-color: #ffff;
-
-    .espaçar{
-        display: flex;
-        padding: 0px 0px 0px 60px;
-    }
-
-    .reunir-navegações{
-
-    }
-
-    .reunir-imagens{
-
-    }
-
-    .imagens{
-        
-    }
+    flex-direction: column;
 }
+
+body{
+    background-color: rgb(126, 123, 123);
+    margin: 0px;
+}
+
+
+.seja-bem-vindo{
+    text-align: center;
+    background-color: #ffff;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid 1px #919191;
+}
+
+.Caspot{
+    text-align: center;
+    padding-left: 6em;
+}
+
+.oi{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffff;
+    height: 80px;
+}
+.p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ppp{
+    display: flex;
+    padding-left: 1em;
+}
+
+.img{
+    display: flex;
+    padding-right: 4em;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inicio{
+    padding-right: 17px;
+    cursor: pointer;
+}
+.serviço{
+    padding-left: 17px;
+    cursor: pointer;
+}
+.catalogo{
+    cursor: pointer;
+}
+.pessu{
+    padding-left: 17px;
+    cursor: pointer;
+}
+.lupa{
+    padding-right: 17px;
+    cursor: pointer;
+}
+.loja{
+    cursor: pointer;
+}
+

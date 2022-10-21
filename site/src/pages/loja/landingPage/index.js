@@ -7,7 +7,12 @@ export default function Index() {
 
         <main className="admin-home">
             <div className='header-landing-page'>
-                <Header/>
+              <Header/>
+
+            <div className='faixa-1'>
+                    <img className="camisas" src="/images/11.png" alt="r"/>
             </div>
+            </div>
+   
         </main>
     )}
