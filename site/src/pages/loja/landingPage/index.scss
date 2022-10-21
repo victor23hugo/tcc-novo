@@ -1,13 +1,136 @@
-.header-landing-page{
-    width: 100%;
-}
+.landing-page{
+    margin:0px;
 
-.faixa-1{
- width: 100%;
-height: 90%;
-}
 
-.camisas{
-    height: 100%;
-    width: 100%;
+
+        .header-landing-page{
+            width: 100%;
+        }
+
+
+        .faixa-1{
+            background-color: #E9E8E8;
+            width: 100%;
+            height: 90%;
+        }
+        .Nike{
+            height: 130px;
+        }
+        .Adidas{
+            height: 90px;
+        }
+        .Umbro{
+            height: 90px;
+        }
+        .Puma{
+            height: 160px;
+        }
+        .camisas{
+            height: 725px;
+            width: 100%;
+        }
+        .mini-faixa{
+            height: 170px;
+            background-color: #E9E8E8;  
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .nike-faixa{
+            padding-top: 23px;
+        }
+        .adidas-faixa{
+            padding-top: 30px;
+        }
+        .umbro-faixa{
+            padding-top: 30px;
+        }
+
+        .faixa-2{
+            background-color: #3E3E3E;
+            height: 497px ;
+            width: 100%;
+        }
+
+        .faixa-3{
+            background-color: #000000;
+            height: 497px ;
+            width: 100%;
+        }
+
+        .mini-faixa2{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 170px;
+            background-color: #E9E8E8;
+            align-items: center; 
+        }
+        .circulo{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #D9D9D9 ;
+            text-align: center;
+            padding: 20px;
+        }
+        .collum{
+            display: flex;
+            align-items: center;
+        }
+        .texto{
+
+            padding-left: 20px;
+        }
+        .texto h1{
+            font-size: 19px;
+        }
+        .texto p{
+            font-size: 15px;
+        }
+
+        .caixa{
+            padding: 2px ;
+        }
+        .seta{
+            padding: 8px ;
+        }
+        .cartao{
+            padding: 7px ;
+        }
+        .medalha{
+            padding: 5px ;
+        }
+        
+        .faixa-4{
+            background-color: #3E3E3E;
+            height: 497px ;
+            width: 100%;
+        }
+
+        .faixa-5{
+            background-color: #000000;
+            height: 497px ;
+            width: 100%;
+        }
+
+        .mini-faixa3{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 170px;
+            background-color: #E9E8E8;
+            align-items: center; 
+        }
+        .fale-conosco{
+            display: flex;
+            height: 260px;//427
+            background-image: url(../../../../public/images/fundo-bola.png);
+        }
+
+        .rodape{
+            background-color: #000000;
+            height: 427px ;
+            width: 100%;
+        }
 }

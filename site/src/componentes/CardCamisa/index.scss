@@ -1,0 +1,52 @@
+.card-camisa {
+    padding: 1em;
+
+
+    display: flex;
+    flex-direction: column;
+
+    width: 200px;
+    height: 320px;
+    border: 1px solid #e0e0e0;
+
+    margin: 10px;
+
+    & > div *, img {
+        cursor: pointer;
+    }
+    & > div *:hover {
+        color: #51515151;
+    }
+
+    
+    img {
+        max-height: 180px;
+        width: auto;
+        background-color: #f8f8f8;
+    }
+
+    & > div div:nth-child(1) {
+       
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-top: 10px;
+    }
+    & > div div:nth-child(2) {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    & > div div:nth-child(3) {
+        margin-top: 5px;
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    .button-class button{
+
+    border-radius: 5px;
+    
+    }
+}
