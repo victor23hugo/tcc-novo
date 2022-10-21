@@ -1,42 +1,96 @@
-#imagemcapa{
-    visibility: hidden;
-    position: absolute;
-}
+.page-consultar{ 
 
-.imagem-camisa{
-    width:200px;
-     height:200px;
-}
-
-.input-group{
-    flex-direction: row;
-   
-}
-
-.container{
-    background-color: #252f3c;
-    justify-content:left;
-    flex-direction: column;
-    justify-content: space-between;
     display: flex;
-    
-    
-   
-    
-   
-}
+    flex-direction: row-reverse;
 
-.input-box > input {
-    background-color: #252f3c;
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 12pt;
-    box-shadow: 0px 10px 40px rgb(22, 28, 36);
-    outline: none;
-    box-sizing: border-box;
-    color: #ffffff;
-    
-}
+    #imagemcapa{
+        visibility: hidden;
+        position: absolute;
+    }
 
+    .imagem-camisa{
+        width:200px;
+        height:200px;
+    }
+
+    .input-group{
+        flex-direction: row;
+    
+    }
+
+    .container{
+        background-color: #252f3c;
+        
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        display: flex;
+        
+    
+    }
+
+    .input-box > input {
+        background-color: #252f3c;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 12pt;
+        box-shadow: 0px 10px 40px rgb(22, 28, 36);
+        outline: none;
+        box-sizing: border-box;
+        color: #ffffff;
+        
+    }
+    
+    .continue-button {
+        display: flex;
+
+        background-color: #252f3c;
+        width: 5em;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 12pt;
+        box-shadow: 0px 10px 40px rgb(22, 28, 36);
+        outline: none;
+        box-sizing: border-box;
+        color: #ffffff;
+    }
+    
+
+    .info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    // *{
+    //     box-sizing: border-box;
+    //     border: 1px solid blue;
+    //     margin: 5px;
+    // }
+
+    .inputs{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container2{
+        background-color: aqua;
+        width: 100%;
+        height: 100%;
+    
+    
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .info-cadastro{
+        
+        width: 70%;
+    }
+
+}
