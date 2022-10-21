@@ -12,7 +12,6 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-//configuração dos endpoints
 
 //Liberar arquivos da storage
 server.use('/storage/imgcamisas',  express.static('storage/imgcamisas'));
@@ -22,5 +21,5 @@ server.use(adminController);
 server.use(lojaController);
 server.use(loginClienteController);
 
-server.listen(process.env.PORT, () => console.log(`Api conectada na porta ${process.env.PORT}`))
+server.listen(process.env.PORT, () => console.log(`api conectada na porta ${process.env.PORT}`))
 

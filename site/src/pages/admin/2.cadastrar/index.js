@@ -28,7 +28,7 @@ export default function Index() {
             const novoProduto = await cadastrarCamisa(nome, descricao, quantidade, valor, marca, tamanho);
             const r = await enviarImagemCamisa(novoProduto.id, imagem);
             
-            alert('Cadastrado com sucesso!')
+            toast.dark('Cadastrado com sucesso✔️')
         } catch (err) {
             if(err.response)
             toast(err.response.data.erro);

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ToastContainer } from 'react-toastify';
-
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 //imports do adm
@@ -23,17 +23,18 @@ import CadastrarUser from './pages/User/1.CadastrarUser';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ToastContainer/>
     <BrowserRouter>
       <Routes>
   
 
-      <Route path='/' element={<LoginAdm/>} />
+      <Route path='/login/admin' element={<LoginAdm/>} />
         <Route path='/admin/BemVindo' element={<BemVindo/>} />
         <Route path='/admin/cadastrar' element={<Cadastrar/>} />
         <Route path='/admin/consultar' element={<Consultar/>} />
         <Route path='/admin/pedidos' element={<Pedidos/>} />
         <Route path='/admin/entregues' element={<Entregues/>} />
-        <Route path='/loja/landing' element={<LandingPage/>} />
+        <Route path='/' element={<LandingPage/>} />
 
 
         <Route path='/Login' element={<LoginUser/>} />
