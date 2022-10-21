@@ -63,7 +63,8 @@ function mostrarImagem(){
                             <div className="input-box">
                                 <input id="firstname" type="text" name="firstname" placeholder="Nome do produto" value={nome} onChange={e => setNome(e.target.value)}/>
                             </div>
-                                <br/>
+
+                            <br/>
                             <div className="input-box">
                                 <input id="Descrição" type="Descrição" name="Descrição" placeholder="Descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
                             </div>
@@ -101,7 +102,7 @@ function mostrarImagem(){
                             </div>
 
                             
-                        <div className="continue-button">
+                        <div>
                                 <button onClick={salvar}>Cadastrar</button>
                             </div>
                         </div>
