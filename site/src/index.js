@@ -33,7 +33,6 @@ root.render(
         <Route path='/admin/consultar' element={<Consultar/>} />
         <Route path='/admin/pedidos' element={<Pedidos/>} />
         <Route path='/admin/entregues' element={<Entregues/>} />
-
         <Route path='/loja/landing' element={<LandingPage/>} />
 
 

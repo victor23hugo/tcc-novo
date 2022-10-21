@@ -48,7 +48,7 @@ function mostrarImagem(){
 
     return(
         <main className='page-consultar'>              
-           <ToastContainer/>
+            <ToastContainer/>
             <Header/>
             <div className='container'>    
                 <Menu/>
@@ -107,11 +107,6 @@ function mostrarImagem(){
             
                 <br/>
             </div>
-               
-
-                
-
-
         </main>
     )
 }
