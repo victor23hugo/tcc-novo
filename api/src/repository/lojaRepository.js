@@ -188,3 +188,22 @@ export async function buscarCamisaImagem10(idCamisa){
     return registros.map(item => item.imagem)
 
 }    
+
+
+//listar produtos na home
+
+export async function listarProdutosInicio(){
+    const comando = `
+
+
+        select id_camisa        id ,
+        nm_camisa               nome,
+        vl_camisa               valor,
+        img_camisa	            imagem
+        from tb_cadastro_camisa
+
+    `
+
+    const [registros] = await con.query (comando);
+    return registros;
+}

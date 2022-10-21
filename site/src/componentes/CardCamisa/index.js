@@ -15,7 +15,6 @@ export default function Index(){
                         <div>Camias santos 2022</div>
                         <div>R$100,00</div>
                             <div className='button-class'>
-                        <button>Ver Mais</button>
                         </div>
                     </div>
                 </div>

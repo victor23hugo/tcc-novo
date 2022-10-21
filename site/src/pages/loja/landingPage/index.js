@@ -1,5 +1,6 @@
 import './index.scss'
 import Header from '../../../componentes/3.HeaderLanding'
+import Cardcaimsa from '../../../componentes/CardCamisa'
 
 export default function Index() {
     return(
@@ -29,7 +30,14 @@ export default function Index() {
                 </div>
 
                 <div className='faixa-2'>
-
+                    <br/>
+                    <br/>
+                    <div className='cards'>
+                        <Cardcaimsa/>
+                        <Cardcaimsa/>
+                        <Cardcaimsa/>
+                        <Cardcaimsa/>
+                    </div>
                 </div>
 
                 <div className='faixa-3'>
@@ -98,4 +106,5 @@ export default function Index() {
                 </div>
             </div>
         </main>
-    )}
+    )
+}

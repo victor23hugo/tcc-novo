@@ -50,6 +50,16 @@
             background-color: #3E3E3E;
             height: 497px ;
             width: 100%;
+            display: flex;
+        
+        }
+        .cards{
+            display: flex;
+            margin: 10vh;
+            padding-left: 10em;
+            padding-top: 1em;
+            
+            margin-right: 100em;
         }
 
         .faixa-3{
@@ -125,7 +135,7 @@
         .fale-conosco{
             display: flex;
             height: 260px;//427
-            background-image: url(../../../../public/images/fundo-bola.png);
+            //background-image: url(../../../../public/images/fundo-bola.png);
         }
 
         .rodape{

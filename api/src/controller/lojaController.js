@@ -1,4 +1,4 @@
-import {  alterarImagem, buscarPorId, buscarProduto, inserirCamisa, buscarPorNome, buscarPorMarca, removerCamisa1, alterarCamisa, buscarCamisaPorId1, buscarCamisaImagem10 } from '../repository/lojaRepository.js';
+import {  alterarImagem, buscarPorId, buscarProduto, inserirCamisa, buscarPorNome, buscarPorMarca, removerCamisa1, alterarCamisa, buscarCamisaPorId1, buscarCamisaImagem10, listarProdutosInicio } from '../repository/lojaRepository.js';
 
 import multer from 'multer'
 import { Router } from 'express';
@@ -220,5 +220,15 @@ server.get('/admin/camisa/:id' , async (req, resp ) =>{
         resp.status(400).send({
             erro: err.message
         })
+    }
+})
+
+
+server.get('/listar/home', async (req, resp ) =>{
+    try{
+            const r = await listarProdutosInicio()
+            resp.send(r)
+    } catch(err){
+        erro: err.message
     }
 })
