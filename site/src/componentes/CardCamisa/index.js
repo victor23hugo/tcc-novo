@@ -1,19 +1,27 @@
+import { API_URL } from '../../api/config';
 import './index.scss'
 
 
 
 
-export default function Index(){
+export default function Index(props){
 
+    function exibir(imagem){
+        if(!imagem)
+        return ``;
+        
+        else
+        return `${API_URL}/${imagem}`
+    }
 
     return(
         <main>
                 <div className='card-camisa'>
-                    <img src = "https://m.media-amazon.com/images/I/51MHJUObZoL._AC_SX425_.jpg" alt='camisa santos'/>
+                    <img src ={exibir (props.item.imagem)} alt='camisa santos'/>
                     <div>
-                        <div>Umbro </div>
-                        <div>Camias santos 2022</div>
-                        <div>R$100,00</div>
+                        <div>{props.item.marca} </div>
+                        <div>{props.item.nome}</div>
+                        <div>R${props.item.valor},00</div>
                             <div className='button-class'>
                         </div>
                     </div>

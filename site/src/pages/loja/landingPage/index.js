@@ -1,8 +1,29 @@
 import './index.scss'
 import Header from '../../../componentes/3.HeaderLanding'
 import Cardcaimsa from '../../../componentes/CardCamisa'
+import { listarCamisaHome } from '../../../api/camisaApi'
+import { useEffect, useState } from 'react'
 
 export default function Index() {
+        const [camisas, setCamisas] = useState([]);
+
+   async function listar(){
+            const r = await listarCamisaHome();
+            setCamisas(r)
+    }
+
+
+
+
+    useEffect(() =>{
+        listar();
+    }, [])
+
+
+
+
+
+
     return(
 
 
@@ -33,10 +54,12 @@ export default function Index() {
                     <br/>
                     <br/>
                     <div className='cards'>
-                        <Cardcaimsa/>
-                        <Cardcaimsa/>
-                        <Cardcaimsa/>
-                        <Cardcaimsa/>
+                        {camisas.map(item =>
+                         <Cardcaimsa item={item}/> 
+
+                            )}
+                     
+                       
                     </div>
                 </div>
 

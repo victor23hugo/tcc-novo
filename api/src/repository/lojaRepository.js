@@ -199,6 +199,7 @@ export async function listarProdutosInicio(){
         select id_camisa        id ,
         nm_camisa               nome,
         vl_camisa               valor,
+        nm_marca                marca,
         img_camisa	            imagem
         from tb_cadastro_camisa
 
