@@ -15,6 +15,7 @@ import Entregues from './pages/admin/5.entregues';
 
 //loja CaSports
 import LandingPage from './pages/loja/landingPage'
+import DetalheCamsia from './pages/loja/landingPage/detalhecamisa'
 
 //imports do User
 import LoginUser from './pages/User/0.loginUser/index.js';
@@ -35,7 +36,7 @@ root.render(
         <Route path='/admin/pedidos' element={<Pedidos/>} />
         <Route path='/admin/entregues' element={<Entregues/>} />
         <Route path='/' element={<LandingPage/>} />
-
+        <Route path='/camisa/:id/detalhe' element={<DetalheCamsia/>} />
 
         <Route path='/Login' element={<LoginUser/>} />
         <Route path='/Cadastrar' element={<CadastrarUser/>} />

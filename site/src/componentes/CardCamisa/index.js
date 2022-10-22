@@ -1,22 +1,30 @@
+import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../api/config';
 import './index.scss'
+//import Semimg from '../imgs/produto-sem-imagem.pngproduto-sem-imagem.png'
 
 
 
 
 export default function Index(props){
 
+    const nav  = useNavigate();
+
     function exibir(imagem){
         if(!imagem)
-        return ``;
+        return `./produto-sem-imagem.webp`
         
         else
         return `${API_URL}/${imagem}`
     }
 
+    function abrirDetalhes(id){
+        nav ('/camisa/' + id + '/detalhe')
+    }
+
     return(
         <main>
-                <div className='card-camisa'>
+                <div className='card-camisa' onClick={() => abrirDetalhes(props.item.id)}>
                     <img src ={exibir (props.item.imagem)} alt='camisa santos'/>
                     <div>
                         <div>{props.item.marca} </div>

@@ -64,7 +64,7 @@ export default function Index() {
                 </div>
 
                 <div className='faixa-3'>
-                    
+        
                 </div>
 
                 <div className='mini-faixa2'>
