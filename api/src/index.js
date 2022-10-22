@@ -4,7 +4,7 @@ import express from 'express'
 import adminController from './controller/adminController.js'
 import lojaController from './controller/lojaController.js'
 import loginClienteController from './controller/loginClienteController.js'
-
+import homeController from  './controller/homeController.js'
 
 
 
@@ -16,7 +16,7 @@ server.use(express.json());
 //Liberar arquivos da storage
 server.use('/storage/imgcamisas',  express.static('storage/imgcamisas'));
 
-
+server.use(homeController);
 server.use(adminController);
 server.use(lojaController);
 server.use(loginClienteController);

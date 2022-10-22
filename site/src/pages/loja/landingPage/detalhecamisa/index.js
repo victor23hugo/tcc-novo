@@ -1,9 +1,30 @@
 import './index.scss'
 import Header from '../../../../componentes/3.HeaderLanding'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { buscarCamisa } from '../../../../api/camisaApi';
 
 
 
 export default function Index(){
+
+    const [camisa, setCamisa] = useState({})
+
+
+
+    const {id} = useParams();
+
+    async function carregarPagina(){
+       const r = await  buscarCamisa(id);
+        console.log(r)
+    }
+
+    useEffect(() => {
+        carregarPagina();
+    }, [])
+
+
+
     return(
         <main>
             <div>

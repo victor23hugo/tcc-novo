@@ -50,3 +50,10 @@ export async function listarCamisaHome(){
     const r = await api.get('/listar/home');
     return r.data;
 }
+
+// buscar camisa mais no caso pe pra fazer od detalhes na ladinpage
+
+export async function busaPorIdDetalhes(id){
+    const r =  await axios.post('api/camisa/' + id);
+    return r.data;
+}

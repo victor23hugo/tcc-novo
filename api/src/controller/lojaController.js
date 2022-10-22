@@ -223,12 +223,3 @@ server.get('/admin/camisa/:id' , async (req, resp ) =>{
     }
 })
 
-
-server.get('/listar/home', async (req, resp ) =>{
-    try{
-            const r = await listarProdutosInicio()
-            resp.send(r)
-    } catch(err){
-        erro: err.message
-    }
-})
