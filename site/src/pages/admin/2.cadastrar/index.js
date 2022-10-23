@@ -55,6 +55,11 @@ function mostrarImagem(){
         <Menu/>
             <div className='menu'> 
                 <Header/> 
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <div className='Cont'>
                 <div className='info-cadastro'>
                     <div className='container2'>
                     <div className='inputs'>
@@ -85,6 +90,8 @@ function mostrarImagem(){
                             <div className="input-box">
                                 <input id="Tamnaho" type="Tamnaho" name="Tamnaho" placeholder="Tamanho" value={tamanho} onChange={e => setTamanho(e.target.value) } />
                             </div>
+                                <br/>
+                                <br/>
                         </div>
 
                         <br/>
@@ -102,7 +109,7 @@ function mostrarImagem(){
                             </div>
 
                             
-                        <div>
+                        <div className='container-button'>
                                 <button onClick={salvar}>Cadastrar</button>
                             </div>
                         </div>
@@ -110,6 +117,7 @@ function mostrarImagem(){
                     </div>
                     </div>
 
+                </div>
                 </div>
             </div>
             </div>
