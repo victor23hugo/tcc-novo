@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import {buscarCamisaImagem10, buscarCamisaPorId1} from '../repository/lojaRepository.js'
+import {buscarCamisaImagem10, buscarCamisaPorId1, listarProdutosInicio} from '../repository/lojaRepository.js'
 
 const server = Router();
 

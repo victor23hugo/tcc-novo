@@ -1,8 +1,11 @@
 import './index.scss'
 import {  Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Index() {
+
+    const nav = useNavigate
     return(
         
 <main>
@@ -19,7 +22,7 @@ export default function Index() {
                     <h1>CaSports</h1>
                 </div>
                 <div class="ppp">
-                    <div class="inicio">inicio</div>
+                        <div class="inicio">inicio</div>
                     <div class="catalogo">catalago</div>
                     <div class="serviço">Entrar em contato</div>
                 </div>

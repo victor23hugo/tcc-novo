@@ -8,7 +8,7 @@ import { buscarCamisa } from '../../../../api/camisaApi';
 
 export default function Index(){
 
-    const [camisa, setCamisa] = useState({})
+    const [camisa, setCamisa] = useState([])
 
 
 
@@ -16,7 +16,7 @@ export default function Index(){
 
     async function carregarPagina(){
        const r = await  buscarCamisa(id);
-        console.log(r)
+        setCamisa(r);
     }
 
     useEffect(() => {
@@ -42,18 +42,18 @@ export default function Index(){
                     </div>
                 </div>
                 <div className='detalhes'>
-                    <div className='nome'> Camisa Santos 2022 </div>
+                    <div className='nome'> Nome da camisa</div>
                     <div className='departamento'> 
                     <p>Tamanho: G</p>                    
                      </div>
                     
                     <div className='preco-label'> Valor </div>
-                    <div className='preco'> R$ 600kwanzas </div>
+                    <div className='preco'>  </div>
                     
                     <button> Adicionar ao Carrinho </button>
                 </div>
                 <div className='desc-camisa'>
-                <p>Camisa muito bem desenvolvida pela marca <br/>ele acertaram em cheio nessa parte</p>
+                <p> descriçao da camisa</p>
                 </div>
             </div>
         </div>
