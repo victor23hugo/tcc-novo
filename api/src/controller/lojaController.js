@@ -1,4 +1,4 @@
-import {  alterarImagem, buscarPorId, buscarProduto, inserirCamisa, buscarPorNome, buscarPorMarca, removerCamisa1, alterarCamisa, buscarCamisaPorId1, buscarCamisaImagem10, listarProdutosInicio } from '../repository/lojaRepository.js';
+import {  alterarImagem, buscarPorId, buscarProduto, inserirCamisa, buscarPorNome, buscarPorMarca, removerCamisa1, buscarCamisaPorId1, buscarCamisaImagem10, alterarcamisa1, } from '../repository/lojaRepository.js';
 
 import multer from 'multer'
 import { Router } from 'express';
@@ -161,48 +161,6 @@ server.delete('/camisa/:id', async (req, resp ) =>{
     }
 })
 
-//arrumar .
-server.put ('/camisa/:id', async (req, resp ) => {
-
-    try{
-        const {id} = req.params;
-        const camisa = req.body;
-
-        if(!camisa.nome)
-        throw new Error('Nome da camisa é obrigatório!!');
-
-        if(!camisa.descricao)
-        throw new Error('Descrição da camisa é obrigatório!!');
-
-        if(!camisa.quantidade)
-        throw new Error('Quantidade de Camisas é obrigatório!!');
-
-        if(!camisa.valor)
-        throw new Error('Valor da camisa é obrigatório!!');
-
-        if(!camisa.marca)
-        throw new Error('Marca da camisa é obrigatória!!');
-
-        if(!camisa.tamanho)
-        throw new Error('Tamanho da camisa é obrigatório!!');
-
-
-        const resposta  = await alterarCamisa(id, camisa);
-        if(resposta != 1 )
-        throw new Error('Camisa não pode ser alterada');
-
-        else
-            resp.status(204).send();
-
-
-    } catch  (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-
-
-})
 
 server.get('/admin/camisa/:id' , async (req, resp ) =>{
     try{
@@ -223,4 +181,39 @@ server.get('/admin/camisa/:id' , async (req, resp ) =>{
     }
 })
 
+
+server.put('/alterar/:id', async (req, resp) =>{
+    try{
+
+        const {id} = req.params;
+        const camisa = req.body;
+
+        if(!camisa.nome)
+        throw new Error('Nome da camisa é obrigatório!!');
+
+        if(!camisa.descricao)
+        throw new Error('Descrição da camisa é obrigatório!!');
+
+        if(!camisa.quantidade)
+        throw new Error('Quantidade de Camisas é obrigatório!!');
+
+        if(!camisa.valor)
+        throw new Error('Valor da camisa é obrigatório!!');
+
+        if(!camisa.tamanho)
+        throw new Error('Tamanho da camisa é obrigatório!!');
+
+        
+        const resposta = await alterarcamisa1(id, camisa);
+        
+        resp.status(204).send({
+            
+        });
+
+    } catch (err){
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 

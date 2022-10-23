@@ -57,3 +57,14 @@ export async function busaPorIdDetalhes(id){
     const r =  await axios.post('api/camisa/' + id);
     return r.data;
 }
+
+
+export async function buscarCamisaPorId(id){
+
+    const resposta = await api.get(`/admin/${id}`);
+    return resposta.data;
+}
+
+export function buscarImagem(imagem){
+    return `${api.getUri()}/${imagem}`
+}

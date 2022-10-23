@@ -95,7 +95,7 @@ async function filtrar(){
                                 <td>{item.nome}</td>
                                 <td>{item.marca}</td>
                                 <td>{item.tamanho}</td>
-                                <td>R${item.valor},00</td>
+                                <td>{item.valor}</td>
                                 <td><span>Editar</span></td>
                                 <td><span onClick={() => removerCamisa(item.id, item.nome)}>Remover</span></td>
                             </tr>

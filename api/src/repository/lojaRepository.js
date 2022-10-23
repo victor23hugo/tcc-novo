@@ -138,25 +138,9 @@ export async function removerCamisa1 (id){
 
 
  
-//alterar Cadastro de camisa 
+       
 
-//arrumar
-export async function alterarCamisa(id, camisa){
-    const comando = `
-    
-    update tb_cadastro_camisa 
-            set nm_camisa       =  ?,
-            ds_descricao        =  ?,
-            qtd_camisa          =  ?,
-            vl_camisa           =  ?',
-            nm_marca            =  ?',
-            ds_tamanho          =  ?
-            where id_camisa     =  ?`
 
-     const [resposta] = await con.query (comando, [camisa.nome, camisa.descricao, camisa.quantidade, camisa.valor, camisa.marca, camisa.tamanho, id]);
-     return resposta.affectedRows;       
-}
-//arrumar
 
 export async function buscarCamisaPorId1(id){
 
@@ -208,4 +192,22 @@ export async function listarProdutosInicio(){
 
     const [registros] = await con.query (comando);
     return registros;
+}
+
+export async function alterarcamisa1(id, camisa){
+
+    const comando = `
+    
+    update tb_cadastro_camisa
+        set nm_camisa		= ?,
+	        ds_descricao	= ?,
+	        qtd_camisa		= ?,
+            vl_camisa		= ?,
+            nm_marca		= ?,
+            ds_tamanho		= ?
+            where id_camisa = ?;
+
+    `
+        const [resposta ] = await con.query (comando, [camisa.nome, camisa.descricao, camisa.quantidade, camisa.valor, camisa.marca, camisa.tamanho, id])
+        return resposta.affectedRows;
 }

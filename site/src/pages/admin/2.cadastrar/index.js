@@ -2,8 +2,9 @@ import './index.scss'
 import Menu from '../../../componentes/2.MenuAdm'
 import Header from '../../../componentes/1.HeaderAdm'
 import upload from '../../../componentes/imgs/upload.png'
-import {useState} from 'react'
-import { cadastrarCamisa, enviarImagemCamisa } from '../../../api/camisaApi'
+import {useEffect, useState} from 'react'
+import { cadastrarCamisa, enviarImagemCamisa, buscarCamisaPorId, buscarImagem } from '../../../api/camisaApi'
+import { useParams} from 'react-router-dom'
 
 import { toast, ToastContainer } from 'react-toastify'
 //import 'react-toastify/dist/RactToastify.css';
@@ -17,23 +18,44 @@ export default function Index() {
     const [marca, setMarca] = useState('')
     const [tamanho, setTamanho] = useState('')
     const [imagem, setImagem] = useState();
+    
 
+    const { id } = useParams()
 
+    useEffect(() =>{
+         if(id) {
+            carregarcamisa();
+         }
+    }, [])
+
+   async function carregarcamisa(){
+    const resposta = await buscarCamisaPorId(id)
+    setNome(resposta.nome);
+    setDescricao(resposta.descricao);
+    setQuantidade(resposta.quantidade);
+    setValor(resposta.valor);
+    setMarca(resposta.marca);
+    setTamanho(resposta.tamanho);
+    setImagem(resposta.imagem);
+    }
 
     async function salvar(){
 
         if(!imagem)
             throw new Error('Voçe se esqueceu da imagem broder')
+
+
         try {
             const novoProduto = await cadastrarCamisa(nome, descricao, quantidade, valor, marca, tamanho);
             const r = await enviarImagemCamisa(novoProduto.id, imagem);
             
             toast.dark('Cadastrado com sucesso✔️')
+
         } catch (err) {
             if(err.response)
-            toast(err.response.data.erro);
+            toast.error(err.response.data.erro);
             else
-            toast(err.message);
+            toast.error(err.message);
         }
     }
 
@@ -43,7 +65,12 @@ function escolherImagem(){
 }
 
 function mostrarImagem(){
+    if (typeof (imagem) == 'object'){
     return URL.createObjectURL(imagem);
+    }    
+    else {
+        return buscarImagem(imagem);
+    }
 }
 
     return(
@@ -111,6 +138,7 @@ function mostrarImagem(){
                             
                         <div className='container-button'>
                                 <button onClick={salvar}>Cadastrar</button>
+                                <button onClick={salvar}>Alterar</button>
                             </div>
                         </div>
                     

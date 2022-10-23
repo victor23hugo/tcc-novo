@@ -35,6 +35,7 @@ root.render(
         <Route path='/admin/consultar' element={<Consultar/>} />
         <Route path='/admin/pedidos' element={<Pedidos/>} />
         <Route path='/admin/entregues' element={<Entregues/>} />
+        <Route path='/admin/alterar/:id' element={<Cadastrar/>} />
         <Route path='/' element={<LandingPage/>} />
         <Route path='/camisa/:id/detalhe' element={<DetalheCamsia/>} />
 
