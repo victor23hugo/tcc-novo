@@ -1,63 +1,75 @@
 import './index.scss'
 import Header from '../../../../componentes/3.HeaderLanding'
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import { API_URL } from '../../../../api/config';
 import { useEffect, useState } from 'react';
-import { buscarCamisa } from '../../../../api/camisaApi';
+import { buscarCamisa, buscarCamisaPorId } from '../../../../api/camisaApi';
 
 
 
-export default function Index(){
+export default function Index() {
 
     const [camisa, setCamisa] = useState([])
 
 
+    function exibir(imagem){
+        if(!imagem)
+        return `./produto-sem-imagem.webp`
+        
+        else
+        return `${API_URL}/${imagem}`
+    }
 
-    const {id} = useParams();
 
-    async function carregarPagina(){
-       const r = await  buscarCamisa(id);
+    const { id } = useParams();
+
+    async function carregarPagina() {
+        const r = await buscarCamisaPorId(id);
+
         setCamisa(r);
     }
 
+    console.log(camisa)
     useEffect(() => {
         carregarPagina();
     }, [])
 
 
 
-    return(
+    return (
         <main>
             <div>
-         <Header/>
-                </div >
-                <div className='pagina-detalhe-produto'>
-            <div className='produto'>
+                <Header />
+            </div >
+            <div className='pagina-detalhe-produto'>
+                <div className='produto'>
 
-                <div className='imagens'>
-                    <div className='opcoes'>
-                    
+                    <div className='imagens'>
+                        <div className='opcoes'>
+
+                        </div>
+                        <div className='atual'>
+                            <img src={exibir(camisa.imagem)} />
+                        </div>
                     </div>
-                    <div className='atual'>
-                        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhsrEc-Ujxdi9hqK201FH9tmvDb8PAry6ycw&usqp=CAU'/>
+                    <div className='detalhes'>
+                        <div className='nome'> {camisa.nome}</div>
+                        <div className='departamento'>
+                            <p>Tamanho: {camisa.tamanho}</p>
+                        </div>
+
+                        <div className='preco-label'> Valor </div>
+                        <div className='preco'> {camisa.valor}</div>
+
+                        <button> Adicionar ao Carrinho </button>
                     </div>
-                </div>
-                <div className='detalhes'>
-                    <div className='nome'> Nome da camisa</div>
-                    <div className='departamento'> 
-                    <p>Tamanho: G</p>                    
-                     </div>
-                    
-                    <div className='preco-label'> Valor </div>
-                    <div className='preco'>  </div>
-                    
-                    <button> Adicionar ao Carrinho </button>
-                </div>
-                <div className='desc-camisa'>
-                <p> descriçao da camisa</p>
+                    <div className='desc-camisa'>
+                        <p> descriçao da camisa:</p>
+                        <p>{camisa.descricao}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        
+
         </main>
     )
 }
