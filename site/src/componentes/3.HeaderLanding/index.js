@@ -1,11 +1,10 @@
 import './index.scss'
 import {  Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 
 export default function Index() {
 
-    const nav = useNavigate
     return(
         
 <main>
@@ -32,7 +31,7 @@ export default function Index() {
                     <img className='imagens' src="/images/lupa.png" alt="" />
                     </div>
                 <div class="loja">
-                <Link to='/login'>
+                <Link to='/carrinho'>
                     <img className='imagens' src="/images/sacola.png" alt=""/>
                 </Link>
                     </div>

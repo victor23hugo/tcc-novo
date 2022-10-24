@@ -1,9 +1,38 @@
 import './index.scss'
+import Storage from 'local-storage'
+import { useState } from 'react';
+import { buscarCamisaPorId } from '../../../../api/camisaApi';
 
 
 
 
 export default function Index(){
+
+        const [itens, setItens ] = useState([])
+
+   async function carregarCarrinho(){
+        let carrinho = Storage('carrinho');
+        
+        if(carrinho){
+
+
+            let temp = [];
+
+         for(let camisa of carrinho ){
+          let p =   await buscarCamisaPorId(camisa.id)
+
+
+           temp.push({
+            camisa: p,
+            qtd:    camisa.qtd
+           })     
+         }
+        }
+        console.log(temp);
+        setItens(temp);
+    }
+
+
     return(
         <div className='pagina-carrinho'>
 
@@ -12,7 +41,7 @@ export default function Index(){
             <div className='carrinho'>
 
                 <div className='itens'>
-itens aq
+                        <h1>Itens Aqui</h1>
                  
                 </div>
 
