@@ -4,6 +4,7 @@ import Cardcaimsa from '../../../componentes/CardCamisa'
 import { listarCamisaHome } from '../../../api/camisaApi'
 import { useEffect, useState } from 'react'
 
+
 export default function Index() {
         const [camisas, setCamisas] = useState([]);
 

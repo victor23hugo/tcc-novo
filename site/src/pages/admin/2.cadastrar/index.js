@@ -17,7 +17,6 @@ export default function Index() {
     const [valor, setValor] = useState('')
     const [marca, setMarca] = useState('')
     const [tamanho, setTamanho] = useState('')
-    const [genero, setGenero] = useState('')
     const [imagem, setImagem] = useState();
     
 
@@ -47,7 +46,7 @@ export default function Index() {
 
 
         try {
-            const novoProduto = await cadastrarCamisa(nome, descricao, quantidade, valor, marca, tamanho, genero);
+            const novoProduto = await cadastrarCamisa(nome, descricao, quantidade, valor, marca, tamanho);
             const r = await enviarImagemCamisa(novoProduto.id, imagem);
             
             toast.dark('Cadastrado com sucesso✔️')
@@ -108,9 +107,6 @@ function mostrarImagem(){
                                 <br/>
                             <div className="input-box">
                                 <input id="Quantidade" type="Quantidade" name="Quantidade" placeholder="Quantidade" value={quantidade} onChange={e => setQuantidade(e.target.value)} />
-                            </div>
-                            <div className="input-box">
-                                <input id="Quantidade" type="Quantidade" name="Quantidade" placeholder="Genero" value={genero} onChange={e => setGenero(e.target.value)} />
                             </div>
                             <br/>
                             <div className="input-box">

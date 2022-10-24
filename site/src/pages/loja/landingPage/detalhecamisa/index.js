@@ -3,11 +3,31 @@ import Header from '../../../../componentes/3.HeaderLanding'
 import { useParams } from 'react-router-dom';
 import { API_URL } from '../../../../api/config';
 import { useEffect, useState } from 'react';
-import { buscarCamisa, buscarCamisaPorId } from '../../../../api/camisaApi';
+import {buscarCamisaPorId } from '../../../../api/camisaApi';
+import {toas, toast} from 'react-toastify'
+import Storage from 'local-storage' 
 
 
 
 export default function Index() {
+
+
+    function adicionarAocarrinho(){
+        let carrinho = [];
+        if(Storage('carrinho')){
+            carrinho = Storage ('carrinho')
+        }
+        if(!carrinho.find(camisa => camisa.id === id)){
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+
+            Storage('carrinho', carrinho);
+
+        }
+        toast.dark('Camisa Adiconada ao Carrinho ✔️✔️')
+    }
 
     const [camisa, setCamisa] = useState([])
 
@@ -60,11 +80,12 @@ export default function Index() {
 
                         <div className='preco-label'> Valor </div>
                         <div className='preco'> {camisa.valor}</div>
-
-                        <button> Adicionar ao Carrinho </button>
+                        <div className='button'>
+                        <button onClick={adicionarAocarrinho}> Adicionar ao Carrinho </button>
+                        </div>
                     </div>
                     <div className='desc-camisa'>
-                        <p> descriçao da camisa:</p>
+                        <h4>Descrição</h4>
                         <p>{camisa.descricao}</p>
                     </div>
                 </div>

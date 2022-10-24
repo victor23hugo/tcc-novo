@@ -4,7 +4,7 @@ import { con } from "./connection.js";
 //inserir camisa no banco
 export async function inserirCamisa(camisa){
     const comando = `
-insert into tb_cadastro_camisa (nm_camisa, ds_descricao, qtd_camisa, vl_camisa, nm_marca, ds_tamanho, ds_genero)
+insert into tb_cadastro_camisa (nm_camisa, ds_descricao, qtd_camisa, vl_camisa, nm_marca, ds_tamanho)
                     values    (?,?,?,?,?,?,?);
     `
 
