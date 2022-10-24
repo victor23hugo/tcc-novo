@@ -29,7 +29,7 @@ server.post('/camisa', async (req, resp) =>{
         if(!camisaParaInserir.marca)
         throw new Error('Marca da camisa é obrigatória!!');
 
-        if(!camisaParaInserir.tamanho)
+        if(!camisaParaInserir.tamanho.trim())
         throw new Error('Tamanho da camisa é obrigatório!!');
 
 
