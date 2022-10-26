@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { API_URL } from '../../../../api/config';
 import { useEffect, useState } from 'react';
 import {buscarCamisaPorId } from '../../../../api/camisaApi';
-import {toas, toast} from 'react-toastify'
+import {toast} from 'react-toastify'
 import Storage from 'local-storage' 
 
 
