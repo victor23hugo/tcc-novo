@@ -2,6 +2,7 @@ import './index.scss'
 import Storage from 'local-storage'
 import { useEffect, useState } from 'react';
 import { buscarCamisaPorId } from '../../../../api/camisaApi';
+import CarrinhoComp from '../../../../componentes/carrinhoComp/indesx';
 
 
 
@@ -42,9 +43,13 @@ export default function Index(){
             <h1> Carrinho </h1>
 
             <div className='carrinho'>
-
+        
                 <div className='itens'>
-                        <h1>Itens Aqui</h1>
+
+
+                {itens.map (item =>
+                    <CarrinhoComp item={item}/>
+                    )}
                  
                 </div>
 
