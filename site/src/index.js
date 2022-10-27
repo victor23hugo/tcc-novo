@@ -21,6 +21,11 @@ import Carrinho from './pages/loja/landingPage/carrinho'
 //imports do User
 import LoginUser from './pages/User/0.loginUser/index.js';
 import CadastrarUser from './pages/User/1.CadastrarUser';
+import MinhaConta from './pages/User/MinhaConta';
+import InfoPessoais from './pages/User/InfoPessoias';
+import MeusPedidos from './pages/User/MeusPedidos';
+import HistPedidos from './pages/User/HistPedidos';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -42,6 +47,10 @@ root.render(
         <Route path='/carrinho' element={<Carrinho/>} />
         <Route path='/Login' element={<LoginUser/>} />
         <Route path='/Cadastrar' element={<CadastrarUser/>} />
+        <Route path='/MinhaConta' element={<MinhaConta/>} />
+        <Route path='/InfoPessoais' element={<InfoPessoais/>} />
+        <Route path='/MeusPedidos' element={<MeusPedidos/>} />
+        <Route path='/HistPedidos' element={<HistPedidos/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
