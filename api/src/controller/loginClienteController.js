@@ -3,16 +3,21 @@ import { cadastraruser, login } from "../repository/loginClienteRepository.js"
 import { Router } from "express";
 const server = Router();
 
+
+
 server.post('/login', async (req, resp) => {
     try{
-        const { email, senha } = req.body;
+        const {email, senha } = req.body;
         
         const r = await login (email, senha);
         if (!r) {
             throw new Error('Credenciais inválidas');
         }
 
-        resp.send(r) 
+        resp.send({
+                id: r.id,
+                nome: r.nome
+        }) 
     }
     catch (err) {
         resp.status(400).send({
@@ -38,5 +43,26 @@ server.post('/cadastrar/user', async (req, resp) =>{
         })
     }
 })
+
+
+server.post('/login/:id', async (req, resp) =>{
+    try{ 
+        const id = req.params.id;
+        const login = req.body
+
+        await validarLoginCliente(login)
+
+        const respota = await cadastrarUsuarioLogin(login, id)
+        resp.send(respota)
+
+    } catch (err) {
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+
+} )
+
+
 
 export default server ;

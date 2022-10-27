@@ -1,12 +1,23 @@
 import './index.scss'
 import { API_URL } from '../../api/config'
 import { useState } from 'react'
+import Storage from 'local-storage'
 
 
 
-export default function CarrinhoComp(props){
 
-    //const [subtotal, setSubtotal] = useState(0);
+export default function CarrinhoComp(props, carregarCarrinho, removerItem){
+
+    
+
+    //arrumar
+    function remover(){
+        alert('passou aqui')
+        removerItem(props.id)
+    }
+    
+    const [qtdProduto, setTQtdProduto] = useState(props.item.qtd);
+    
 
     function exibir(imagem){
         if(!imagem)
@@ -14,6 +25,23 @@ export default function CarrinhoComp(props){
         
         else
         return `${API_URL}/${imagem}`
+    }
+
+    function subTotal(){
+        const subtotal = qtdProduto * props.item.camisa.valor
+        return subtotal
+    }
+
+    function alterarQuantidade(novaQtd){
+        setTQtdProduto(novaQtd)
+
+        let carrinho = Storage('carrinho');
+        let itemStorage =  carrinho.find(item => item.id == info.id)
+        itemStorage.qtd = novaQtd;
+
+        Storage('carrinho', carrinho);
+
+        carregarCarrinho()
     }
 
 
@@ -38,7 +66,7 @@ export default function CarrinhoComp(props){
             <div className='qtd-box'>
                 <div className='qtd'>
                     <label>Qtd.</label>
-                    <select>
+                    <select onChange={e => alterarQuantidade(e.target.value)} value={qtdProduto}>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -48,9 +76,9 @@ export default function CarrinhoComp(props){
                 </div>
                 <div className='subtotal'>
                     <div>Subtotal</div>
-                    <div></div>
+                    <div>R${subTotal()},00</div>
                 </div>
-                <div className='excluir'>
+                <div className='excluir' onClick={remover}>
                     excluir
                 </div>
             </div>

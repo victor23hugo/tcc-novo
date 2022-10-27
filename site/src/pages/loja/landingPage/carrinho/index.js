@@ -3,6 +3,7 @@ import Storage from 'local-storage'
 import { useEffect, useState } from 'react';
 import { buscarCamisaPorId } from '../../../../api/camisaApi';
 import CarrinhoComp from '../../../../componentes/carrinhoComp/indesx';
+import Header from '../../../../componentes/3.HeaderLanding'
 
 
 
@@ -10,6 +11,29 @@ import CarrinhoComp from '../../../../componentes/carrinhoComp/indesx';
 export default function Index(){
 
     const [itens, setItens] = useState([]);
+
+    //arrumar
+    function calcularValorTotal(){
+        let total = 0;
+        for (let item of itens ){
+           total = total +  item.camisa.valor * item.qtd;
+        }
+        return total;
+    }
+
+    //arrumar
+    function removerItem(id){
+        alert('passou aqui tb')
+        let carrinho = Storage('carrinho');
+        carrinho = carrinho.filter(item => item.id != id);
+
+        Storage('carrinho', carrinho);
+        carregarCarrinho();
+    }
+
+    function qtdItens() {
+        return itens.length;
+    }
 
        async function carregarCarrinho(){
             let carrinho = Storage('carrinho')
@@ -34,21 +58,22 @@ export default function Index(){
 
 
         useEffect(() =>{
-            carregarCarrinho()
+            carregarCarrinho(), calcularValorTotal()
         }, [])
 
     return(
         <div className='pagina-carrinho'>
 
-            <h1> Carrinho </h1>
+           <Header/>
 
             <div className='carrinho'>
-        
+                <br/>
+                <br/>
                 <div className='itens'>
 
 
                 {itens.map (item =>
-                    <CarrinhoComp item={item}/>
+                    <CarrinhoComp item={item} removerItem={removerItem} carregarCarrinho={carregarCarrinho}/>
                     )}
                  
                 </div>
@@ -56,8 +81,8 @@ export default function Index(){
                 
                 <div className='resumo'>
                     <h1> Subtotal </h1>
-                    <h3> Quantidade de itens </h3>
-                    <p> Valor </p>
+                    <h3> ({qtdItens()} Camisas Adicionadas) </h3>
+                    <p> R${calcularValorTotal()},00 </p>
                     <button> Fechar Pedido </button>
                 </div>
 
