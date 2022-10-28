@@ -115,6 +115,7 @@ server.get('/admin/:id', async (req, resp) =>{
         resp.send(resposta);
     } 
     catch(err){
+
         resp.status(400).send({
             erro: err.message
         })

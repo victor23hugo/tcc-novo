@@ -22,21 +22,23 @@ export default function Index(){
     }
 
     //arrumar
-    function removerItem(id){
+    async function removerItem(id){
         alert('passou aqui tb')
         let carrinho = Storage('carrinho');
         carrinho = carrinho.filter(item => item.id != id);
 
         Storage('carrinho', carrinho);
-        carregarCarrinho();
+        await carregarCarrinho();
     }
 
     function qtdItens() {
         return itens.length;
     }
 
-       async function carregarCarrinho(){
+       async function 
+       carregarCarrinho(){
             let carrinho = Storage('carrinho')
+            console.log(carrinho)
             if(carrinho){
 
                     let arr = [];
