@@ -11,9 +11,15 @@ export async function logar(email, senha) {
 }
 
 
-//funcionando
-export async function cadastarPerfil(nome, cpf, nascimento, telefone){
-    const resposta = await api.post('/cadastrar/user', {nome, cpf, nascimento, telefone }) 
+
+export async function cadastrarPerfil(nome,  nascimento, cpf, telefone){
+    const resposta = await api.post('/cadastrar/user', {nome,  nascimento, cpf, telefone }) 
     return resposta.data;
 }
 
+
+
+export async function cadastrarLogin(email, senha, id){
+    const resposta = await api.post('/cadastrar/login/' + id, { email, senha, id }) 
+    return resposta.data;
+}
