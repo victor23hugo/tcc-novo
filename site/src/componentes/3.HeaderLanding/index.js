@@ -21,9 +21,17 @@ export default function Index() {
                     <h1>CaSports</h1>
                 </div>
                 <div class="ppp">
+                    <Link to="/">
                         <div class="inicio">inicio</div>
-                    <div class="catalogo">catalago</div>
+                    </Link>
+
+                    <Link to="/filtroPage">
+                        <div class="catalogo">catalago</div>
+                    </Link>
+                    
+                    <Link to=''>
                     <div class="serviço">Entrar em contato</div>
+                    </Link>
                 </div>
             </div>
             <div class="img">

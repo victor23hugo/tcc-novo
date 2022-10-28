@@ -3,7 +3,9 @@ import Header from '../../../componentes/3.HeaderLanding'
 import Cardcaimsa from '../../../componentes/CardCamisa'
 import { listarCamisaHome } from '../../../api/camisaApi'
 import { useEffect, useState } from 'react'
-
+//import { listarCamisaHome } from '../../../../api/camisaApi'
+//import Header from '../../../componentes/3.HeaderLanding'
+//import Cardcaimsa from '../../../componentes/CardCamisa'
 
 export default function Index() {
         const [camisas, setCamisas] = useState([]);

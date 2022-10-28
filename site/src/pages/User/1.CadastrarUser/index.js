@@ -3,7 +3,7 @@ import './index.scss'
 import { useState } from "react"
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import { cadastarLogin, cadastarPerfil } from "../../../api/loginCliente"
+import { cadastarPerfil } from "../../../api/loginCliente"
 
 
 

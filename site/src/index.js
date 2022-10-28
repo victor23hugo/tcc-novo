@@ -15,8 +15,9 @@ import Entregues from './pages/admin/5.entregues';
 
 //loja CaSports
 import LandingPage from './pages/loja/landingPage'
-import DetalheCamsia from './pages/loja/landingPage/detalhecamisa'
-import Carrinho from './pages/loja/landingPage/carrinho'
+import DetalheCamsia from './pages/loja/detalhecamisa'
+import Carrinho from './pages/loja/carrinho'
+import Filtro from './pages/loja/PageFiltro';
 
 //imports do User
 import LoginUser from './pages/User/0.loginUser/index.js';
@@ -34,7 +35,7 @@ root.render(
     <BrowserRouter>
       <Routes>
   
-
+        <Route path='/filtroPage' element={<Filtro/>}/>
       <Route path='/login/admin' element={<LoginAdm/>} />
         <Route path='/admin/BemVindo' element={<BemVindo/>} />
         <Route path='/admin/cadastrar' element={<Cadastrar/>} />

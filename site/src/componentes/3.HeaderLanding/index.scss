@@ -1,11 +1,10 @@
 .header-page{
     display: flex;
     flex-direction: column;
-}
 
-body{
-    background-color: rgb(126, 123, 123);
-    margin: 0px;
+    *{
+        text-decoration: none;
+    }
 }
 
 
@@ -51,13 +50,16 @@ body{
 .inicio{
     padding-right: 17px;
     cursor: pointer;
+    color: black;
 }
 .serviço{
     padding-left: 17px;
     cursor: pointer;
+    color: black
 }
 .catalogo{
     cursor: pointer;
+    color: black
 }
 .pessu{
     padding-left: 17px;

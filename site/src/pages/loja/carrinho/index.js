@@ -1,9 +1,9 @@
 import './index.scss'
 import Storage from 'local-storage'
 import { useEffect, useState } from 'react';
-import { buscarCamisaPorId } from '../../../../api/camisaApi';
-import CarrinhoComp from '../../../../componentes/carrinhoComp/indesx';
-import Header from '../../../../componentes/3.HeaderLanding'
+import { buscarCamisaPorId } from '../../../api/camisaApi';
+import CarrinhoComp from '../../../componentes/carrinhoComp/indesx';
+import Header from '../../../componentes/3.HeaderLanding'
 
 
 

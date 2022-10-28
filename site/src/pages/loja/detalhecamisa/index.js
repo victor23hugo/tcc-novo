@@ -1,9 +1,9 @@
 import './index.scss'
-import Header from '../../../../componentes/3.HeaderLanding'
+import Header from '../../../componentes/3.HeaderLanding'
 import { useParams } from 'react-router-dom';
-import { API_URL } from '../../../../api/config';
+import { API_URL } from '../../../api/config';
 import { useEffect, useState } from 'react';
-import {buscarCamisaPorId } from '../../../../api/camisaApi';
+import {buscarCamisaPorId } from '../../../api/camisaApi';
 import {toast} from 'react-toastify'
 import Storage from 'local-storage' 
 
