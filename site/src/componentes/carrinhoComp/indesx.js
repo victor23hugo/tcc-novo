@@ -42,6 +42,7 @@ export default function CarrinhoComp(props, carregarCarrinho, removerItem){
         Storage('carrinho', carrinho);
 
         carregarCarrinho()
+        console.log(carrinho)
     }
 
 

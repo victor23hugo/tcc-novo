@@ -3,7 +3,9 @@ import './index.scss'
 import { useState } from "react"
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import { cadastarPerfil } from "../../../api/loginCliente"
+import { cadastrarPerfil, cadastrarLogin } from "../../../api/loginCliente"
+
+
 
 
 
@@ -12,7 +14,7 @@ export default function Login(){
     const [nome, setNome] = useState('');
     const [cpf, setCpf] = useState('') ;
     const [telefone, setTelefone] = useState('');
-    //const [nascimento, setNascimento] = useState();
+    const [nascimento, setNascimento] = useState();
     const [email, setEmail] = useState('') ;
     const [senha, setSenha] = useState(''); 
 
@@ -21,12 +23,13 @@ export default function Login(){
 
     async function salvarUsuario(){
         try{
-            if(!id){
-                const r = await cadastarPerfil(nome, cpf, nascimento, telefone);
-                await cadastarLogin(email, senha, r.id);
+        
+                const r = await cadastrarPerfil(nome, nascimento, cpf, telefone);
+                await cadastrarLogin(email, senha, r.id);
 
                 toast.dark('Você está cadastrado!');
-            }
+                
+          
         }  catch (err) {
             toast.error(err.response.data.erro);
         }
@@ -47,6 +50,7 @@ export default function Login(){
                         <input placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)}/>
                        
                         <input placeholder="CPF" value={cpf} onChange={e => setCpf(e.target.value)}/>
+                        <input placeholder="Nascimento" value={nascimento} onChange={e => setNascimento(e.target.value)}/>
                     </div>
                 </div>
                 <button className='botão-proseguir' onClick={salvarUsuario}>Seguir</button>

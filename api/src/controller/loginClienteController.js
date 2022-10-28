@@ -1,4 +1,4 @@
-import { cadastraruser, login } from "../repository/loginClienteRepository.js"
+import { cadastraruser,cadastrarLogin,  login } from "../repository/loginClienteRepository.js"
 
 import { Router } from "express";
 const server = Router();
@@ -35,7 +35,9 @@ server.post('/cadastrar/user', async (req, resp) =>{
 
         const cliente = await cadastraruser(clienteparainserir)
 
-        resp.send(cliente)
+        resp.send({
+            id: cliente.id
+        })
 
     } catch(err) {
         resp.status(400).send({
@@ -45,14 +47,15 @@ server.post('/cadastrar/user', async (req, resp) =>{
 })
 
 
-server.post('/login/:id', async (req, resp) =>{
+server.post('/cadastrar/login/:id', async (req, resp) =>{
     try{ 
         const id = req.params.id;
-        const login = req.body
+        const {email, senha} = req.body
 
-        await validarLoginCliente(login)
+        //await validarLoginCliente(login)
 
-        const respota = await cadastrarUsuarioLogin(login, id)
+        const respota = await cadastrarLogin(email, senha, id)
+
         resp.send(respota)
 
     } catch (err) {
@@ -62,6 +65,10 @@ server.post('/login/:id', async (req, resp) =>{
     }
 
 } )
+
+
+
+
 
 
 
