@@ -18,6 +18,8 @@ import LandingPage from './pages/loja/landingPage'
 import DetalheCamsia from './pages/loja/detalhecamisa'
 import Carrinho from './pages/loja/carrinho'
 import Filtro from './pages/loja/PageFiltro';
+import Endereço from './pages/loja/endereco';
+
 
 //imports do User
 import LoginUser from './pages/User/0.loginUser/index.js';
@@ -46,6 +48,7 @@ root.render(
         <Route path='/' element={<LandingPage/>} />
         <Route path='/camisa/:id/detalhe' element={<DetalheCamsia/>} />
         <Route path='/carrinho' element={<Carrinho/>} />
+        <Route path='/endereco' element={<Endereço/>} />
         <Route path='/Login' element={<LoginUser/>} />
         <Route path='/Cadastrar' element={<CadastrarUser/>} />
         <Route path='/MinhaConta' element={<MinhaConta/>} />

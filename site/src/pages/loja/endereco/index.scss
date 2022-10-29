@@ -1,0 +1,22 @@
+.container-1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100em;
+    background-color: #F0F0F0;
+}
+
+.linha{
+    margin: 20px 70px;
+    width: 90%;
+}
+
+.reunir-inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    border: none;
+    
+}

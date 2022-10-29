@@ -5,6 +5,7 @@ import adminController from './controller/adminController.js'
 import lojaController from './controller/lojaController.js'
 import loginClienteController from './controller/loginClienteController.js'
 import homeController from  './controller/homeController.js'
+import enderecoController from './controller/enderecoController.js'
 
 //
 
@@ -20,6 +21,7 @@ server.use(homeController);
 server.use(adminController);
 server.use(lojaController);
 server.use(loginClienteController);
+server.use(enderecoController);
 
 server.listen(process.env.PORT, () => console.log(`api conectada na porta ${process.env.PORT}`))
 
