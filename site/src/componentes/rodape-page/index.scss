@@ -1,0 +1,84 @@
+.rodape{
+
+    color: white;
+    display: flex;
+    background-color: #000000;
+    height: 427px ;
+    width: 100%;
+
+.ajuda{
+    width: 25%;
+}
+.redes-sociais{
+    color: #5F5F5F;
+    text-align: center;
+}
+.Casport {
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-redes-socias{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 25%;
+}
+.facebook{
+    padding-bottom: 9px;
+}
+.Marcas-casport{
+    padding-top: 20%;
+}
+.ajuda-casport{
+    padding-top: 20%;
+}
+.sobre-casport{
+    padding-top: 20%;
+}
+.Marcas-casport p{
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+.ajuda-casport p{
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+.sobre-casport p{
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+
+.formas-de-pagamento{
+    padding-top: 20%;
+}
+
+.master{
+    height: 27px;
+    width: 43px;
+    margin: 10px 20px 10px 5%;
+}
+.boleto{
+    height: 27px;
+    width: 43px;
+    margin: 10px 20px 10px 0px;
+}
+.visa{
+    height: 27px;
+    width: 43px;
+    margin: 10px 20px 10px 0px;
+}
+
+.final{
+    margin-top: 18%;
+}
+.semi-final{
+    margin-top: 53.3%;
+}
+.reta-final{
+    margin-top: 30.3%;
+}
+
+}

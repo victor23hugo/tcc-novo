@@ -1,5 +1,6 @@
 import './index.scss'
 import Header from '../../../componentes/3.HeaderLanding'
+import Rodape from '../../../componentes/rodape-page'
 import Cardcaimsa from '../../../componentes/CardCamisa'
 import { listarCamisaHome } from '../../../api/camisaApi'
 import { useEffect, useState } from 'react'
@@ -127,9 +128,9 @@ export default function Index() {
                     <div></div>
                 </div>
 
-                <div  className='rodape'>
-                    
-                </div>
+             
+                    <Rodape/>
+                
             </div>
         </main>
     )
