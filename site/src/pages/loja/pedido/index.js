@@ -9,20 +9,22 @@ import Storage from 'local-storage'
 
 
 export default function Pedido(){
+
     const [enderecos, setEnderecos] = useState([]);
 
 
     async function carregarEnderecos(){
         const id = Storage('cliente-logado').id;
         const r = await listar(id);
-        setEnderecos(r);
+        console.log(r)
+        
+        setEnderecos(r)
     }
 
     useEffect(() =>{
-        carregarEnderecos();
+        carregarEnderecos()
     }, [])
-
-
+    
     return(
         <div>
             <Header/>
@@ -30,6 +32,8 @@ export default function Pedido(){
                 {enderecos.map(item =>
                     <CardEndereco item={item}/>
                 )}
+                    
+                
             </div>
         </div>
     )
