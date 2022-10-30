@@ -4,10 +4,10 @@ export default function CardEndereco({item: {referencia, logradouro, cep, bairro
 
     return(
         <div className='comp-card-endereco'>
-            <div className='tipo'>{referencia}</div>
+            <div className='tipo'>{cep}</div>
             <div>
                 <div className='end'>{logradouro}, {numero} -{complemento}</div>
-                <div className='cep'> {cep} - {bairro}, {cidade}/{estado} </div>
+                <div className='cep'> {referencia} - {bairro}, {cidade}/{estado} </div>
             </div>
         </div>
     )

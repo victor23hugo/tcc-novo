@@ -10,6 +10,11 @@
     .itens {
         flex-grow: 1;
     }
+    .button{
+        border-radius: 500px;
+        color: red;
+        cursor: pointer;
+    }
 
     .itens>div:first-child {
         margin-top: 0px;

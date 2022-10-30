@@ -26,7 +26,7 @@ export default function Index() {
             Storage('carrinho', carrinho);
 
         }
-        toast.dark('Camisa Adiconada ao Carrinho ✔️✔️')
+        toast.dark('Camisa Adiconada ao Carrinho ✔️')
     }
 
     const [camisa, setCamisa] = useState([])

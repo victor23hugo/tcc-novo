@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { buscarCamisaPorId } from '../../../api/camisaApi';
 import CarrinhoComp from '../../../componentes/carrinhoComp/indesx';
 import Header from '../../../componentes/3.HeaderLanding'
+import Rodape from '../../../componentes/rodape-page'
+import {  Link } from 'react-router-dom';
 
 
 
@@ -85,12 +87,20 @@ export default function Index(){
                     <h1> Subtotal </h1>
                     <h3> ({qtdItens()} Camisas Adicionadas) </h3>
                     <p> R${calcularValorTotal()},00 </p>
+                    <div className='button'>
+                    <Link to='/pedido'>
                     <button> Fechar Pedido </button>
+                    </Link>
+                    </div>
                 </div>
-
+                            
 
             </div>
-
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <Rodape/>
         </div>
     )
 }
