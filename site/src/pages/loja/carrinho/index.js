@@ -10,6 +10,7 @@ import {  Link } from 'react-router-dom';
 
 
 
+
 export default function Index(){
 
     const [itens, setItens] = useState([]);
@@ -37,8 +38,7 @@ export default function Index(){
         return itens.length;
     }
 
-       async function 
-       carregarCarrinho(){
+       async function carregarCarrinho(){
             let carrinho = Storage('carrinho')
             console.log(carrinho)
             if(carrinho){
@@ -54,12 +54,18 @@ export default function Index(){
                  })
 
                 } 
-                console.log(arr);
                 setItens(arr);
             }
                      
         }
 
+        function exibir(imagem){
+            if(!imagem)
+            return `./produto-sem-imagem.webp`
+            
+            else
+            return `${API_URL}/${imagem}`
+        }
 
         useEffect(() =>{
             carregarCarrinho(), calcularValorTotal()

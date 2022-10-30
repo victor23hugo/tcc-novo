@@ -6,6 +6,8 @@ import CardEndereco from '../../../componentes/cardEndereco'
 import { listar } from '../../../api/enderecoAPI'
 import Storage from 'local-storage'
 import ModalEndereco from '../../../componentes/modalEndereco'
+import { buscarCamisaPorId } from '../../../api/camisaApi'
+import { API_URL } from '../../../api/config' 
 
 
 
@@ -13,6 +15,7 @@ export default function Pedido(){
 
     const [enderecos, setEnderecos] = useState([]);
     const [exibirEndereco, setExibirEndereco] = useState(false);
+    const [itens, setItens] = useState([])
 
     function exibirNovoEndereco(){
             setExibirEndereco(true);
@@ -21,6 +24,42 @@ export default function Pedido(){
     function fecharNovoEndereco(){
         setExibirEndereco(false)
         carregarEnderecos()
+    }
+
+    function calcularValorTotal(){
+        let total = 0;
+        for (let item of itens ){
+           total = total +  item.camisa.valor * item.qtd;
+        }
+        return total;
+    }
+
+    async function carregarItens(){
+        let carrinho = Storage('carrinho')
+        console.log(carrinho)
+        if(carrinho){
+
+                let arr = [];
+                                                                                                    
+            for(let camisa of carrinho){
+             let p =   await buscarCamisaPorId(camisa.id);
+                                                                                                    
+             arr.push({
+                camisa: p,
+                qtd: camisa.qtd
+             })
+
+            } 
+            setItens(arr);
+        }
+                 
+    }
+    function exibir(imagem){
+        if(!imagem)
+        return `./produto-sem-imagem.webp`
+        
+        else
+        return `${API_URL}/${imagem}`
     }
 
 
@@ -33,7 +72,7 @@ export default function Pedido(){
     }
 
     useEffect(() =>{
-        carregarEnderecos()
+        carregarEnderecos(), carregarItens()
     }, [])
     
     return(
@@ -44,7 +83,7 @@ export default function Pedido(){
             <ModalEndereco exibir={exibirEndereco} fechar={fecharNovoEndereco}/>
              <div className='total'>   
             <h1>Total:</h1>
-            <h4>R$300,00</h4>
+            <h4>R${calcularValorTotal()},00</h4>
             <button>Finalizar Pedido</button>
             </div>
                 <br/>
@@ -81,13 +120,58 @@ export default function Pedido(){
                     <div className="input-box">
                                 <input id="Descrição" type="Descrição" name="Validade" placeholder="Numero Do Cartão"/>
                     </div>
+                    <br/>
+                    <select>
+                    <option>Débito</option>
+                        <option>Credito</option>
+                    </select>
                     </div>
 
                    
             </div>
             <div className='itens'>
                     <h1>Itens</h1>
-                    <hr/>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantidade</th>
+                                <th>Preço Unitário</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {itens.map(item =>
+                                
+                            <tr>
+                                <td>
+                                    <div className='celula-item'>
+                                    <img src={exibir(item.camisa.imagem)} />
+                                    <div>
+                                        <h3>{item.camisa.nome}</h3>
+                                        <h4>{item.camisa.marca}</h4>
+                                    </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    Quantidade
+                                </td>
+                                <td>
+                                   R${item.camisa.valor},00
+                                </td>
+                                <td>
+                                R${calcularValorTotal()},00
+                                </td>
+                            </tr>
+                            )}
+
+
+                        </tbody>
+                    </table>
+
+
                    
                     </div>
             </div>
