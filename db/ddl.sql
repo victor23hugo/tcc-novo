@@ -54,17 +54,38 @@ ds_senha    varchar (50)
 
 
 
-create table tb_endereco (
-    ID_ENDERECO              INT PRIMARY KEY AUTO_INCREMENT,
-    DS_CEP                	 VARCHAR(9),
-    DS_ENDERECO              VARCHAR(50),
-    DS_CIDADE            	 VARCHAR(50),
-    DS_BAIRRO                VARCHAR(50),
-    DS_NUMERO                VARCHAR(6),
-	FK_PEDIDO            	 INT,
-    FOREIGN KEY (fk_pedido) REFERENCES tb_pedido (id_pedido)
-);
+select id_usuario_endereco		id,
+	   ds_referemcia			referencia,
+	   ds_cep					cep,
+       ds_logradouro			logradouro,
+       ds_bairro				bairro,
+       ds_cidade				cidade,
+       ds_estado				estado,
+       ds_complemento			complemento
+	from tb_usuario_endereco
+where id_usuario =1;
 
+insert into tb_usuario_endereco (id_usuario, ds_referencia, ds_cep, ds_logradouro, ds_bairro, ds_cidade, ds_estado, ds_numero, ds_complemento)
+						values(1, 'CASA', '12345-678', 'Av.Um', 'Bairro Um', 'São Paulo', 'SP', '4000b', 'bloco A, apt. 2');
+
+insert into tb_usuario_endereco (id_usuario, ds_cep, ds_logradouro, ds_bairro, ds_cidade, ds_estado, ds_numero, ds_complemento)
+						values('5', '98765-432', 'Av.Dez', 'Bairro Dez', 'São Paulo', 'SP', '1000b', 'bloco B, apt. 5');
+
+select * from tb_usuario_endereco;
+
+create table tb_usuario_endereco (
+    id_usuario_endereco      int primary key auto_increment,
+    id_usuario               int,
+    ds_referencia			 varchar(100),
+    ds_cep              	 varchar(50),
+    ds_logradouro            varchar(400),
+    ds_bairro                varchar(100),
+    ds_cidade                varchar(100),
+	ds_estado            	 varchar(100),
+    ds_numero				 varchar(100),
+    ds_complemento			 varchar(200),
+FOREIGN KEY (id_usuario) REFERENCES tb_usuario (id_usuario)
+);
 
 create table tb_pagamento_cartao (
 	ID_PAGAMENTO_CARTAO		INT PRIMARY KEY AUTO_INCREMENT,

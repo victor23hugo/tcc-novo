@@ -4,6 +4,8 @@ import ImagemGif from './soccer.svg'
 import { useState } from 'react'
 import { logar } from '../../../api/loginCliente'
 import { toast } from 'react-toastify';
+import localStorage from 'local-storage';
+//import { useNavigate } from 'react-router-dom';
 
 export default function Login(){
     const [email, setEmail] = useState('');
@@ -13,6 +15,7 @@ export default function Login(){
     async function logarCliente(){
         try{
             const r = await logar(email, senha);
+            localStorage('cliente-logado', r);
             toast.dark('Usuário logado');
         }
         catch(err) {

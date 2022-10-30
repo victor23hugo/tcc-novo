@@ -1,30 +1,35 @@
 import './index.scss'
-import Header from '../../../componentes/3.HeaderLanding'
+import { useEffect, useState } from 'react'
 
-export default function Index(){
+import Header from '../../../componentes/3.HeaderLanding'
+import CardEndereco from '../../../componentes/cardEndereco'
+import { listar } from '../../../api/enderecoAPI'
+import Storage from 'local-storage'
+
+
+
+export default function Pedido(){
+    const [enderecos, setEnderecos] = useState([]);
+
+
+    async function carregarEnderecos(){
+        const id = Storage('cliente-logado').id;
+        const r = await listar(id);
+        setEnderecos(r);
+    }
+
+    useEffect(() =>{
+        carregarEnderecos();
+    }, [])
+
+
     return(
         <div>
             <Header/>
             <div className='container-1'>
-                <h3>Informações de Entrega</h3>
-                <hr className='linha'/>
-
-                <div className='reunir-inputs'>
-                    <label>CEP:</label>
-                    <input></input>
-                    
-                    <label>Endreço:</label>
-                    <input></input>
-
-                    <label>Numero:</label>
-                    <input></input>
-
-                    <label>Complemento:</label>
-                    <input></input>
-                
-                    <label>Ponto de Referencia:</label>
-                    <input></input>
-                </div>
+                {enderecos.map(item =>
+                    <CardEndereco item={item}/>
+                )}
             </div>
         </div>
     )
