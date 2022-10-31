@@ -19,7 +19,7 @@ export default function Pedido() {
     const [enderecos, setEnderecos] = useState([]);
     const [exibirEndereco, setExibirEndereco] = useState(false);
     const [itens, setItens] = useState([]);
-    const [ idEndereco, setIdEndereco] = useState()
+    const [idEndereco, setIdEndereco] = useState()
 
 
     const [frete, setFrete] = useState('');
@@ -69,35 +69,36 @@ export default function Pedido() {
             setItens(arr);
         }
     }
-        async function salvarPedido() {
-
-            
-                let produtos = Storage('carrinho');
-                let id = Storage('cliente-logado').id
-
-                let pedido = 
-                {
-                    frete: frete,
-                    idEndereco: idEndereco,
-                    tipoPagamento: 'Cartão',
-                    cartao: {
-                        nome: nome,
-                        numero: numero,
-                        vencimento: vencimento,
-                        codSeguranca: cvv,
-                        formaPagamento: tipo,
-                        parcelas: parcela
-                    },
-                    produtos: produtos
-                }
-                const r = await salvarNovoPedido(id, pedido)
-                toast.dark('Pedido inserido com sucesso ')
-                Storage('carrinho', [])
-                navigate('/')
-
-        }
+    async function salvarPedido() {
 
     
+        let produtos = Storage('carrinho');
+        let id = Storage('cliente-logado').id
+
+        let pedido =
+        {
+            frete: frete,
+            idEndereco: idEndereco,
+            tipoPagamento: 'Cartão',
+            cartao: {
+                nome: nome,
+                numero: numero,
+                vencimento: vencimento,
+                codSeguranca: cvv,
+                formaPagamento: tipo,
+                parcelas: parcela
+            },
+            produtos: produtos
+        }
+        const r = await salvarNovoPedido(id, pedido)
+        toast.dark('Pedido inserido com sucesso ')
+        Storage('carrinho', [])
+        navigate('/')
+        
+    }
+
+
+
     function exibir(imagem) {
         if (!imagem)
             return `./produto-sem-imagem.webp`
@@ -136,7 +137,7 @@ export default function Pedido() {
                 <hr />
                 <br />
                 {enderecos.map(item =>
-                    <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.id == idEndereco}/>
+                    <CardEndereco item={item} selecionar={setIdEndereco} selecionado={item.id == idEndereco} />
                 )}
                 <br />
                 <button onClick={exibirNovoEndereco}>Adicionar Novo Endereço</button>
