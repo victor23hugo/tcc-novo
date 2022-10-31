@@ -134,8 +134,75 @@
         }
         .fale-conosco{
             display: flex;
-            height: 260px;//427
-            //background-image: url(../../../../public/images/fundo-bola.png);
+            height: 260px;
+            justify-content: space-evenly;
+            background-image: url(../../../../public/images/fundo-bola.png);
+  
+        }
+        .imagem-telefone {
+            height: 47%;
+            background-color: #201E1E;
+        }
+        .imagem-end {
+            height: 47%;
+            background-color: #201E1E;
+        }
+        .imagem-email{
+            width: 100px;
+            height: 47%;
+            background-color: #201E1E;
+        }
+         .telefone {
+        
+            background-color: #201E1E;
+        }
+        .texto-end{
+            background-color: #0D0B0B;
+            height: 47%;
+            width: 243px;
+        }
+        .texto-email{
+            background-color: #0D0B0B;
+            height: 47%;
+            width: 243px;
+        }
+        .texto-telefone{
+            background-color: #0D0B0B;
+            height: 47%;
+            width: 243px;
+        }
+        .email{
+            padding-top: 10px;
+            padding-left: 4px;
+        }
+        .telefone{
+            padding-top: 16px;
+            padding-right: 6px;
+        }
+        .Bloco-telefone{
+            display: flex;
+            align-items: center;
+        }
+        .fale-td{
+            color: #5F5F5F;
+            font-size: 19px;
+            padding-left: 15px;
+            padding-top: 10px;
+        }
+        .fale-tp{
+            color: white;
+            font-size: 15.6px;
+            padding-top: 15px;
+            padding-left: 15px;
+        }
+
+        .Bloco-endereco{
+            display: flex;
+            align-items: center;
+        }
+        .Bloco-email{
+            display: flex;
+            align-items: center;
         }
 
         .rodape{

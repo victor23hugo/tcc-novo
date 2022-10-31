@@ -123,9 +123,40 @@ export default function Index() {
                 </div>
 
                 <div className='fale-conosco'>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <div className='Bloco-endereco'>
+                        <div className='imagem-end'>
+                            <img className="endereco" src="/images/end.png" alt="r"/>
+                        </div>
+                        <div className='texto-end'>
+                            <h1 className='fale-td'>Endereço</h1>
+                            <p className='fale-tp'>Rua da cachorrada,
+                                Sala 1, Mauá </p>
+                        </div>
+                    </div>
+
+                    <div className='Bloco-email'>
+                        <div className='imagem-email'>
+                            <img className="email" src="/images/email.png" alt="r"/>
+                        </div>
+                        <div className='texto-email'>
+                            <h1 className='fale-td'>email</h1>
+                            <p className='fale-tp'>nomanaodefinido@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div className='Bloco-telefone'>
+                        <div className='imagem-telefone'>
+                            <img className="telefone" src="/images/telefone.png" alt="r"/>
+                        </div>
+                        <div className='texto-telefone'>
+                            <h1 className='fale-td'>telefone</h1>
+                            <p className='fale-tp'>        
+                             (11)96338-0945 </p>
+                        </div>
+                    </div>
+
+
+
                 </div>
 
              
