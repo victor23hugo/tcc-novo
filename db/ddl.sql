@@ -87,19 +87,7 @@ create table tb_usuario_endereco (
 FOREIGN KEY (id_usuario) REFERENCES tb_usuario (id_usuario)
 );
 
-create table tb_pagamento_cartao (
-	ID_PAGAMENTO_CARTAO		INT PRIMARY KEY AUTO_INCREMENT,
-	NM_TITULAR_CARTAO		VARCHAR(50),
-    DS_NUMERO_CARTAO		VARCHAR(20),
-    DS_CPF					VARCHAR(12),
-    DT_NASCIMENTO			DATE,
-    DS_VALIDADE				VARCHAR(10),
-    DS_CODVERIFICACAO		VARCHAR(5),
-    QTD_PARCELAS			tinyint,
-    FK_PEDIDO				INT,
-	
-    FOREIGN KEY (fk_pedido)	REFERENCES tb_pedido (id_pedido)
-);
+
 
 create table tb_pagamento_boleto (
 	ID_PAGAMENTO_BOLETO			INT PRIMARY KEY AUTO_INCREMENT,
@@ -126,4 +114,40 @@ id_camisa_imagem		int primary key auto_increment,
 id_camisa			int,
 ds_imagem			varchar (800),
 foreign key (id_camisa) references tb_cadastro_camisa (id_camisa)
+);
+
+create table tb_pedido (
+	id_pedido			int primary key auto_increment,
+    id_usuario			int,
+    id_usuario_endereco	int,
+    dt_pedido			datetime,
+    cod_nota_fiscal		varchar(200),
+    tp_frete			varchar(200),
+    vl_frete			decimal(15,2),
+    ds_status			varchar(200),
+    tp_pagamento		varchar(200),
+    foreign key (id_usuario) references tb_usuario (id_usuario),
+    foreign key (id_usuario_endereco) references tb_usuario_endereco (id_usuario_endereco)
+);
+
+create table tb_pedido_item (
+	id_pedido_item		int primary key auto_increment,
+    id_pedido			int,
+    id_camisa			int,
+    qtd_itens			int,
+    vl_produto			decimal(15,2),
+    foreign key (id_pedido) references tb_pedido (id_pedido),
+    foreign key (id_camisa) references tb_cadastro_camisa (id_camisa)
+);
+
+create table tb_pagamento_cartao (
+	id_pagamento_cartao	int primary key auto_increment,
+    id_pedido			int,
+    nm_cartao			varchar(200),
+    nr_cartao			varchar(200),
+    dt_vencimento		varchar(200),
+    cod_seguranca		varchar(200),
+    nr_parcelas			int,
+    ds_forma_pagamento	varchar(200),
+    foreign key (id_pedido) references tb_pedido (id_pedido)
 );
