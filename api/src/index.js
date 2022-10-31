@@ -6,6 +6,7 @@ import lojaController from './controller/lojaController.js'
 import loginClienteController from './controller/loginClienteController.js'
 import homeController from  './controller/homeController.js'
 import enderecoController from './controller/enderecoController.js'
+import pedidoController from './controller/pedidoController.js'
 
 //
 
@@ -22,6 +23,6 @@ server.use(adminController);
 server.use(lojaController);
 server.use(loginClienteController);
 server.use(enderecoController);
-
+server.use(pedidoController);
 server.listen(process.env.PORT, () => console.log(`api conectada na porta ${process.env.PORT}`))
 
