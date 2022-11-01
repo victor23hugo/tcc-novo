@@ -1,5 +1,6 @@
 import './index.scss'
 import MenuInfo from '../../../componentes/MenuInfo'
+import CardInfoPessoais from '../../../componentes/cardInfopessoais'
 
 export default function Index(){
     return(
@@ -10,8 +11,11 @@ export default function Index(){
                         <img className='imagem-1' src="/images/9.png" alt="" />
                         <p>Informações Pessoias</p>
                     </div>
-                    <div>
+                    <div className='container-info'>
                         <MenuInfo/>
+                        <div>
+                            <CardInfoPessoais/>
+                        </div>
                     </div>
         </main>
     )    
