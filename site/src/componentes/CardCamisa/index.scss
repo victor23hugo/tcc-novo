@@ -1,13 +1,13 @@
 .card-camisa {
     padding: 1em;
-
+    background-color: #ffffff;
 
     display: flex;
     flex-direction: column;
 
     width: 200px;
     height: 320px;
-    border: 2px solid #e0e0e0;
+    //border: 2px solid #e0e0e0;
     border-radius: 10px;
 
     margin: 10px;
@@ -16,7 +16,10 @@
         cursor: pointer;
     }
     & > div *:hover {
-        color: red;
+        color: rgb(116, 32, 32);
+    }
+    .valor > p {
+        color: black;
     }
 
     
