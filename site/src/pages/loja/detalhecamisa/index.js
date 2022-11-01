@@ -79,7 +79,7 @@ export default function Index() {
                         </div>
 
                         <div className='preco-label'> Valor </div>
-                        <div className='preco'> {camisa.valor}</div>
+                        <div className='preco'> R${camisa.valor},00</div>
                         <div className='button'>
                         <button onClick={adicionarAocarrinho}> Adicionar ao Carrinho </button>
                         </div>

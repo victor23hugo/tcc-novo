@@ -14,15 +14,14 @@ server.post('/api/pedido/:idUsuario/', async (req, resp) =>{
 
         const { idUsuario } = req.params;
         const info = req.body;
-        const novoPedido = criarNovoPedido(idUsuario, info);
-    
 
+        const novoPedido = criarNovoPedido(idUsuario, info);
         const idPedidoCriado = await inserirPedido(novoPedido);
         const idPagamentoCriado = await inserirPagamento(idPedidoCriado, info.cartao);
 
         for (let item of info.produtos){
             const prod = await buscarPorId(item.id);
-            const idPedidoItemCriado = await inserirPedidoItem(idPagamentoCriado, prod.idCamisa, item.qtd, prod.valor)
+            const idPedidoItemCriado = await inserirPedidoItem(idPedidoCriado, prod.id_camisa, item.qtd, prod.valor)
         }
 
         resp.status(204).send();

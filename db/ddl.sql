@@ -37,41 +37,6 @@ ds_email    varchar(50),
 ds_senha    varchar (50)
 );
 
-create table tb_pedido(
-id_pedido        int primary key auto_increment,
-ds_status		 varchar(35),
-vl_total		 decimal,
-dt_pedido		 DATE
-);
-
-
-create table tb_usuario_login(
-id_usuario_login    int primary key auto_increment,
-nm_usuario    varchar (30),
-ds_email    varchar (50),
-ds_senha    varchar (50)
-);
-
-
-
-select id_usuario_endereco		id,
-	   ds_referemcia			referencia,
-	   ds_cep					cep,
-       ds_logradouro			logradouro,
-       ds_bairro				bairro,
-       ds_cidade				cidade,
-       ds_estado				estado,
-       ds_complemento			complemento
-	from tb_usuario_endereco
-where id_usuario =1;
-
-insert into tb_usuario_endereco (id_usuario, ds_referencia, ds_cep, ds_logradouro, ds_bairro, ds_cidade, ds_estado, ds_numero, ds_complemento)
-						values(1, 'CASA', '12345-678', 'Av.Um', 'Bairro Um', 'São Paulo', 'SP', '4000b', 'bloco A, apt. 2');
-
-insert into tb_usuario_endereco (id_usuario, ds_cep, ds_logradouro, ds_bairro, ds_cidade, ds_estado, ds_numero, ds_complemento)
-						values('5', '98765-432', 'Av.Dez', 'Bairro Dez', 'São Paulo', 'SP', '1000b', 'bloco B, apt. 5');
-
-select * from tb_usuario_endereco;
 
 create table tb_usuario_endereco (
     id_usuario_endereco      int primary key auto_increment,
@@ -87,34 +52,6 @@ create table tb_usuario_endereco (
 FOREIGN KEY (id_usuario) REFERENCES tb_usuario (id_usuario)
 );
 
-
-
-create table tb_pagamento_boleto (
-	ID_PAGAMENTO_BOLETO			INT PRIMARY KEY AUTO_INCREMENT,
-    NM_CLIENTE					VARCHAR(50),
-    DS_EMAIL					VARCHAR(50),
-    DS_CPF						VARCHAR(12),
-    DS_TELEFONE					VARCHAR(12),
-    FK_PEDIDO				INT,
-    
-    FOREIGN KEY (fk_pedido) REFERENCES tb_pedido (id_pedido)
-);
-
-create table tb_pagamento_pix (
-	ID_PAGAMENTO_PIX		INT PRIMARY KEY AUTO_INCREMENT,
-    NM_CLIENTE				VARCHAR(50),
-    DS_CPF					VARCHAR(12),
-    FK_PEDIDO				INT,
-    
-    FOREIGN KEY (fk_pedido) REFERENCES tb_pedido (id_pedido)
-);
-
-create table tb_camisa_imagem (
-id_camisa_imagem		int primary key auto_increment,
-id_camisa			int,
-ds_imagem			varchar (800),
-foreign key (id_camisa) references tb_cadastro_camisa (id_camisa)
-);
 
 create table tb_pedido (
 	id_pedido			int primary key auto_increment,
