@@ -5,6 +5,8 @@ import { useState } from 'react'
 import { logar } from '../../../api/loginCliente'
 import { toast } from 'react-toastify';
 import localStorage from 'local-storage';
+import { Link } from 'react-router-dom';
+
 //import { useNavigate } from 'react-router-dom';
 
 export default function Login(){
@@ -43,7 +45,12 @@ export default function Login(){
                             <label for='senha'>senha</label>
                             <input type='password' name='senha' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
                         </div>
-                        <button onClick={logarCliente} className='btn-login'>Login</button>
+                        <button onClick={logarCliente} className='btn-login'>Entre</button>
+                        <p>ou</p>
+                        <br/>
+                        <Link to='/Cadastro'>
+                        <a>Cadastre-se</a>
+                        </Link>
                     </div>
                 </div>
             </div>

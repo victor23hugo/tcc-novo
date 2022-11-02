@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import { cadastrarPerfil, cadastrarLogin } from "../../../api/loginCliente"
+import Header from '../../../componentes/3.HeaderLanding'
 
 
 
@@ -36,28 +37,45 @@ export default function Login(){
     }
 
     return(
+        
         <main className='page-cadastrar'>
-
-            <div className='principal-container'>
+                <Header/>
+           <br/>
+           <br/>
+            <div className='unir'>
+                
+            <br/>
+                <div className='card'>
+                    <br/>
                     <h1 className='h1-1'>CADASTRE-SE</h1>
                 <div className='reunir-containers'>
-                    <div className='container-1'>
+                    <div className='container-2'>
                         <input placeholder="Nome"  value={nome} onChange={e => setNome(e.target.value)}/>
                         <input placeholder="Telefone" value={telefone} onChange={e => setTelefone(e.target.value)}/>
                         <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)}/>
                     </div>
                     <div className='container-2'>
-                        <input placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)}/>
+                        <input placeholder="Senha" type="password" value={senha} onChange={e => setSenha(e.target.value)}/>
                        
                         <input placeholder="CPF" value={cpf} onChange={e => setCpf(e.target.value)}/>
                         <input placeholder="Nascimento" value={nascimento} onChange={e => setNascimento(e.target.value)}/>
                     </div>
+                    
                 </div>
-                <button className='botão-proseguir' onClick={salvarUsuario}>Seguir</button>
+                <br/>
+
+                <div className='button'>
+                <button className='botão-proseguir' onClick={salvarUsuario}><a>Concluir Cadastro</a></button>
+                <br/>
                 <Link className='voltar' to='/Login'>
                     <div>Voltar</div>
                 </Link>
-            </div>
+                </div>
+                
+                </div>
+
+                </div>
+        
         </main>
     )
 }
