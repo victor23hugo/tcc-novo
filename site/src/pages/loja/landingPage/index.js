@@ -36,7 +36,7 @@ export default function Index() {
               <Header/>
 
                 <div className='faixa-1'>
-                        <img className="camisas" src="/images/11.png" alt="r"/>
+                        <img className="camisas" src="/images/slider3.png" alt="r"/>
                 </div>
 
                 <div className='mini-faixa'>
