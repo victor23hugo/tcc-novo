@@ -180,14 +180,22 @@ export async function listarProdutosInicio(){
     const comando = `
 
 
-        select id_camisa        id ,
-        nm_camisa               nome,
-        vl_camisa               valor,
-        nm_marca                marca,
-        ds_descricao            descricao,
-        img_camisa	            imagem
-        from tb_cadastro_camisa
+    select 
+    id_camisa,
+    nm_camisa nome,
+    ds_descricao descricao,
+    qtd_camisa      quantidade,
+    vl_camisa       valor,
+    nm_marca marca,
+    ds_tamanho      tamanho,
+    img_camisa      imagem
+    from tb_cadastro_camisa
 
+      order by id_camisa
+      limit 4
+      offset 4
+   ;
+       
     `
 
     const [registros] = await con.query (comando);
