@@ -48,23 +48,32 @@
 
         .faixa-2{
             background-color: #3E3E3E;
-            height: 497px ;
+            height: max-content;
             width: 100%;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; border: red solid 1px;
         
         }
         .cards{
             display: flex;
-            margin: 10vh;
+            flex-wrap: wrap;
+           
             padding-left: 10em;
             padding-top: 1em;
+            width: 100%;
             
-            margin-right: 100em;
+            border: red solid 1px;
         }
 
         .faixa-3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; border: red solid 1px;
             background-color: #000000;
-            height: 497px ;
+            height: max-content;
             width: 100%;
         }
 

@@ -68,7 +68,11 @@ export default function Index() {
                 </div>
 
                 <div className='faixa-3'>
-        
+                        <div className='cards'>
+                        {camisas.map(item =>
+                         <Cardcaimsa item={item}/> 
+                        )}            
+                    </div>
                 </div>
 
                 <div className='mini-faixa2'>
