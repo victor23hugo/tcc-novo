@@ -35,10 +35,15 @@ export default function ModalEndereco({exibir, fechar}){
         <div className='comp-modal-endereco'>
             <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
+                    <div className='fechar'>
                     <h1> Informaçoes De Entrega </h1>
-
+                    
+                    <span>X</span>
+                    
+                    </div>
                     <div className='form'>
                         <div>
+                            
                             <label> Referência: </label>
                             <input type='text' value={referencia} onChange={e => setReferencia(e.target.value)}/>
                         </div>

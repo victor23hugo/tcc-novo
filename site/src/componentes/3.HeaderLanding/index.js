@@ -25,11 +25,11 @@ export default function Index() {
                         <div class="inicio">inicio</div>
                     </Link>
 
-                    <Link to="/filtroPage">
+                    <Link to="/catalogo">
                         <div class="catalogo">catalago</div>
                     </Link>
                     
-                    <Link to=''>
+                    <Link to='/contato'>
                     <div class="serviço">Entrar em contato</div>
                     </Link>
                 </div>

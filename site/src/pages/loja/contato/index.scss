@@ -1,0 +1,28 @@
+.page{
+    background-color: rgb(45, 65, 65);
+    align-items: center;
+    border: 1px solid black;
+
+
+.Header{
+    margin: 0px;
+}
+    
+
+
+    .info{
+        border: 1px solid black;
+        text-align: center;
+        
+    }
+
+    .left-info{
+        align-items: center;
+        
+        display: flex;
+        width: 60em;
+        height: 10em;
+        text-align: center; 
+        padding-left: 25em;
+    }
+}

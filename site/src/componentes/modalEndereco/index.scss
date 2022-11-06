@@ -18,6 +18,17 @@
         margin-top: -38vh;
     }
 
+    .fechar{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .fechar > span{
+        color: red;
+        padding-left: 7em;
+    }
+
     .btn > button{
         color: white;
         width: 60px;

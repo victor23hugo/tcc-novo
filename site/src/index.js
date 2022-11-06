@@ -19,6 +19,7 @@ import DetalheCamsia from './pages/loja/detalhecamisa'
 import Carrinho from './pages/loja/carrinho'
 import Filtro from './pages/loja/PageFiltro';
 import Pedido from './pages/loja/pedido';
+import Contato from './pages/loja/contato'
 
 
 //imports do User
@@ -37,8 +38,9 @@ root.render(
     <BrowserRouter>
       <Routes>
   
-        <Route path='/filtroPage' element={<Filtro/>}/>
-      <Route path='/login/admin' element={<LoginAdm/>} />
+        <Route path='/catalogo' element={<Filtro/>}/>
+        <Route path='/contato' element={<Contato/>}/>
+        <Route path='/login/admin' element={<LoginAdm/>} />
         <Route path='/admin/BemVindo' element={<BemVindo/>} />
         <Route path='/admin/cadastrar' element={<Cadastrar/>} />
         <Route path='/admin/consultar' element={<Consultar/>} />

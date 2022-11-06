@@ -15,9 +15,7 @@ export default function Index() {
             const r = await listarCamisaHome();
             setCamisas(r)
     }
-
-
-
+  
 
     useEffect(() =>{
         listar();
@@ -36,7 +34,7 @@ export default function Index() {
               <Header/>
 
                 <div className='faixa-1'>
-                        <img className="camisas" src="/images/slider3.png" alt="r"/>
+                        <img className="camisas" src="/images/slider2.png" alt="r"/>
                 </div>
 
                 <div className='mini-faixa'>
@@ -63,6 +61,7 @@ export default function Index() {
 
                             )}
                      
+                     <button> Ver Mais </button>
                        
                     </div>
                 </div>

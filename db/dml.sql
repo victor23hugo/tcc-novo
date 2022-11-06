@@ -46,6 +46,9 @@ update tb_cadastro_camisa
 set img_camisa1 = 'imagem'
 where id_camisa = 1;
 
+ insert into tb_usuario_endereco (id_usuario, ds_referencia, ds_cep, ds_logradouro, ds_bairro, ds_cidade, ds_estado, ds_numero, ds_complemento)
+						values(1, "teste", "10101", "rua da sjs", "pararau", "São Paulo","SP", "6", "Casa");
+
 
 -- Inserts Produtos/camisas
 
