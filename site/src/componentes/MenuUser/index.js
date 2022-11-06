@@ -4,9 +4,9 @@ export default function Index(){
 
     return(
         <main className='filtros-object'>
-            <div>
+            <div className='block-1'>
                 <h1>Marca</h1>
-                <input type='text' placeholder='Buscar...' />
+                <input className='text' type='text' placeholder='Buscar...' />
 
                 <div className='Marcas-selecionada'>
                 <input  className='square-input' type='radio' placeholder='Buscar...' />
@@ -29,10 +29,11 @@ export default function Index(){
                 </div>
                 
             </div>
-
+            <div className='line-black'>
                 <hr/>
+            </div>
 
-            <div>
+            <div className='block-2'>
                     <h1>Tamanho</h1>
                 <div className='size'>
                     <div className='tamanho'>
@@ -64,6 +65,10 @@ export default function Index(){
                     </div>
                 </div>            
             </div>
+            <div className='line-black'>
+                <hr/>
+            </div>
+
         </main>
     )
 }

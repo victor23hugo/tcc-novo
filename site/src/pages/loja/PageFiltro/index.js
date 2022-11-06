@@ -1,6 +1,7 @@
 import './index.scss'
 import Header from '../../../componentes/3.HeaderLanding'
 import Menu from '../../../componentes/MenuUser'
+import Rodape from '../../../componentes/rodape-page'
 
 export default function Index(){
 
@@ -14,14 +15,13 @@ export default function Index(){
                     <Menu/>
                 </div>
                 <div className='camisas-filtradas'>
-                    ooii
+                    Onde ficara as camisas
                 </div>
             </div>
+            
             </div>
-
-            <div>
-                oii
-            </div>
+            <Rodape/>
+         
         </main>
     )
 }
