@@ -1,16 +1,15 @@
 
 .admin-home{
 
-    
  
     .cont-faixa-cadastro{
-        
+                    
         align-items: center;
     }
 
     .conteudo{
         padding-top: 80px;
-        background-color:aqua ;
+        background-color: #252F3C;
         width: 85%;
         height: 100%;
     }
@@ -28,8 +27,16 @@
     }
 
     .input-busca{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width:90%;
         height: 6%;
+    }
+
+    .centralizar{
+        display: flex;
+        justify-content: center;
     }
 
 }

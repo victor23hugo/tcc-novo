@@ -44,14 +44,15 @@
         flex-direction: column;
         width: 100%;
         height: 100%;
-        background-color: rgb(185, 211, 211);
+        background-color: #252F3C;
         
     }
 
     .produtos{
         display: flex;
         justify-content: center;
-        background-color: aqua;
+        color: #ffffff;
+        background-color: #252F3C;
         
     }
     .caixa-busca {
@@ -77,4 +78,21 @@
         right: -15px;
     }
 
+    .ajustes{        
+        background-color: #dce3ec;
+    }
+
+    .info-consultar{
+        width: 100%;
+        background-color: #252F3C;
+    }
+ 
+    .item-id{
+        flex-direction: center;
+        width: 100px;
+    }
+
+    .olhar{
+        
+    }
 }

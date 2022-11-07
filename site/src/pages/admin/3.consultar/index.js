@@ -78,20 +78,20 @@ async function filtrar(){
                     </div>
                     <br/>
                     <table>
-                        <thead>
+                        <thead className='ajustes'>
                             <tr>
-                                <th>ID</th>
+                                <th className='item-id'>ID</th>
                                 <th>NOME</th>
                                 <th>MARCA</th>
                                 <th>TAMANHO</th>
                                 <th>PREÇO</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className='info-consultar'>
                             {produtos.map(item =>
                                 
                                 <tr key={item.id}>
-                                <td>{item.id}</td>
+                                <td className='item-id'>{item.id}</td>                             
                                 <td>{item.nome}</td>
                                 <td>{item.marca}</td>
                                 <td>{item.tamanho}</td>
