@@ -45,6 +45,7 @@ export async function deletarcamisa(id){
     return resposta.status;
 }
 
+
 //listar camisas na home
 export async function listarCamisaHome(){
     const r = await api.get('/listar/home');
