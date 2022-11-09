@@ -61,6 +61,8 @@ server.get('/admin/camisa', async (req, resp) =>{
 })
 
 
+
+
 //buscar por nome 
 server.get('/admin/busca', async (req, resp) =>{
     try{
@@ -163,6 +165,8 @@ server.delete('/camisa/:id', async (req, resp ) =>{
 })
 
 
+
+//busacr imagem do produto
 server.get('/admin/camisa/:id' , async (req, resp ) =>{
     try{
         const id = req.params.id;
@@ -182,7 +186,7 @@ server.get('/admin/camisa/:id' , async (req, resp ) =>{
     }
 })
 
-
+//alterar arrumar 
 server.put('/alterar/:id', async (req, resp) =>{
     try{
 
