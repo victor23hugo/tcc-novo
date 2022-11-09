@@ -36,7 +36,40 @@
 }
 
 .info-pagamento{
+    align-items: center;
+    width: 65em;
+    height: 35em;
+    border-radius: 10px;
     border: 1px solid black;    
+}
+
+.reunir-bandeiras{
+    *{
+        border: 1px solid green;
+    }
+    display: flex;
+    width: 0em;
+    height: 100%;
+}
+
+.bandeiras{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+    border: 1px solid black;
+}
+
+.img-bandeiras{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.aceitamos{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .inputs {
@@ -97,8 +130,12 @@ th:first-child {
     border-radius: 10px;
     padding: 10px;
     font-size: 12pt;
-    box-shadow: 0px 10px 40px rgb(198, 198, 198);
+    box-shadow: 0px 10px 40px #989898;
     outline: none;
     box-sizing: border-box;
     color: #000000;
+}
+
+.selecione{
+    border: 1px solid #989898;
 }

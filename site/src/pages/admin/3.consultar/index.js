@@ -4,7 +4,7 @@ import Header from '../../../componentes/1.HeaderAdm'
 import { useEffect, useState } from 'react';
 import { buscarCamisa, buscarCamisaPorNome, deletarcamisa } from '../../../api/camisaApi';
 import { toast } from 'react-toastify'
-import buscar from '../../../componentes/imgs/icon-buscar.svg'
+import Buscar from '../../../componentes/imgs/icon-buscar.svg'
 import { confirmAlert } from 'react-confirm-alert'
 import 'react-confirm-alert/src/react-confirm-alert.css';   
 

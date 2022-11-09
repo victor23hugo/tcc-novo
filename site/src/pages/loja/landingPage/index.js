@@ -4,6 +4,8 @@ import Rodape from '../../../componentes/rodape-page'
 import Cardcaimsa from '../../../componentes/CardCamisa'
 import { listarCamisaHome } from '../../../api/camisaApi'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
 //import { listarCamisaHome } from '../../../../api/camisaApi'
 //import Header from '../../../componentes/3.HeaderLanding'
 //import Cardcaimsa from '../../../componentes/CardCamisa'
@@ -61,7 +63,7 @@ export default function Index() {
 
                             )}
                      
-                     <button> Ver Mais </button>
+                     <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
                        
                     </div>
                 </div>

@@ -150,8 +150,19 @@ export default function Pedido() {
                     <hr />
                     <br />
                     <div className='inputs'>
+                        <div className='reunir-bandeiras'>
+                            <div className='bandeiras'>
+                                <h5 className='aceitamos'>Bandeiras de cartão que aceitamos</h5>
+                                <div className='img-bandeiras'>
+                                    <img src="/images/bandeiraelo.png" alt="" width='50px' height='50px'/>
+                                    <img src="/images/bandeiramastercard.png" alt="" width='50px' height='50px'/>
+                                    <img src="/images/bandeiravisa.png" alt="" width='50px' height='50px'/>
+                                    <img src="/images/bandeiraamerican.png" alt="" width='50px' height='50px'/>
+                                </div>
+                            </div>
+                        </div>
                         <div className="input-box">
-                            <input id="Descrição" placeholder="Nome Do Tirular " value={nome} onChange={e => setNome(e.target.value)} />
+                            <input id="Descrição" placeholder="Nome Do Titular " value={nome} onChange={e => setNome(e.target.value)} />
                         </div>
                         <br />
                         <div className="input-box">
@@ -168,7 +179,7 @@ export default function Pedido() {
 
                         <br />
                         <label>Selecione a forma de pagamento</label>
-                        <select value={tipo} onChange={e => setTipo(e.target.value)}>
+                        <select className='selecione' value={tipo} onChange={e => setTipo(e.target.value)}>
                             <option>Selecione</option>
                             <option>Débito</option>
                             <option>Credito</option>
