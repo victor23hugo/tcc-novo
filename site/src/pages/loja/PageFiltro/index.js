@@ -29,6 +29,7 @@ export default function Index() {
     return (
         <main className='filtros-user'>
             <div className='header-filtro'>
+
                 <Header />
                 <div className='Filtros-Camisas'>
                     <div className='menu-filtro'>
@@ -40,16 +41,12 @@ export default function Index() {
                     </div>
 
                 </div>
-                <h1>Thanks </h1>
-                <br />
-                <br />
-                <br />
-                <br />
+                <div>
+                     <Rodape/>             
+                </div>
             </div>
 
-            <div>
 
-            </div>
 
         </main>
     )
