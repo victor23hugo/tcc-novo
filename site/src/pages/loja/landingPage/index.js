@@ -6,137 +6,186 @@ import CardPuma from '../../../componentes/CardPuma'
 import { listarCamisaHome } from '../../../api/camisaApi'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { listarProdutosPuma } from '../../../api/filtrosApi'
+import { listarProdutosFaixa1, listarProdutosFaixa2, listarProdutosFaixa3, listarProdutosFaixa4 } from '../../../api/filtrosApi'
 
-//import { listarCamisaHome } from '../../../../api/camisaApi'
-//import Header from '../../../componentes/3.HeaderLanding'
-//import Cardcaimsa from '../../../componentes/CardCamisa'
 
 export default function Index() {
-        const [camisas, setCamisas] = useState([]);
-        const [puma, setPuma] = useState([]);
+    const [camisas, setCamisas] = useState([]);
+    const [puma, setPuma] = useState([]);
+    const [nike, setNike] = useState([]);
+    const [adidas, setAdidas] = useState([]);
+    const [umbro, setUmbro] = useState([]);
 
-   async function listar(){
-            const r = await listarCamisaHome();
-            setCamisas(r)
+    async function listar() {
+        const r = await listarCamisaHome();
+        setCamisas(r)
     }
 
-    async function listarPuma(){
-        const r =  await listarProdutosPuma();
+    async function listarPuma() {
+        const r = await listarProdutosFaixa3();
         setPuma(r)
     }
-  
 
-    useEffect(() =>{
+    async function listarNike() {
+        const r = await listarProdutosFaixa1();
+        setNike(r)
+    }
+
+    async function listarAdidas() {
+        const r = await listarProdutosFaixa2();
+        setAdidas(r);
+    }
+
+    async function listarUmbro() {
+        const r = await listarProdutosFaixa4();
+        setUmbro(r);
+    }
+
+    useEffect(() => {
         listar();
 
     }, [])
 
 
 
-    useEffect(() =>{
+    useEffect(() => {
         listarPuma();
     }, [])
 
+    useEffect(() => {
+        listarNike();
+    }, [])
 
-    return(
+    useEffect(() => {
+        listarAdidas();
+    }, [])
+
+    useEffect(() => {
+        listarUmbro();
+    })
+
+
+    return (
 
 
         <main className="landing-page">
             <div className='header-landing-page'>
-              <Header/>
+                <Header />
 
                 <div className='faixa-1'>
-                        <img className="camisas" src="/images/slider2.png" alt="r"/>
+                    <img className="camisas" src="/images/slider2.png" alt="r" />
                 </div>
 
                 <div className='mini-faixa'>
                     <div className='nike-faixa'>
-                        <img className="Nike" src="/images/nike.png" alt="r"/>
+                        <img className="Nike" src="/images/nike.png" alt="r" />
                     </div>
                     <div className='adidas-faixa'>
-                        <img className="Adidas" src="/images/adidas.png" alt="r"/>
+                        <img className="Adidas" src="/images/adidas.png" alt="r" />
                     </div>
                     <div className='puma-faixa'>
-                        <img className="Puma" src="/images/puma.png" alt="r"/>
+                        <img className="Puma" src="/images/puma.png" alt="r" />
                     </div>
                     <div className='umbro-faixa'>
-                        <img className="Umbro" src="/images/umbro.png" alt="r"/>
+                        <img className="Umbro" src="/images/umbro.png" alt="r" />
                     </div>
                 </div>
 
                 <div className='faixa-2'>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <div className='cards'>
-                        {camisas.map(item =>
-                         <Cardcamisa item={item}/> 
-                            )}
-                     
-                     {/* <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link> */}
-                       
+                        {nike.map(item =>
+                            <Cardcamisa item={item} />
+                        )}
+
+                        <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
+
+                    </div>
+                </div>
+
+
+                <div className='faixa-3'>
+                    <br />
+                    <br />
+                    <div className='cards'>
+                        {adidas.map(item =>
+                            <Cardcamisa item={item} />
+                        )}
+
+                        <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
+
                     </div>
                 </div>
 
                 <div className='mini-faixa2'>
                     <div className='collum'>
                         <div className='circulo'>
-                            <img className="caixa" src="/images/caixa.png" alt="r"/>
+                            <img className="caixa" src="/images/caixa.png" alt="r" />
                         </div>
-                        <div className='texto'> 
+                        <div className='texto'>
                             <h1>Frete Grátis</h1>
                             <p>para todo o Brasil</p>
                         </div>
                     </div>
                     <div className='collum'>
                         <div className='circulo'>
-                            <img className="seta" src="/images/seta.png" alt="r"/>
+                            <img className="seta" src="/images/seta.png" alt="r" />
                         </div>
-                        <div className='texto'> 
+                        <div className='texto'>
                             <h1>30 Dias</h1>
                             <p>para troca</p>
                         </div>
                     </div>
                     <div className='collum'>
                         <div className='circulo'>
-                            <img className="cartao" src="/images/cartao.png" alt="r"/>
+                            <img className="cartao" src="/images/cartao.png" alt="r" />
                         </div>
-                        <div className='texto'> 
+                        <div className='texto'>
                             <h1>10x Sem Juros </h1>
                             <p>No cartão de crédito</p>
                         </div>
                     </div>
                     <div className='collum'>
                         <div className='circulo'>
-                        <img className="medalha" src="/images/medalha.png" alt="r"/>
+                            <img className="medalha" src="/images/medalha.png" alt="r" />
                         </div>
-                        <div className='texto'> 
+                        <div className='texto'>
                             <h1>Produtos </h1>
                             <p>Originais</p>
                         </div>
                     </div>
                 </div>
 
-                <div className='faixa-4'>
+                <div className='faixa-2'>
 
-                {puma.map(item =>
-                         <CardPuma item={item}/> 
-
-                            )}
-                </div>
-
-                <div className='faixa-5'>
+                    {puma.map(item =>
+                        <CardPuma item={item} />
+                    )}
+                    
+                    <div className='button-1'>
+                        <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
+                    </div>
                     
                 </div>
 
+                <div className='faixa-3'>
+
+                    {umbro.map(item =>
+                        <CardPuma item={item} />
+                    )}
+                    <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
+
+                </div>
+
                 <div className='mini-faixa3'>
-                        
+
                 </div>
 
                 <div className='fale-conosco'>
                     <div className='Bloco-endereco'>
                         <div className='imagem-end'>
-                            <img className="endereco" src="/images/end.png" alt="r"/>
+                            <img className="endereco" src="/images/end.png" alt="r" />
                         </div>
                         <div className='texto-end'>
                             <h1 className='fale-td'>Endereço</h1>
@@ -147,22 +196,22 @@ export default function Index() {
 
                     <div className='Bloco-email'>
                         <div className='imagem-email'>
-                            <img className="email" src="/images/email.png" alt="r"/>
+                            <img className="email" src="/images/email.png" alt="r" />
                         </div>
                         <div className='texto-email'>
                             <h1 className='fale-td'>email</h1>
-                            <p className='fale-tp'>nomanaodefinido@gmail.com</p>
+                            <p className='fale-tp'>casports@gmail.com</p>
                         </div>
                     </div>
 
                     <div className='Bloco-telefone'>
                         <div className='imagem-telefone'>
-                            <img className="telefone" src="/images/telefone.png" alt="r"/>
+                            <img className="telefone" src="/images/telefone.png" alt="r" />
                         </div>
                         <div className='texto-telefone'>
                             <h1 className='fale-td'>telefone</h1>
-                            <p className='fale-tp'>        
-                             (11)96338-0945 </p>
+                            <p className='fale-tp'>
+                                (11)96338-0945 </p>
                         </div>
                     </div>
 
@@ -170,9 +219,9 @@ export default function Index() {
 
                 </div>
 
-             
-                    <Rodape/>
-                
+
+                <Rodape />
+
             </div>
         </main>
     )

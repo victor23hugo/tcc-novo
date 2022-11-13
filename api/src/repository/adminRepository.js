@@ -17,3 +17,17 @@ where ds_email 		= ?
     const [linhas] = await con.query(comando, [email, senha])
     return linhas[0];
 }
+
+
+
+export async function listarPedidos(){
+    const comando = `
+    
+    
+    
+    
+    `
+
+    const [registro] = await con.query (comando)
+    return registro;
+}

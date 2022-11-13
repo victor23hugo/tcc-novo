@@ -1,13 +1,13 @@
 import './index.scss'
-import { listarProdutosPuma } from '../../api/filtrosApi'
+import { listarProdutosFaixa3 } from '../../api/filtrosApi'
 import { useState } from 'react'
 
 export default function Index(props){
 
     async function puma(){
-        const resposta = await listarProdutosPuma()
+        const resposta = await listarProdutosFaixa1()
     }
-    
+
 
     return(
         <main className='filtros-object'>

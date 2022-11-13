@@ -58,6 +58,7 @@ export async function teste(){
     return registros;
 }
 
+//listando as camisa nike na primeira faixa 
 export async function testeNike(){
     const comando = `
     select id_camisa        id ,
@@ -69,6 +70,42 @@ export async function testeNike(){
     from tb_cadastro_camisa
     where nm_marca = 'Nike'
         and vl_camisa < 400
+    `
+    const [registros] = await con.query(comando)
+    return registros;
+}
+//listando as camisas Adidas na segunda faixa
+export async function Adidas(){
+    const comando = 
+    `select id_camisa        id ,
+    nm_camisa               nome,
+    vl_camisa               valor,
+    nm_marca                marca,
+    ds_descricao            descricao,
+    img_camisa	            imagem
+    from tb_cadastro_camisa
+    where nm_marca = 'Adidas'
+        and vl_camisa < 400
+    
+    `
+    const [registros] = await con.query(comando )
+    return registros;
+}
+
+//listando as camisas Umbro na Home 
+export async function Umbro(){
+    const comando =  `
+    
+    select id_camisa        id ,
+    nm_camisa               nome,
+    vl_camisa               valor,
+    nm_marca                marca,
+    ds_descricao            descricao,
+    img_camisa	            imagem
+    from tb_cadastro_camisa
+    where nm_marca = 'Umbro'
+        and vl_camisa < 350
+    
     `
     const [registros] = await con.query(comando)
     return registros;

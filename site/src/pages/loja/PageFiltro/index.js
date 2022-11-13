@@ -7,9 +7,10 @@ import { useEffect, useState } from 'react'
 import { listarCamisaCatalogo } from '../../../api/camisaApi'
 
 
+
 export default function Index() {
 
-
+    
     const [camisas, setCamisas] = useState([]);
     const [filtro, setFiltro] = useState();
 
@@ -41,6 +42,7 @@ export default function Index() {
                     </div>
 
                 </div>
+                <br/>
                 <div>
                      <Rodape/>             
                 </div>

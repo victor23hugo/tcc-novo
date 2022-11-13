@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { teste, testeNike } from '../repository/homeRepositoy.js';
+import { Adidas, teste, testeNike, Umbro } from '../repository/homeRepositoy.js';
 
 import { buscarCamisaImagem10, buscarCamisaPorId1, listarProdutosAdidas, listarProdutoscatalogo, listarProdutosInicio, listarProdutosNike, listarProdutosPuma, listarProdutosUmbro } from '../repository/lojaRepository.js'
 
@@ -43,7 +43,7 @@ server.get('/filtro/gabrel', async (req, resp) => {
 
 
 //listando as camisas Puma na Home
-server.get('/teste', async (req, resp) => {
+server.get('/puma', async (req, resp) => {
 
     try {
         const r = await teste();
@@ -67,6 +67,31 @@ server.get('/nike', async (req, resp) => {
     }
 })
 
+server.get('/adidas', async (req, resp) =>{
+    try{
+
+        const r = await Adidas();
+        resp.send(r)
+
+    } catch (err){
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/umbro', async (req, resp) =>{
+    try{
+
+        const r = await Umbro();
+        resp.send(r)
+
+    } catch(err){
+        resp.status(400).send({
+            erro:err.message
+        })
+    }
+})
 
 
 

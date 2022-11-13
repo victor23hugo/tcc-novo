@@ -23,5 +23,27 @@
     flex-wrap: wrap;
     
 }
+.pagination{
+    display: flex;
+    list-style: none;
+    padding-left: 40em;
+    align-items: center;
+}
+.pagination li + li {
+    margin-left: 1rem;
+}
+.pagination > ul{
+    width: 100px;
+    height: 100px;
+}
+
+.pagination__item--active {
+    background-color: rgb(201, 201, 201);
+    font-weight: bold;
+    //border: none;
+}
+.pagination__item--active :focus{
+    outline: none;
+}
 
 }
