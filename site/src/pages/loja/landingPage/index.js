@@ -1,10 +1,12 @@
 import './index.scss'
 import Header from '../../../componentes/3.HeaderLanding'
 import Rodape from '../../../componentes/rodape-page'
-import Cardcaimsa from '../../../componentes/CardCamisa'
+import Cardcamisa from '../../../componentes/CardCamisa'
+import CardPuma from '../../../componentes/CardPuma'
 import { listarCamisaHome } from '../../../api/camisaApi'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { listarProdutosPuma } from '../../../api/filtrosApi'
 
 //import { listarCamisaHome } from '../../../../api/camisaApi'
 //import Header from '../../../componentes/3.HeaderLanding'
@@ -12,20 +14,29 @@ import { Link } from 'react-router-dom'
 
 export default function Index() {
         const [camisas, setCamisas] = useState([]);
+        const [puma, setPuma] = useState([]);
 
    async function listar(){
             const r = await listarCamisaHome();
             setCamisas(r)
     }
+
+    async function listarPuma(){
+        const r =  await listarProdutosPuma();
+        setPuma(r)
+    }
   
 
     useEffect(() =>{
         listar();
+
     }, [])
 
 
 
-
+    useEffect(() =>{
+        listarPuma();
+    }, [])
 
 
     return(
@@ -59,20 +70,11 @@ export default function Index() {
                     <br/>
                     <div className='cards'>
                         {camisas.map(item =>
-                         <Cardcaimsa item={item}/> 
-
+                         <Cardcamisa item={item}/> 
                             )}
                      
-                     <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
+                     {/* <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link> */}
                        
-                    </div>
-                </div>
-
-                <div className='faixa-3'>
-                        <div className='cards'>
-                        {camisas.map(item =>
-                         <Cardcaimsa item={item}/> 
-                        )}            
                     </div>
                 </div>
 
@@ -110,13 +112,17 @@ export default function Index() {
                         </div>
                         <div className='texto'> 
                             <h1>Produtos </h1>
-                            <p>Paraguai</p>
+                            <p>Originais</p>
                         </div>
                     </div>
                 </div>
 
                 <div className='faixa-4'>
-                    
+
+                {puma.map(item =>
+                         <CardPuma item={item}/> 
+
+                            )}
                 </div>
 
                 <div className='faixa-5'>

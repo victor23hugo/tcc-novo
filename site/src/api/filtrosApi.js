@@ -9,7 +9,7 @@ const api = axios.create({
 
 //Filteo de camisas Puma 
 export async function listarProdutosPuma(){
-    const r = await api.get('/filtro/puma');
+    const r = await api.get('/teste');
     return r.data;
 }
 

@@ -7,6 +7,7 @@ export default function Index(props){
     async function puma(){
         const resposta = await listarProdutosPuma()
     }
+    
 
     return(
         <main className='filtros-object'>

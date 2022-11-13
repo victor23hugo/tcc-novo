@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import {buscarCamisaPorId } from '../../../api/camisaApi';
 import {toast} from 'react-toastify'
 import Storage from 'local-storage' 
-
+import Rodape from '../../../componentes/rodape-page'
 
 
 export default function Index() {
@@ -89,6 +89,9 @@ export default function Index() {
                         <p>{camisa.descricao}</p>
                     </div>
                 </div>
+                <br/>
+                <br/>
+                <Rodape/>
             </div>
 
         </main>

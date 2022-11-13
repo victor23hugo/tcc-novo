@@ -12,7 +12,6 @@ export async function cadastrarCamisa(nome, descricao, quantidade, valor, marca,
 }
 
 export async function buscarCamisa(){
-    
     const resposta = await api.get('/admin/camisa')
     return resposta.data;
 }
@@ -51,6 +50,13 @@ export async function listarCamisaHome(){
     const r = await api.get('/listar/home');
     return r.data;
 }
+
+//listar camisas no catalogo
+export async function listarCamisaCatalogo(){
+    const r = await api.get('/listar/catalogo');
+    return r.data;
+}
+
 
 // buscar camisa mais no caso pe pra fazer od detalhes na ladinpage
 

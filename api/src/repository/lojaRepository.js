@@ -187,10 +187,26 @@ export async function listarProdutosInicio(){
         ds_descricao            descricao,
         img_camisa	            imagem
         from tb_cadastro_camisa
-
-
+        where vl_camisa < 400
     `
 
+    const [registros] = await con.query (comando);
+    return registros;
+}
+
+export async function listarProdutoscatalogo(){
+    const comando = `
+
+
+        select id_camisa        id ,
+        nm_camisa               nome,
+        vl_camisa               valor,
+        nm_marca                marca,
+        ds_descricao            descricao,
+        img_camisa	            imagem
+        from tb_cadastro_camisa
+        
+    `
     const [registros] = await con.query (comando);
     return registros;
 }

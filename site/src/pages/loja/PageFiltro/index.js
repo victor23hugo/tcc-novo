@@ -4,7 +4,7 @@ import Menu from '../../../componentes/MenuUser'
 import Rodape from '../../../componentes/rodape-page'
 import CardCamisa from '../../../componentes/CardCamisa'
 import { useEffect, useState } from 'react'
-import { listarCamisaHome } from '../../../api/camisaApi'
+import { listarCamisaCatalogo } from '../../../api/camisaApi'
 
 
 export default function Index() {
@@ -14,11 +14,11 @@ export default function Index() {
     const [filtro, setFiltro] = useState();
 
     async function listar() {
-        const r = await listarCamisaHome();
+        const r = await listarCamisaCatalogo();
         setCamisas(r)
     }
 
-    console.log(filtro)
+    
 
     useEffect(() => {
         listar();
