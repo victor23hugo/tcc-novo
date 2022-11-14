@@ -73,7 +73,7 @@ export default function Index() {
                 <Header />
 
                 <div className='faixa-1'>
-                    <img className="camisas" src="/images/slider2.png" alt="r" />
+                    <img className="camisas" src="/images/imagempage1.png" alt="r" />
                 </div>
 
                 <div className='mini-faixa'>
@@ -179,7 +179,6 @@ export default function Index() {
                 </div>
 
                 <div className='mini-faixa3'>
-
                 </div>
 
                 <div className='fale-conosco'>

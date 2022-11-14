@@ -44,12 +44,13 @@ export default function Index() {
                 </div>
                 <br/>
                 <div>
-                     <Rodape/>             
+                                  
                 </div>
             </div>
-
+                            
 
 
         </main>
+            
     )
 }

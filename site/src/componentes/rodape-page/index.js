@@ -51,7 +51,6 @@ export default function Index(){
                                 <img className="master" src="/images/master.png" alt=""/>
                                 <img className="visa" src="/images/visa.png" alt=""/>
                                 <img className="boleto" src="/images/boleto.png" alt=""/>
-                                <img className="palmeiras" src="/images/pal.png" alt=""/>
                             </div>
                         </div>
                     </div>

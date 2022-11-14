@@ -89,6 +89,9 @@ export default function Index() {
                         <p>{camisa.descricao}</p>
                     </div>
                 </div>
+                <h1>Você tambem pode gostar</h1>
+                <hr/>
+                
                 <br/>
                 <br/>
                 <Rodape/>
