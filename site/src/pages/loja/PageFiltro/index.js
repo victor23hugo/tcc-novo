@@ -15,8 +15,8 @@ export default function Index() {
     
     const [camisas, setCamisas] = useState([]);
     const [filtro, setFiltro] = useState();
-    const [currentPage, setCurrentPage] = useState(0)
-    const [camisaPorPage] = useState(5);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [camisaPorPage] = useState(10);
 
     async function listar() {
         const r = await listarCamisaCatalogo();
@@ -64,7 +64,7 @@ export default function Index() {
                         <Menu filtro={e => setFiltro(e.target.value)} />
                     </div>
                     <div className='camisas-filtradas'>
-                        {camisas.map(item =>
+                        {currentCamisas.map(item =>
                             <CardCamisa item={item} camisas={currentCamisas}  />)}
                     </div>
 
@@ -77,6 +77,8 @@ export default function Index() {
                         paginate={paginate}
                     />
                 </div>
+                <br/>
+                <Rodape/>
             </div>
                             
 

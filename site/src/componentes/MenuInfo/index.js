@@ -29,6 +29,21 @@ function sairClick(){
                         <img src="/images/5.png" alt="" />
                         <div>Histórico de Pedidos   </div>
                     </Link>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <Link to ='/'>
+                        <span>Sair</span>
+                    </Link>
                 </div>
             
         </nav>
