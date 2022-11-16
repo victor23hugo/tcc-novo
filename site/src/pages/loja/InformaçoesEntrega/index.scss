@@ -1,0 +1,60 @@
+.info-entrega{
+    background-color: #F0F0F0;
+    height: 120vh;
+
+    .titulo-entrgas{
+     
+        
+    }
+
+        .inf-img{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .informaçoes{
+            display:flex ;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+        }
+        .titulo-entrgas{
+            margin-top: 45px;
+            padding-left: 35px;
+        }
+        hr{
+            width: 1200px;
+            border: solid 1px black;
+        }
+        .form-email{
+            margin:13px;
+            width: 523px;
+            background-color: transparent;
+            border: 0;
+            border-bottom: 2px rgb(0, 0, 0) solid;
+            display: block;
+            font-size: 14px;
+            color: rgb(0, 0, 0);
+            outline: 0;
+            padding-top: 15px;
+        }
+        .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         
+        }
+        button{
+            background-color: #1200E7;
+            border: 0px;
+            color: white;
+            height: 39px;
+            font-size: 15px;
+            width: 140px;
+        }
+        ::placeholder{
+            color: rgb(0, 0, 0);
+            padding-left: 4px;
+            font-size: 14px;
+         }
+}

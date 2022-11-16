@@ -30,6 +30,8 @@ import InfoPessoais from './pages/User/InfoPessoias';
 import MeusPedidos from './pages/User/MeusPedidos';
 import HistPedidos from './pages/User/HistPedidos';
 
+import InformaçoesEntrega from './pages/loja/InformaçoesEntrega';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -57,6 +59,8 @@ root.render(
         <Route path='/InfoPessoais' element={<InfoPessoais/>} />
         <Route path='/MeusPedidos' element={<MeusPedidos/>} />
         <Route path='/HistPedidos' element={<HistPedidos/>} />
+        <Route path='/informacao' element={<InformaçoesEntrega/>} />
+      
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
