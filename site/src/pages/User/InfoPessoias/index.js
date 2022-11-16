@@ -13,8 +13,8 @@ export default function Index(){
                     </div>
                     <div className='container-info'>
                         <MenuInfo/>
-                        <div>
-                            <CardInfoPessoais/>
+                        <div className='card'>
+                            
                         </div>
                     </div>
         </main>

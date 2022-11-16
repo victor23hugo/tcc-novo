@@ -1,12 +1,12 @@
 import './index.scss'
 import { listarProdutosFaixa3 } from '../../api/filtrosApi'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Index(props){
 
-    async function puma(){
-        const resposta = await listarProdutosFaixa1()
-    }
+    // async function puma(){
+    //     const resposta = await listarProdutosFaixa1()
+    // }
 
 
     return(
@@ -31,7 +31,7 @@ export default function Index(props){
                 </div>
 
                 <div className='Marcas-selecionada'>
-                <input  className='square-input' type='radio' name='valor' placeholder='Buscar...' />
+                <input  className='square-input' type='radio' name='valor' placeholder='Buscar...' onClick={props.filtro} value='2'/>
                 <p>Umbro</p>
                 </div>
                 

@@ -261,7 +261,8 @@ export async function listarProdutosNike(){
         nm_camisa               nome,
         vl_camisa               valor,
         nm_marca                marca,
-        ds_descricao            descricao
+        ds_descricao            descricao,
+        img_camisa              imagem
         
         from tb_cadastro_camisa
         where nm_marca = 'Nike'

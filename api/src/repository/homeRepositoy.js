@@ -51,7 +51,7 @@ export async function teste(){
     img_camisa	            imagem
     from tb_cadastro_camisa
     where nm_marca = 'Puma'
-        and vl_camisa < 400
+        and vl_camisa <= 289
     
     `
     const [registros] = await con.query(comando)
@@ -69,7 +69,7 @@ export async function testeNike(){
     img_camisa	            imagem
     from tb_cadastro_camisa
     where nm_marca = 'Nike'
-        and vl_camisa < 400
+        and vl_camisa <= 299
     `
     const [registros] = await con.query(comando)
     return registros;
@@ -85,7 +85,7 @@ export async function Adidas(){
     img_camisa	            imagem
     from tb_cadastro_camisa
     where nm_marca = 'Adidas'
-        and vl_camisa < 400
+        and vl_camisa <= 289
     
     `
     const [registros] = await con.query(comando )
@@ -104,7 +104,7 @@ export async function Umbro(){
     img_camisa	            imagem
     from tb_cadastro_camisa
     where nm_marca = 'Umbro'
-        and vl_camisa < 350
+        and vl_camisa <= 249
     
     `
     const [registros] = await con.query(comando)
@@ -185,6 +185,7 @@ export async function listarProdutosUmbro(){
         img_camisa	            imagem
         from tb_cadastro_camisa
         where nm_marca = 'Umbro'
+
     `
 
     const [registros] = await con.query (comando);

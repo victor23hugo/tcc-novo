@@ -32,16 +32,16 @@ export async function listarProdutosFaixa4(){
 }
 
 //Filtro Nike
-// export async function listarProdutosNike(){
-//     const r = await api.get('/filtro/nike');
-//     return r.data;
-// }
+ export async function filtrarProdutosNike(){
+     const r = await api.get('/filtro/nike');
+     return r.data;
+ }
 
 // //Filtro umbro
-// export async function listarProdutosUmbro(){
-//     const r = await api.get('/filtro/umbro');
-//     return r.data;
-// }
+ export async function listarProdutosUmbro(){
+     const r = await api.get('/filtro/umbro');
+     return r.data;
+ }
 
 // //filtro Adidas
 // export async function listarProdutosAdidas(){

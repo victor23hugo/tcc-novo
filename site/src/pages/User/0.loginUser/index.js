@@ -51,6 +51,11 @@ export default function Login(){
                         <Link to='/Cadastro'>
                         <a>Cadastre-se</a>
                         </Link>
+                        <br/>   
+                        <Link  to= '/'>
+                        <a>Voltar</a>
+                        </Link>
+
                     </div>
                 </div>
             </div>

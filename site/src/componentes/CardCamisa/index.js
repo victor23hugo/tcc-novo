@@ -19,7 +19,7 @@ export default function Index(props){
     }
 
     function abrirDetalhes(id){
-        nav ('/camisa/' + id + '/detalhe')
+        nav('/camisa/' + id + '/detalhe')
     }
 
     return(

@@ -58,7 +58,7 @@ export default function Login(){
                         <input placeholder="Senha" type="password" value={senha} onChange={e => setSenha(e.target.value)}/>
                        
                         <input placeholder="CPF" value={cpf} onChange={e => setCpf(e.target.value)}/>
-                        <input placeholder="Nascimento" value={nascimento} onChange={e => setNascimento(e.target.value)}/>
+                        <input placeholder="Nascimento" type="date" value={nascimento} onChange={e => setNascimento(e.target.value)}/>
                     </div>
                     
                 </div>
