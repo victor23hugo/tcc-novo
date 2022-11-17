@@ -27,6 +27,7 @@ export default function ModalEndereco({exibir, fechar}){
                 toast.error(err.respose.data.erro)
                 }
 
+                
 }
 
 
@@ -35,12 +36,12 @@ export default function ModalEndereco({exibir, fechar}){
         <div className='comp-modal-endereco'>
             <div className={`modal-endereco ${exibir ? 'exibir' : ''}`}>
                 <div className='conteudo'>
-                    <div className='fechar'>
+                <div className='fechar'>
+                    <span onClick={fechar}>X</span>
+                    </div>
                     <h1> Informaçoes De Entrega </h1>
                     
-                    <span>X</span>
                     
-                    </div>
                     <div className='form'>
                         <div>
                             
@@ -55,7 +56,7 @@ export default function ModalEndereco({exibir, fechar}){
                             <input type='text' value={cep} onChange={e => setCep(e.target.value)}/>
                         </div>
                         <div>
-                            <label> Logradouro: </label>
+                            <label> Rua: </label>
                             <input type='text' value={logradouro} onChange={e => setLogradouro(e.target.value)}/>
                         </div>
                         <div>

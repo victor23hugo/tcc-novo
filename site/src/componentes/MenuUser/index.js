@@ -21,12 +21,12 @@ export default function Index(props){
                 </div>
 
                 <div className='Marcas-selecionada'>
-                <input  className='square-input' type='radio' name='valor' placeholder='Buscar...' />
+                <input  className='square-input' type='radio' name='valor' placeholder='Buscar...' onClick={props.filtro} value='3'/>
                 <p>Adidas</p>
                 </div>
 
                 <div className='Marcas-selecionada'>
-                <input  className='square-input' type='radio' name='valor' placeholder='Buscar...' />
+                <input  className='square-input' type='radio' name='valor' placeholder='Buscar...' onClick={props.filtro} value='4'/>
                 <p>Puma</p>
                 </div>
 
@@ -45,30 +45,23 @@ export default function Index(props){
                 <div className='size'>
                     <div className='tamanho'>
                         <div>    
-                            <button placeholder='P'>P</button>
+                            <button placeholder='P' onClick={props.filtro} value='p'>P</button>
                         </div>
 
                         <div>
-                            <button placeholder='g'>G</button>
+                            <button placeholder='g' onClick={props.filtro} value='g'>G</button>
                         </div>
 
                         <div>
-                            <button placeholder='M'>M</button>
+                            <button placeholder='M' onClick={props.filtro} value='m'>M</button>
                         </div>
                     </div>
 
                     <div className='tamanho-grande'>
+                        
                         <div>
-                            <button placeholder='PP'>PP</button>
+                            <button placeholder='GG' onClick={props.filtro} value='gg'>GG</button>
                         </div>
-
-                        <div>
-                            <button placeholder='GG'>GG</button>
-                        </div>
-
-                        <div>
-                            <button placeholder='MM'>MM</button>
-                        </div>   
                     </div>
                 </div>            
             </div>

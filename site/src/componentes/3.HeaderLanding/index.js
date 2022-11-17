@@ -48,9 +48,9 @@ export default function Index() {
                     <img className='imagens' src="/images/user.png" alt=""/>
                 </Link>
                 
-                <Link to='InfoPessoais'>
+                {/* <Link to='InfoPessoais'>
                     <span>Minha conta</span>
-                    </Link>    
+                    </Link>     */}
                 
                 
                 {/* <div className='minha-conta'>

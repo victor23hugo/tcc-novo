@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { Adidas, teste, testeNike, Umbro } from '../repository/homeRepositoy.js';
+import { Adidas, listarPorNome, listarTamanhoG, listarTamanhoGG, listarTamanhoM, listarTamanhoP, teste, testeNike, Umbro } from '../repository/homeRepositoy.js';
 
 import { buscarCamisaImagem10, buscarCamisaPorId1, listarProdutosAdidas, listarProdutoscatalogo, listarProdutosInicio, listarProdutosNike, listarProdutosPuma, listarProdutosUmbro } from '../repository/lojaRepository.js'
 
@@ -30,7 +30,7 @@ server.get('/listar/catalogo', async (req, resp) => {
 
 
 //Filtro de camisas Puma
-server.get('/filtro/gabrel', async (req, resp) => {
+server.get('/filtro/puma', async (req, resp) => {
     try {
         const r = await listarProdutosPuma()
         resp.send(r)
@@ -149,6 +149,65 @@ server.get('/api/camisa/:id', async (req, resp) => {
     }
 })
 
+server.get('/filtro/tamanho/p', async (req, resp) => {
+    try {
+        const r = await listarTamanhoP()
+        resp.send(r)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
+server.get('/filtro/tamanho/m', async (req, resp) => {
+    try {
+        const r = await listarTamanhoM()
+        resp.send(r)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+// server.get('/busca', async (req, resp) => {
+//     try {
+//         const { nome } = req.query;
+        
+//         const resposta = await listarPorNome(nome);
+
+//         if (resposta.length == 0)
+//             resp.status(404).send()
+//         else
+//             resp.send(resposta);
+//     } catch (err) {
+//         resp.status(400).send({
+//             erro: err.message
+//         })
+//     }
+// })
+
+server.get('/filtro/tamanho/g', async (req, resp) => {
+    try {
+        const r = await listarTamanhoG()
+        resp.send(r)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/filtro/tamanho/gg', async (req, resp) => {
+    try {
+        const r = await listarTamanhoGG()
+        resp.send(r)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 export default server;

@@ -44,7 +44,32 @@ export async function listarProdutosFaixa4(){
  }
 
 // //filtro Adidas
-// export async function listarProdutosAdidas(){
-//     const r = await api.get('/filtro/adidas');
-//     return r.data;
-// }
+export async function listarProdutosAdidas(){
+     const r = await api.get('/filtro/adidas');
+     return r.data;
+}
+
+export async function listarProdutosPuma(){
+    const r = await api.get('/filtro/puma');
+    return r.data;
+}
+
+export async function listarTamanhoP(){
+    const r = await api.get('/filtro/tamanho/p');
+    return r.data;
+}
+
+export async function listarTamanhoM(){
+    const r = await api.get('/filtro/tamanho/m');
+    return r.data;
+}
+
+export async function listarTamanhoG(){
+    const r = await api.get('/filtro/tamanho/g');
+    return r.data;
+}
+
+export async function listarTamanhoGG(){
+    const r = await api.get('/filtro/tamanho/gg');
+    return r.data;
+}

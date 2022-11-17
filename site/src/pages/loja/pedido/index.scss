@@ -44,9 +44,7 @@
 }
 
 .reunir-bandeiras{
-    *{
-        border: 1px solid green;
-    }
+  
     display: flex;
     width: 0em;
     height: 100%;
@@ -57,7 +55,7 @@
     flex-direction: column;
 
     justify-content: flex-end;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .img-bandeiras{

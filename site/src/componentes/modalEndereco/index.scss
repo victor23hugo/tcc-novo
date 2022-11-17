@@ -20,13 +20,17 @@
 
     .fechar{
         display: flex;
-        flex-direction: row;
-        align-items: flex-end;
+        justify-content: end;
+        
+
+
     }
 
     .fechar > span{
         color: red;
-        padding-left: 7em;
+        
+        cursor: pointer;
+        font-size: x-large;
     }
 
     .btn > button{

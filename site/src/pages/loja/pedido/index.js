@@ -154,11 +154,12 @@ export default function Pedido() {
                             <div className='bandeiras'>
                                 <h5 className='aceitamos'>Bandeiras de cartão que aceitamos</h5>
                                 <div className='img-bandeiras'>
-                                    <img src="/images/bandeiraelo.png" alt="" width='50px' height='50px'/>
-                                    <img src="/images/bandeiramastercard.png" alt="" width='50px' height='50px'/>
-                                    <img src="/images/bandeiravisa.png" alt="" width='50px' height='50px'/>
-                                    <img src="/images/bandeiraamerican.png" alt="" width='50px' height='50px'/>
+                                    <img src="/images/bandeira elo.png" alt="" width='50px' height='50px'/>
+                                    <img src="/images/bandeira mastercard.png" alt="" width='50px' height='50px'/>
+                                    <img src="/images/bandeira visa.png" alt="" width='50px' height='50px'/>
+                                    <img src="/images/bandeira american.png" alt="" width='50px' height='50px'/>
                                 </div>
+                                
                             </div>
                         </div>
                         <div className="input-box">

@@ -5,7 +5,7 @@ import Rodape from '../../../componentes/rodape-page'
 import CardCamisa from '../../../componentes/CardCamisa'
 import { useEffect, useState } from 'react'
 import { listarCamisaCatalogo } from '../../../api/camisaApi'
-import { filtrarProdutosNike, listarProdutosUmbro } from '../../../api/filtrosApi'
+import { filtrarProdutosNike, listarProdutosAdidas, listarProdutosUmbro, listarProdutosPuma, listarTamanhoP, listarTamanhoM, listarTamanhoG, listarTamanhoGG } from '../../../api/filtrosApi'
 import Pagination from '../../../componentes/pagination'
 
 
@@ -17,6 +17,9 @@ export default function Index() {
     const [filtro, setFiltro] = useState();
     const [currentPage, setCurrentPage] = useState(1);
     const [camisaPorPage] = useState(10);
+    const [texto, setTexto] = useState('')
+
+    
 
     async function listar() {
         const r = await listarCamisaCatalogo();
@@ -41,9 +44,37 @@ export default function Index() {
                 setCamisas(resp)
             }   else if(filtro === '2'){
                 resp = await listarProdutosUmbro()
+                setCamisas(resp)
+            } else if(filtro === '3'){
+                resp = await listarProdutosAdidas()
+                setCamisas(resp)
+            }
+            else if(filtro === '4'){
+                resp = await listarProdutosPuma()
+                setCamisas(resp)
+            }
+            else if(filtro === 'p'){
+                resp = await listarTamanhoP()
+                setCamisas(resp)
+            }
+            else if(filtro === 'm'){
+                resp = await listarTamanhoM()
+                setCamisas(resp)
+            }
+            else if(filtro === 'g'){
+                resp = await listarTamanhoG()
+                setCamisas(resp)
+            }
+            else if(filtro === 'gg'){
+                resp = await listarTamanhoGG()
+                setCamisas(resp)
             }
         }
-    }, [camisas])
+
+        if(filtro){
+            filtrar()
+        }
+    }, [filtro])
 
 
     const indexOfLastPost = currentPage * camisaPorPage;

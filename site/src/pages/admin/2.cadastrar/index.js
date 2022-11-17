@@ -138,7 +138,7 @@ function mostrarImagem(){
                             
                         <div className='container-button'>
                                 <button onClick={salvar}>Cadastrar</button>
-                                <button onClick={salvar}>Alterar</button>
+                                {/* <button onClick={salvar}>Alterar</button> */}
                             </div>
                         </div>
                     

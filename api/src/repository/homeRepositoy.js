@@ -191,3 +191,97 @@ export async function listarProdutosUmbro(){
     const [registros] = await con.query (comando);
     return registros;
 }
+
+
+export async function listarTamanhoP(){
+    const comando = `
+
+
+        select id_camisa        id ,
+        nm_camisa               nome,
+        vl_camisa               valor,
+        nm_marca                marca,
+        ds_descricao            descricao,
+        img_camisa	            imagem
+        from tb_cadastro_camisa
+       where ds_tamanho = 'P'
+    `
+
+    const [registros] = await con.query (comando);
+    return registros;
+}
+
+
+export async function listarTamanhoM(){
+    const comando = `
+
+
+        select id_camisa        id ,
+        nm_camisa               nome,
+        vl_camisa               valor,
+        nm_marca                marca,
+        ds_descricao            descricao,
+        img_camisa	            imagem
+        from tb_cadastro_camisa
+       where ds_tamanho = 'M'
+    `
+
+    const [registros] = await con.query (comando);
+    return registros;
+}
+
+
+export async function listarTamanhoG(){
+    const comando = `
+
+
+        select id_camisa        id ,
+        nm_camisa               nome,
+        vl_camisa               valor,
+        nm_marca                marca,
+        ds_descricao            descricao,
+        img_camisa	            imagem
+        from tb_cadastro_camisa
+       where ds_tamanho = 'G'
+    `
+
+    const [registros] = await con.query (comando);
+    return registros;
+}
+
+
+export async function listarTamanhoGG(){
+    const comando = `
+
+
+        select id_camisa        id ,
+        nm_camisa               nome,
+        vl_camisa               valor,
+        nm_marca                marca,
+        ds_descricao            descricao,
+        img_camisa	            imagem
+        from tb_cadastro_camisa
+       where ds_tamanho = 'GG'
+    `
+
+    const [registros] = await con.query (comando);
+    return registros;
+}
+
+export async function listarPorNome(nome){
+    const comando = `
+
+
+        select id_camisa        id ,
+        nm_camisa               nome,
+        vl_camisa               valor,
+        nm_marca                marca,
+        ds_descricao            descricao,
+        img_camisa	            imagem
+        from tb_cadastro_camisa
+       where nm_camisa like ?
+    `
+
+    const [registros] = await con.query (comando, [`${nome}`]);
+    return registros;
+}
