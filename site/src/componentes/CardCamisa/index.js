@@ -23,7 +23,7 @@ export default function Index(props){
     }
 
     return(
-        <main>
+        <main className='tudo'>
                 <div className='card-camisa' onClick={() => abrirDetalhes(props.item.id)}>
                     <img src ={exibir (props.item.imagem)} alt='camisa santos'/>
                     <div>

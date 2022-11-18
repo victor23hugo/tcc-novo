@@ -84,7 +84,7 @@ server.get('/admin/busca', async (req, resp) =>{
 
 
 //buscar por marca ARRUMAR --guilherme 
-server.get('/admin/busca', async (req, resp) =>{
+server.get('/admin/busca/?marca', async (req, resp) =>{
     try{
         const {marca} = req.query;
 

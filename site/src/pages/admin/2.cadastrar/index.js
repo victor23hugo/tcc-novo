@@ -97,7 +97,7 @@ function mostrarImagem(){
                             </div>
 
                             <br/>
-                            <div className="input-box">
+                            <div className="input-maior">
                                 <input id="Descrição" type="Descrição" name="Descrição" placeholder="Descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
                             </div>
                                 <br/>

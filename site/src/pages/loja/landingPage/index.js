@@ -15,6 +15,7 @@ export default function Index() {
     const [nike, setNike] = useState([]);
     const [adidas, setAdidas] = useState([]);
     const [umbro, setUmbro] = useState([]);
+    const [filtro, setFiltro] = useState();
 
     async function listar() {
         const r = await listarCamisaHome();
@@ -43,26 +44,16 @@ export default function Index() {
 
     useEffect(() => {
         listar();
-
-    }, [])
-
-
-
-    useEffect(() => {
         listarPuma();
-    }, [])
-
-    useEffect(() => {
         listarNike();
-    }, [])
-
-    useEffect(() => {
         listarAdidas();
+        listarUmbro();
     }, [])
 
-    useEffect(() => {
-        listarUmbro();
-    })
+
+    
+
+
 
 
     return (
@@ -98,9 +89,9 @@ export default function Index() {
                         {nike.map(item =>
                             <Cardcamisa item={item} />
                         )}
-
+                        <div className='button-catalogo'>
                         <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
-
+                        </div>
                     </div>
                 </div>
 
@@ -179,6 +170,7 @@ export default function Index() {
                 </div>
 
                 <div className='mini-faixa3'>
+                    <button ></button>
                 </div>
 
                 <div className='fale-conosco'>
