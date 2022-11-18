@@ -12,7 +12,7 @@ export default function CarrinhoComp(props, carregarCarrinho, removerItem){
 
     //arrumar
     function remover(){
-        alert('passou aqui')
+        alert('passou aqui tbm')
         removerItem(props.id)
     }
     

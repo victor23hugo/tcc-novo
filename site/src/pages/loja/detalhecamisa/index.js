@@ -70,7 +70,7 @@ export default function Index() {
 
                         </div>
                         <div className='atual'>
-                            <img src={exibir(camisa.imagem)} />
+                            <img src={exibir(camisa.imagem)}/>
                         </div>
                     </div>
                     <div className='detalhes'>

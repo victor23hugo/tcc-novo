@@ -11,7 +11,7 @@ import {  Link } from 'react-router-dom';
 
 
 
-export default function Index(){
+export default function Index(props){
 
     const [itens, setItens] = useState([]);
 
@@ -28,7 +28,7 @@ export default function Index(){
     async function removerItem(id){
         alert('passou aqui tb')
         let carrinho = Storage('carrinho');
-        carrinho = carrinho.filter(item => item.id != id);
+        carrinho = carrinho.filter(item => camisa.id != id);
 
         Storage('carrinho', carrinho);
         await carregarCarrinho();
