@@ -77,18 +77,14 @@ export default function Index(props){
            <Header/>
 
             <div className='carrinho'>
-                <br/>
-                <br/>
+              
                 <div className='itens'>
 
 
                 {itens.map (item =>
                     <CarrinhoComp item={item} removerItem={removerItem} carregarCarrinho={carregarCarrinho}/>
                     )}
-                 
                 </div>
-
-                
                 <div className='resumo'>
                     <h1> Subtotal </h1>
                     <h3> ({qtdItens()} Camisas Adicionadas) </h3>
@@ -102,10 +98,7 @@ export default function Index(props){
                             
 
             </div>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+            
             <Rodape/>
         </div>
     )

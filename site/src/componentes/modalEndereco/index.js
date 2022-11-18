@@ -20,7 +20,7 @@ export default function ModalEndereco({exibir, fechar}){
         try{
         const id = Storage('cliente-logado').id
         const r = await salvar(id, cep, referencia, logradouro, bairro, cidade, estado, numero, complemento);
-        toast.dark('endereco cadastardo')
+        toast.dark('endereco cadastardo✔️')
         fechar();
         } 
         catch(err){

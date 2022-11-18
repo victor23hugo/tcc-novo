@@ -31,6 +31,7 @@ export default function CarrinhoComp(props, carregarCarrinho, removerItem){
         const subtotal = qtdProduto * props.item.camisa.valor
         return subtotal
     }
+    console.log(props.item.camisa.valor)
 
     function alterarQuantidade(novaQtd){
         setTQtdProduto(novaQtd)

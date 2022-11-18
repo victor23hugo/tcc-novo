@@ -6,6 +6,7 @@ import { logar } from '../../../api/loginCliente'
 import { toast } from 'react-toastify';
 import localStorage from 'local-storage';
 import { Link } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom'
 
 //import { useNavigate } from 'react-router-dom';
 
@@ -14,14 +15,17 @@ export default function Login(){
     const [senha, setSenha] = useState('');
 
 
+    const nav = useNavigate();
+
     async function logarCliente(){
         try{
             const r = await logar(email, senha);
             localStorage('cliente-logado', r);
-            toast.dark('Usuário logado');
+            toast.dark('✔️Usuário logado');
+            nav('/')
         }
         catch(err) {
-            toast.error(err.message);
+            toast.error(err.response.data.erro);
         }
     }
 
