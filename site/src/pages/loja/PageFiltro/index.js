@@ -95,20 +95,20 @@ export default function Index() {
                         <Menu filtro={e => setFiltro(e.target.value)} />
                     </div>
                     <div className='camisas-filtradas'>
+                        <div className='filtros-camisa'>
                         {currentCamisas.map(item =>
                             <CardCamisa item={item} camisas={currentCamisas}  />)}
+                        </div>
+
+                        <div className='paginacao'>
+                            <Pagination
+                            camisaPorPage={camisaPorPage}
+                            totalCamisas={camisas.length}
+                            paginate={paginate}/>
+                        </div>
                     </div>
 
                 </div>
-                <br/>
-                <div>
-                <Pagination
-                        camisaPorPage={camisaPorPage}
-                        totalCamisas={camisas.length}
-                        paginate={paginate}
-                    />
-                </div>
-                <br/>
                 <Rodape/>
             </div>
                             

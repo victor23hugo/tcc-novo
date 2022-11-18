@@ -20,7 +20,7 @@ import Carrinho from './pages/loja/carrinho'
 import Filtro from './pages/loja/PageFiltro';
 import Pedido from './pages/loja/pedido';
 import Contato from './pages/loja/contato'
-
+import PedidoFinalizado from './pages/loja/PedidoFinalizado'
 
 //imports do User
 import LoginUser from './pages/User/0.loginUser/index.js';
@@ -60,7 +60,8 @@ root.render(
         <Route path='/MeusPedidos' element={<MeusPedidos/>} />
         <Route path='/HistPedidos' element={<HistPedidos/>} />
         <Route path='/informacao' element={<InformaçoesEntrega/>} />
-      
+        <Route path='/Pedido/Finalizado' element={<PedidoFinalizado/>} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -20,14 +20,23 @@
 }
 .camisas-filtradas{
     display: flex;
-    flex-wrap: wrap;
-    
+    flex-direction: column;
+    width: 100%;
+}
+.filtros-camisa{
+    display: flex;
+    height: 98%;
+}
+.paginacao{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .pagination{
     display: flex;
     list-style: none;
-    padding-left: 40em;
     align-items: center;
+    padding: 5px;
 }
 .pagination li + li {
     margin-left: 1rem;
