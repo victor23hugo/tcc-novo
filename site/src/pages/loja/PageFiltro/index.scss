@@ -25,7 +25,9 @@
 }
 .filtros-camisa{
     display: flex;
+    flex-wrap: wrap;
     height: 98%;
+    width: 100%;
 }
 .paginacao{
     width: 100%;
