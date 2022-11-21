@@ -40,11 +40,8 @@ export default function Login(){
         
         <main className='page-cadastrar'>
                 <Header/>
-           <br/>
-           <br/>
             <div className='unir'>
                 
-            <br/>
                 <div className='card'>
                     <br/>
                     <h1 className='h1-1'>CADASTRE-SE</h1>

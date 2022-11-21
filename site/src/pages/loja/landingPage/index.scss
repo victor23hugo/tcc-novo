@@ -13,6 +13,17 @@
             width: 100%;
             height: 90%;
         }
+        .clas{
+           
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+        }
+        .clas > button{
+            border-radius: 100%;
+        }
         .Nike{
             height: 130px;
         }

@@ -39,3 +39,31 @@ export async function cadastrarLogin(email, senha, idUsuario){
     const [resposta] = await con.query(comando, [email, senha, idUsuario]);
     return resposta;
 }
+
+
+export async function buscarPerfilPorId(id){
+    const comando = 
+    `
+    select id_usuario as IdUsuario,
+    nm_usuario        as NomeUsuario,
+    ds_cpf            as Cpf,
+    dt_nascimento     as Nascimento,
+    ds_telefone       as Telefone
+        from tb_usuario 
+            where id_usuario = ?
+    `
+    const resposta  = await con.query(comando, [id])
+    return resposta[0]
+}
+
+
+export async function buscarLoginPorId(idUsuario){
+    const comando = 
+    `
+    select ds_email         as Email
+	    from tb_login_usuario
+            where id_usuario = ?`
+
+    const resposta  = await con.query(comando, [idUsuario])
+    return resposta[0]
+}

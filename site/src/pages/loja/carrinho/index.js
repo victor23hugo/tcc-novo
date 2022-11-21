@@ -26,7 +26,7 @@ export default function Index(props){
 
     //arrumar
     async function removerItem(id){
-        alert('passou aqui tb')
+        alert('passou aqui')
         let carrinho = Storage('carrinho');
         carrinho = carrinho.filter(item => camisa.id != id);
 

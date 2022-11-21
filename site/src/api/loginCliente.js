@@ -23,3 +23,8 @@ export async function cadastrarLogin(email, senha, id){
     const resposta = await api.post('/cadastrar/login/' + id, { email, senha, id }) 
     return resposta.data;
 }
+
+export async function buscarUsuarioPorId(id){
+    const resposta = await api.get('/usuario/perfil/' + id) 
+    return resposta.data;
+}

@@ -13,10 +13,11 @@ export default function CarrinhoComp(props, carregarCarrinho, removerItem){
     //arrumar
     function remover(){
         alert('passou aqui tbm')
-        removerItem(props.id)
+        removerItem(props.item)
     }
     
     const [qtdProduto, setTQtdProduto] = useState(props.item.qtd);
+    const [vl, setVl] = useState(props.item.camisa.valor)
     
 
     function exibir(imagem){
@@ -28,7 +29,7 @@ export default function CarrinhoComp(props, carregarCarrinho, removerItem){
     }
 
     function subTotal(){
-        const subtotal = qtdProduto * props.item.camisa.valor
+        const subtotal = qtdProduto * vl
         return subtotal
     }
     console.log(props.item.camisa.valor)

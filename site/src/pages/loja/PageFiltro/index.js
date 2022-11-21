@@ -16,7 +16,7 @@ export default function Index() {
     const [camisas, setCamisas] = useState([]);
     const [filtro, setFiltro] = useState();
     const [currentPage, setCurrentPage] = useState(1);
-    const [camisaPorPage] = useState(8);
+    const [camisaPorPage] = useState(5);
     const [texto, setTexto] = useState('')
 
     

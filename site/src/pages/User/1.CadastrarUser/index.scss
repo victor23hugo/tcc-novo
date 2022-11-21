@@ -44,6 +44,9 @@
         height: 50px;
         cursor: pointer;
     }
+    .button :hover{
+        margin-top: -0.5;
+    }
     
     .reunir-containers{
         display: flex;

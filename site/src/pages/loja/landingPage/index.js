@@ -89,9 +89,11 @@ export default function Index() {
                         {nike.map(item =>
                             <Cardcamisa item={item} />
                         )}
-                        <div className='button-catalogo'>
-                        <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
+                      <Link to='./catalogo'>
+                        <div className='clas'>
+                                <img src="/images/setinha page1.png" width="40" height="50px"/>
                         </div>
+                        </Link>
                     </div>
                 </div>
 
@@ -103,9 +105,12 @@ export default function Index() {
                         {adidas.map(item =>
                             <Cardcamisa item={item} />
                         )}
-
-                        <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
-
+                        <Link to='./catalogo'>
+                        <div className='clas'>
+                                <img src="/images/setinha page1.png" width="40" height="50px"/>
+                        </div>
+                        </Link>
+                        
                     </div>
                 </div>
 
@@ -154,9 +159,11 @@ export default function Index() {
                         <CardPuma item={item} />
                     )}
                     
-                    <div className='button-1'>
-                        <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
-                    </div>
+                    <Link to='./catalogo'>
+                        <div className='clas'>
+                                <img src="/images/setinha page1.png" width="40" height="50px"/>
+                        </div>
+                        </Link>
                     
                 </div>
 
@@ -165,13 +172,15 @@ export default function Index() {
                     {umbro.map(item =>
                         <CardPuma item={item} />
                     )}
-                    <Link className='botão-catalogo' to='./catalogo'><button> Ver Mais </button></Link>
+                   <Link to='./catalogo'>
+                        <div className='clas'>
+                                <img src="/images/setinha page1.png" width="40" height="50px"/>
+                        </div>
+                        </Link>
 
                 </div>
 
-                <div className='mini-faixa3'>
-                    <button ></button>
-                </div>
+            
 
                 <div className='fale-conosco'>
                     <div className='Bloco-endereco'>

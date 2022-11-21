@@ -11,7 +11,7 @@ import { API_URL } from '../../../api/config'
 import { salvarNovoPedido } from '../../../api/pedidoApi'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 
 
 export default function Pedido() {
@@ -129,7 +129,11 @@ export default function Pedido() {
                 <div className='total'>
                     <h1>Total:</h1>
                     <h4>R${calcularValorTotal()},00</h4>
-                    <button onClick={salvarPedido}>Finalizar Pedido</button>
+                    <Link to='/pedido/finalizado'>
+                        <div className='btn-fechar'>
+                    <button onClick={salvarPedido} >Finalizar Pedido</button>
+                    </div>
+                    </Link>
                 </div>
                 <br />
                 <h1>Selecione o Endereço de Entrega</h1>
@@ -233,7 +237,9 @@ export default function Pedido() {
                                     </td>
                                     <td>
                                         Quantidade
+                                        
                                     </td>
+                                        
                                     <td>
                                         R${item.camisa.valor},00
                                     </td>
